@@ -30,7 +30,11 @@
 		var parent = element.parentNode;
 		var lines = parent.outerText.match(/\n/g);
 
-		lines = (lines ? lines.length : 0);// TODO: for IE + 1;
+		lines = lines ? lines.length : 0;
+
+		// fix for IE
+		if (isIE()) lines += 1;
+
 		if (lines > 1) {
 			var l = '';
 			for (var i = 0; i < lines; i++) {
@@ -44,5 +48,10 @@
 
 			parent.insertBefore(linesPanel, element);
 		}
+	}
+
+	function isIE(userAgent) {
+		userAgent = userAgent || w.navigator.userAgent;
+		return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
 	}
 }(window));
