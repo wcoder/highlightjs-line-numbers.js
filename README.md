@@ -5,7 +5,7 @@ Highlight.js line numbers plugin.
 ## Usage
 
 Download plugin and include file after highlight.js:
-```
+```html
 <script src="highlight.min.js"></script>
 
 <script src="highlightjs-line-numbers.js"></script>
@@ -27,10 +27,10 @@ Adding styles:
 ```
 
 Initialize plugin after highlight.js:
-```
+```js
 hljs.initHighlightingOnLoad();
 
 hljs.initLineNumbersOnLoad();
 ```
 
-&copy; 2015 Pakalo Evgeniy | MIT License
+&copy; 2015 Yauheni Pakala | MIT License
