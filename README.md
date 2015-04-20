@@ -34,11 +34,12 @@ hljs.initLineNumbersOnLoad();
 ```
 
 Here’s an equivalent way to calling `initLineNumbersOnLoad` using jQuery:
-
+```js
 $(document).ready(function() {
 	$('code.hljs').each(function(i, block) {
 		hljs.lineNumbersBlock(block);
 	});
 });
+```
 
 &copy; 2015 Yauheni Pakala | MIT License
