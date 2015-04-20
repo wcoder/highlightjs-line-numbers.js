@@ -8,7 +8,7 @@ Download plugin and include file after highlight.js:
 ```html
 <script src="highlight.min.js"></script>
 
-<script src="highlightjs-line-numbers.js"></script>
+<script src="dist/highlightjs-line-numbers.min.js"></script>
 ```
 
 Adding styles:
