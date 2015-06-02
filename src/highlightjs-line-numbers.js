@@ -28,7 +28,7 @@
 		if (typeof element !== 'object') return;
 
 		var parent = element.parentNode;
-		var lines = parent.outerText.match(/\n/g);
+		var lines = parent.textContent.match(/\r\n|\r|\n/g);
 
 		lines = lines ? lines.length : 0;
 
@@ -44,7 +44,7 @@
 			var linesPanel = document.createElement('code');
 			linesPanel.className = 'hljs hljs-line-numbers';
 			linesPanel.style.float = 'left';
-			linesPanel.innerText = l;
+			linesPanel.textContent = l;
 
 			parent.insertBefore(linesPanel, element);
 		}
