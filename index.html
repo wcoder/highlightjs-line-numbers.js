@@ -1,50 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Highlightjs-line-numbers.js : Line numbers plugin for Highlight.js">
+    <title>Highlightjs-line-numbers.js by wcoder</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Highlightjs-line-numbers.js</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>Highlightjs-line-numbers.js</h1>
+        <p>Line numbers plugin for Highlight.js</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/wcoder/highlightjs-line-numbers.js">View on GitHub</a>
+        <p class="view"><a href="https://github.com/wcoder/highlightjs-line-numbers.js">View the Project on GitHub <small>wcoder/highlightjs-line-numbers.js</small></a></p>
 
-          <h1 id="project_title">Highlightjs-line-numbers.js</h1>
-          <h2 id="project_tagline">Line numbers plugin for Highlight.js</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/wcoder/highlightjs-line-numbers.js/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/wcoder/highlightjs-line-numbers.js/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+        <ul>
+          <li><a href="https://github.com/wcoder/highlightjs-line-numbers.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/wcoder/highlightjs-line-numbers.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/wcoder/highlightjs-line-numbers.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h1>
-<a id="highlightjs-line-numbersjs-" class="anchor" href="#highlightjs-line-numbersjs-" aria-hidden="true"><span class="octicon octicon-link"></span></a>highlightjs-line-numbers.js <a href="https://github.com/wcoder/highlightjs-line-numbers.js/archive/master.zip"><img src="http://img.shields.io/badge/release-v1.0.0-brightgreen.svg?style=flat" alt="version"></a>
+<a id="highlightjs-line-numbersjs-" class="anchor" href="#highlightjs-line-numbersjs-" aria-hidden="true"><span class="octicon octicon-link"></span></a>highlightjs-line-numbers.js <a href="https://github.com/wcoder/highlightjs-line-numbers.js/archive/master.zip"><img src="http://img.shields.io/badge/release-v1.0.1-brightgreen.svg?style=flat" alt="version"></a>
 </h1>
 
 <p>Highlight.js line numbers plugin.</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<h4>
+<a id="bower" class="anchor" href="#bower" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bower</h4>
+
+<pre><code>bower install highlightjs-line-numbers.js
+</code></pre>
+
+<h4>
+<a id="npm" class="anchor" href="#npm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Npm</h4>
+
+<pre><code>npm install highlightjs-line-numbers.js
+</code></pre>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>Download plugin and include file after highlight.js:</p>
 
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>highlight.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path/to/highlight.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 
-&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>dist/highlightjs-line-numbers.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path/to/highlightjs-line-numbers.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <p>Adding styles:</p>
 
@@ -74,19 +86,16 @@ hljs.initLineNumbersOnLoad();</pre></div>
     });
 });</pre></div>
 
+<p><a href="https://github.com/wcoder/highlightjs-line-numbers-demo">DEMO project</a></p>
+
 <p>© 2015 Yauheni Pakala | MIT License</p>
       </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Highlightjs-line-numbers.js maintained by <a href="https://github.com/wcoder">wcoder</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/wcoder">wcoder</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-
   </body>
 </html>
