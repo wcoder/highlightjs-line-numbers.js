@@ -28,12 +28,7 @@
 		if (typeof element !== 'object') return;
 
 		var parent = element.parentNode;
-		var lines = parent.textContent.match(/\r\n|\r|\n/g);
-
-		lines = lines ? lines.length : 0;
-
-		// fix for IE
-		if (isIE()) lines += 1;
+		var lines = getCountLines(parent.textContent);
 
 		if (lines > 1) {
 			var l = '';
@@ -50,8 +45,17 @@
 		}
 	}
 
-	function isIE(userAgent) {
-		userAgent = userAgent || w.navigator.userAgent;
-		return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
+	function getCountLines(text) {
+		if (text.length === 0) return 0;
+
+		var regExp = /\r\n|\r|\n/g;
+		var lines = text.match(regExp);
+		lines = lines ? lines.length : 0;
+
+		if (!text[text.length - 1].match(regExp)) {
+			lines += 1;
+		}
+
+		return lines;
 	}
 }(window));
