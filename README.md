@@ -1,14 +1,26 @@
-# highlightjs-line-numbers.js [![version](http://img.shields.io/badge/release-v1.0.0-brightgreen.svg?style=flat)](https://github.com/wcoder/highlightjs-line-numbers.js/archive/master.zip)
+# highlightjs-line-numbers.js [![version](http://img.shields.io/badge/release-v1.0.1-brightgreen.svg?style=flat)](https://github.com/wcoder/highlightjs-line-numbers.js/archive/master.zip)
 
 Highlight.js line numbers plugin.
+
+## Install
+
+#### Bower
+```
+bower install highlightjs-line-numbers.js
+```
+
+#### Npm
+```
+npm install highlightjs-line-numbers.js
+```
 
 ## Usage
 
 Download plugin and include file after highlight.js:
 ```html
-<script src="highlight.min.js"></script>
+<script src="path/to/highlight.min.js"></script>
 
-<script src="dist/highlightjs-line-numbers.min.js"></script>
+<script src="path/to/highlightjs-line-numbers.min.js"></script>
 ```
 
 Adding styles:
@@ -41,5 +53,7 @@ $(document).ready(function() {
 	});
 });
 ```
+
+[DEMO project](https://github.com/wcoder/highlightjs-line-numbers-demo)
 
 &copy; 2015 Yauheni Pakala | MIT License
