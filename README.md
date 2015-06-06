@@ -1,4 +1,4 @@
-# highlightjs-line-numbers.js [![version](http://img.shields.io/badge/release-v1.0.1-brightgreen.svg?style=flat)](https://github.com/wcoder/highlightjs-line-numbers.js/archive/master.zip)
+# highlightjs-line-numbers.js [![version](http://img.shields.io/badge/release-v1.0.2-brightgreen.svg?style=flat)](https://github.com/wcoder/highlightjs-line-numbers.js/archive/master.zip)
 
 Highlight.js line numbers plugin.
 
