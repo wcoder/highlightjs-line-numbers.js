@@ -2,6 +2,8 @@
 
 Highlight.js line numbers plugin.
 
+[DEMO](http://wcoder.github.io/highlightjs-line-numbers.js/)
+
 ## Install
 
 #### Bower
@@ -54,6 +56,5 @@ $(document).ready(function() {
 });
 ```
 
-[DEMO project](https://github.com/wcoder/highlightjs-line-numbers-demo)
-
+---
 &copy; 2015 Yauheni Pakala | MIT License
