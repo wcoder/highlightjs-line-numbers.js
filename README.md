@@ -2,7 +2,7 @@
 
 Highlight.js line numbers plugin.
 
-[DEMO](http://wcoder.github.io/highlightjs-line-numbers.js/)
+[DEMO](http://wcoder.github.io/highlightjs-line-numbers.js/) | [SСREENSHOTS](https://github.com/wcoder/highlightjs-line-numbers.js/issues/5)
 
 ## Install
 
