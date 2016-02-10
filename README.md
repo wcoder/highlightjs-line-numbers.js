@@ -56,5 +56,26 @@ $(document).ready(function() {
 });
 ```
 
+## Additional features
+
+#### Links
+```js
+hljs.initLineNumbersOnLoad({
+	withLinks: true
+});
+```
+
+```css
+.hljs-line-numbers a {
+	text-decoration: none;
+	color: #999;
+}
+.hljs-line-numbers a:target {
+	color: #ff0000;
+	text-decoration: underline;
+	outline: none;
+}
+```
+
 ---
 &copy; 2015 Yauheni Pakala | MIT License
