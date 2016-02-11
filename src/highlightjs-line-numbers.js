@@ -79,6 +79,6 @@
 
 	function getLineWithLink (i, blockName) {
 		var id = blockName + '_l' + i;
-		return '<a href="#' + id + '" id="' + id + '">' + i + '</span>\n'
+		return '<a href="#' + id + '" name="' + id + '">' + i + '</span>\n'
 	}
 }(window));
