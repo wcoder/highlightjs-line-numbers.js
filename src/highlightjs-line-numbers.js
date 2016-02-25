@@ -9,19 +9,25 @@
 	}
 
 	function initLineNumbersOnLoad () {
-		w.addEventListener('load', function () {
-			try {
-				var blocks = document.querySelectorAll('code.hljs');
+		if (document.readyState === 'complete') {
+			documentReady();
+		} else {
+			w.addEventListener('DOMContentLoaded', documentReady);
+		}
+	}
 
-				for (var i in blocks) {
-					if (blocks.hasOwnProperty(i)) {
-						lineNumbersBlock(blocks[i]);
-					}
+	function documentReady () {
+		try {
+			var blocks = document.querySelectorAll('code.hljs');
+
+			for (var i in blocks) {
+				if (blocks.hasOwnProperty(i)) {
+					lineNumbersBlock(blocks[i]);
 				}
-			} catch (e) {
-				console.error('LineNumbers error: ', e);
 			}
-		});
+		} catch (e) {
+			console.error('LineNumbers error: ', e);
+		}
 	}
 
 	function lineNumbersBlock (element) {
