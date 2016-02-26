@@ -1,9 +1,9 @@
 {
   "name": "highlightjs-line-numbers.js",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "homepage": "https://github.com/wcoder/highlightjs-line-numbers.js",
   "authors": [
-    "Evgeniy Pakalo <evgeniy.pakalo@gmail.com>"
+    "Yauheni Pakala <evgeniy.pakalo@gmail.com>"
   ],
   "description": "Line numbers plugin for Highlight.js",
   "keywords": [
