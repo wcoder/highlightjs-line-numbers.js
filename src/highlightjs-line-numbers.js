@@ -34,17 +34,17 @@
 		if (typeof element !== 'object') return;
 
 		var parent = element.parentNode;
-    // if have 'firstLineNumber' attribute and it's a positive nubmer
-    // start line numbering from its value.
-    var startFrom = element.getAttribute('firstLineNumber');
-    // if startFrom is 'null' regex test will return 'false'
-    startFrom = (/^\d+$/.test(startFrom)) ? parseInt(startFrom) : 0;
+		// if have 'firstLineNumber' attribute and it's a positive nubmer
+		// start line numbering from its value.
+		var startFrom = element.getAttribute('firstLineNumber');
+		// if startFrom is 'null' regex test will return 'false'
+		startFrom = (/^\d+$/.test(startFrom)) ? parseInt(startFrom) : 0;
 		var lines = getCountLines(parent.textContent);
 
 		if (lines > 1) {
 			var l = '';
 			for (var i = 0; i < lines; i++) {
-        // shifting line number as it was numbered starting from 'startFrom'
+				// shifting line number as it was numbered starting from 'startFrom'
 				l += (startFrom + i + 1) + '\n';
 			}
 
