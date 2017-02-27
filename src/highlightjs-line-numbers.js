@@ -49,8 +49,9 @@
 			$('.hljs-line').each(function(i) {
 			  l += (i + 1) + '\n';
 			  //add a empty line if word wrap is detected (if div's height if > than the line-height)
-			  if(Math.round(parseInt($(this).height())/parseInt($(this).css('line-height'))) > 1){
-			    l += '\n';
+			  var height = Math.round(parseInt($(this).height())/parseInt($(this).css('line-height')));
+			  if( height > 1){
+				l += '\n'.repeat(height-1);
 			  }
 			});
 			$('.hljs-line-numbers').remove();
