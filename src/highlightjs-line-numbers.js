@@ -8,21 +8,29 @@
 		w.hljs.lineNumbersBlock = lineNumbersBlock;
 	}
 
-	function initLineNumbersOnLoad () {
+	var defaultOptions = {
+		withLinks: false
+	};
+
+	function initLineNumbersOnLoad (options) {
+		options = options || defaultOptions;
 		if (document.readyState === 'complete') {
-			documentReady();
+			documentReady(options);
 		} else {
-			w.addEventListener('DOMContentLoaded', documentReady);
+			w.addEventListener('DOMContentLoaded', function() { documentReady(options); });
 		}
 	}
 
-	function documentReady () {
+	function documentReady (options) {
 		try {
 			var blocks = document.querySelectorAll('code.hljs');
 
 			for (var i in blocks) {
 				if (blocks.hasOwnProperty(i)) {
-					lineNumbersBlock(blocks[i]);
+						lineNumbersBlock(blocks[i], {
+							blockName: 'c' + i,
+							withLinks: options.withLinks
+						});
 				}
 			}
 		} catch (e) {
@@ -30,8 +38,15 @@
 		}
 	}
 
-	function lineNumbersBlock (element) {
+	function lineNumbersBlock (element, options) {
 		if (typeof element !== 'object') return;
+		if (!!options) {
+			options.withLinks = options.withLinks || false;
+			options.blockName = options.blockName || false;
+		} else {
+			options = defaultOptions;
+			options.blockName = '';
+		}
 
 		var parent = element.parentNode;
 		var lines = getCountLines(parent.textContent);
@@ -39,19 +54,21 @@
 		if (lines > 1) {
 			var l = '';
 			for (var i = 0; i < lines; i++) {
-				l += (i + 1) + '\n';
+				l +=  options.withLinks
+					? getLineWithLink(i + 1, options.blockName)
+					: (i + 1) + '\n';
 			}
 
 			var linesPanel = document.createElement('code');
 			linesPanel.className = 'hljs hljs-line-numbers';
 			linesPanel.style.float = 'left';
-			linesPanel.textContent = l;
+			linesPanel.innerHTML = l;
 
 			parent.insertBefore(linesPanel, element);
 		}
 	}
 
-	function getCountLines(text) {
+	function getCountLines (text) {
 		if (text.length === 0) return 0;
 
 		var regExp = /\r\n|\r|\n/g;
@@ -63,5 +80,10 @@
 		}
 
 		return lines;
+	}
+
+	function getLineWithLink (i, blockName) {
+		var id = blockName + '_l' + i;
+		return '<a href="#' + id + '" name="' + id + '">' + i + '</a>\n'
 	}
 }(window));
