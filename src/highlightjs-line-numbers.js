@@ -1,11 +1,37 @@
 (function (w) {
 	'use strict';
 
+	var TABLE_NAME = 'hljs-ln',
+	    LINE_NAME = 'hljs-ln-line',
+	    CODE_BLOCK_NAME = 'hljs-ln-code',
+	    NUMBERS_BLOCK_NAME = 'hljs-ln-numbers',
+	    NUMBER_LINE_NAME = 'hljs-ln-n',
+	    DATA_ATTR_NAME = 'data-line-number';
+
+	// https://wcoder.github.io/notes/string-format-for-string-formating-in-javascript
+	String.prototype.format = String.prototype.f = function () {
+		var args = arguments;
+		return this.replace(/\{(\d+)\}/g, function(m, n){
+			return args[n] ? args[n] : m;
+		});
+	};
+
 	if (typeof w.hljs === 'undefined') {
 		console.error('highlight.js not detected!');
 	} else {
 		w.hljs.initLineNumbersOnLoad = initLineNumbersOnLoad;
 		w.hljs.lineNumbersBlock = lineNumbersBlock;
+
+		addStyles();
+	}
+
+	function addStyles () {
+		var css = document.createElement('style');
+		css.type = 'text/css';
+		css.innerHTML = ('.{0}{border-collapse:collapse}' +
+		                 '.{0} td{padding:0}' +
+		                 '.{1}:before{content:attr({2})}').format(TABLE_NAME, NUMBER_LINE_NAME, DATA_ATTR_NAME);
+		document.getElementsByTagName('head')[0].appendChild(css);
 	}
 
 	function initLineNumbersOnLoad () {
@@ -33,35 +59,30 @@
 	function lineNumbersBlock (element) {
 		if (typeof element !== 'object') return;
 
-		var parent = element.parentNode;
-		var lines = getCountLines(parent.textContent);
+		var lines = getLines(element.innerHTML);
 
-		if (lines > 1) {
-			var l = '';
-			for (var i = 0; i < lines; i++) {
-				l += (i + 1) + '\n';
+		if (lines.length > 1) {
+			var html = '';
+
+			for (var i = 0; i < lines.length; i++) {
+				html += ('<tr><td class="{0}"><div class="{1} {2}" {3}="{5}"></div></td>' +
+				         '<td class="{4}"><div class="{1}">{6}</div></td></tr>').format(
+				             NUMBERS_BLOCK_NAME,
+				             LINE_NAME,
+				             NUMBER_LINE_NAME,
+				             DATA_ATTR_NAME,
+				             CODE_BLOCK_NAME,
+				             i + 1,
+				             lines[i].length > 0 ? lines[i] : ' ');
 			}
 
-			var linesPanel = document.createElement('code');
-			linesPanel.className = 'hljs hljs-line-numbers';
-			linesPanel.style.float = 'left';
-			linesPanel.textContent = l;
-
-			parent.insertBefore(linesPanel, element);
+			element.innerHTML = '<table class="{0}">{1}</table>'.format(TABLE_NAME, html);
 		}
 	}
 
-	function getCountLines(text) {
-		if (text.length === 0) return 0;
-
-		var regExp = /\r\n|\r|\n/g;
-		var lines = text.match(regExp);
-		lines = lines ? lines.length : 0;
-
-		if (!text[text.length - 1].match(regExp)) {
-			lines += 1;
-		}
-
-		return lines;
+	function getLines(text) {
+		if (text.length === 0) return [];
+		return text.split(/\r\n|\r|\n/g);
 	}
+
 }(window));
