@@ -28,9 +28,15 @@
 	function addStyles () {
 		var css = document.createElement('style');
 		css.type = 'text/css';
-		css.innerHTML = ('.{0}{border-collapse:collapse}' +
-		                 '.{0} td{padding:0}' +
-		                 '.{1}:before{content:attr({2})}').format(TABLE_NAME, NUMBER_LINE_NAME, DATA_ATTR_NAME);
+		css.innerHTML = (
+			'.{0}{border-collapse:collapse}\
+			.{0} td{padding:0}\
+			.{1}:before{content:attr({2})}'
+		).format(
+			TABLE_NAME,
+			NUMBER_LINE_NAME,
+			DATA_ATTR_NAME
+		);
 		document.getElementsByTagName('head')[0].appendChild(css);
 	}
 
@@ -75,15 +81,24 @@
 			var html = '';
 
 			for (var i = 0; i < lines.length; i++) {
-				html += ('<tr><td class="{0}"><div class="{1} {2}" {3}="{5}"></div></td>' +
-				         '<td class="{4}"><div class="{1}">{6}</div></td></tr>').format(
-				             NUMBERS_BLOCK_NAME,
-				             LINE_NAME,
-				             NUMBER_LINE_NAME,
-				             DATA_ATTR_NAME,
-				             CODE_BLOCK_NAME,
-				             i + 1,
-				             lines[i].length > 0 ? lines[i] : ' ');
+				html += (
+					'<tr>\
+						<td class="{0}">\
+							<div class="{1} {2}" {3}="{5}"></div>\
+						</td>\
+						<td class="{4}">\
+							<div class="{1}">{6}</div>\
+						</td>\
+					</tr>'
+				).format(
+					NUMBERS_BLOCK_NAME,
+					LINE_NAME,
+					NUMBER_LINE_NAME,
+					DATA_ATTR_NAME,
+					CODE_BLOCK_NAME,
+					i + 1,
+					lines[i].length > 0 ? lines[i] : ' '
+				);
 			}
 
 			element.innerHTML = '<table class="{0}">{1}</table>'.format(TABLE_NAME, html);
