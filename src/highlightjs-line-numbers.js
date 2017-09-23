@@ -80,7 +80,7 @@
 		if (lines.length > firstLineIndex) {
 			var html = '';
 
-			for (var i = 0; i < lines.length; i++) {
+			for (var i = 0, l = lines.length; i < l; i++) {
 				html += (
 					'<tr>\
 						<td class="{0}">\
