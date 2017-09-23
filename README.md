@@ -1,4 +1,4 @@
-# highlightjs-line-numbers.js [![version](http://img.shields.io/badge/release-v2.0.0-brightgreen.svg?style=flat)](https://github.com/wcoder/highlightjs-line-numbers.js/archive/master.zip)
+# highlightjs-line-numbers.js [![version](http://img.shields.io/badge/release-v2.1.0-brightgreen.svg?style=flat)](https://github.com/wcoder/highlightjs-line-numbers.js/archive/master.zip)
 
 Highlight.js line numbers plugin.
 
@@ -65,6 +65,26 @@ td.hljs-ln-numbers {
 td.hljs-ln-code {
 	padding-left: 10px;
 }
+```
+
+## Options
+
+After version 2.1 plugin has optional parameter `options` - for custom setup.
+
+name | type | default value | description
+-----|------|---------------|------------
+singleLine | boolean | false | enable plugin for code block with one line
+
+#### Examples of using
+
+```js
+hljs.initLineNumbersOnLoad({
+    singleLine: true
+});
+```
+
+```js
+hljs.lineNumbersBlock(myCodeBlock, myOptions);
 ```
 
 ---

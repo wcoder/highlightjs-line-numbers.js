@@ -6,7 +6,7 @@
 	    CODE_BLOCK_NAME = 'hljs-ln-code',
 	    NUMBERS_BLOCK_NAME = 'hljs-ln-numbers',
 	    NUMBER_LINE_NAME = 'hljs-ln-n',
-	    DATA_ATTR_NAME = 'data-line-number';
+		DATA_ATTR_NAME = 'data-line-number';
 
 	// https://wcoder.github.io/notes/string-format-for-string-formating-in-javascript
 	String.prototype.format = String.prototype.f = function () {
@@ -34,21 +34,23 @@
 		document.getElementsByTagName('head')[0].appendChild(css);
 	}
 
-	function initLineNumbersOnLoad () {
+	function initLineNumbersOnLoad (options) {
 		if (document.readyState === 'complete') {
-			documentReady();
+			documentReady(options);
 		} else {
-			w.addEventListener('DOMContentLoaded', documentReady);
+			w.addEventListener('DOMContentLoaded', function () {
+				documentReady(options);
+			});
 		}
 	}
 
-	function documentReady () {
+	function documentReady (options) {
 		try {
 			var blocks = document.querySelectorAll('code.hljs');
 
 			for (var i in blocks) {
 				if (blocks.hasOwnProperty(i)) {
-					lineNumbersBlock(blocks[i]);
+					lineNumbersBlock(blocks[i], options);
 				}
 			}
 		} catch (e) {
@@ -56,12 +58,20 @@
 		}
 	}
 
-	function lineNumbersBlock (element) {
+	function lineNumbersBlock (element, options) {
 		if (typeof element !== 'object') return;
+
+		// define options or set default
+		options = options || {
+			singleLine: false
+		};
+
+		// convert options
+		var firstLineIndex = !!options.singleLine ? 0 : 1;
 
 		var lines = getLines(element.innerHTML);
 
-		if (lines.length > 1) {
+		if (lines.length > firstLineIndex) {
 			var html = '';
 
 			for (var i = 0; i < lines.length; i++) {
