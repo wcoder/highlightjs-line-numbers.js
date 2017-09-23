@@ -8,10 +8,10 @@
 	    NUMBER_LINE_NAME = 'hljs-ln-n',
 		DATA_ATTR_NAME = 'data-line-number';
 
+	// string format
 	// https://wcoder.github.io/notes/string-format-for-string-formating-in-javascript
-	String.prototype.format = String.prototype.f = function () {
-		var args = arguments;
-		return this.replace(/\{(\d+)\}/g, function(m, n){
+	var format = function (str, args) {
+		return str.replace(/\{(\d+)\}/g, function(m, n){
 			return args[n] ? args[n] : m;
 		});
 	};
@@ -28,15 +28,15 @@
 	function addStyles () {
 		var css = document.createElement('style');
 		css.type = 'text/css';
-		css.innerHTML = (
+		css.innerHTML = format(
 			'.{0}{border-collapse:collapse}\
 			.{0} td{padding:0}\
-			.{1}:before{content:attr({2})}'
-		).format(
+			.{1}:before{content:attr({2})}',
+		[
 			TABLE_NAME,
 			NUMBER_LINE_NAME,
 			DATA_ATTR_NAME
-		);
+		]);
 		document.getElementsByTagName('head')[0].appendChild(css);
 	}
 
@@ -81,7 +81,7 @@
 			var html = '';
 
 			for (var i = 0, l = lines.length; i < l; i++) {
-				html += (
+				html += format(
 					'<tr>\
 						<td class="{0}">\
 							<div class="{1} {2}" {3}="{5}"></div>\
@@ -89,8 +89,8 @@
 						<td class="{4}">\
 							<div class="{1}">{6}</div>\
 						</td>\
-					</tr>'
-				).format(
+					</tr>',
+				[
 					NUMBERS_BLOCK_NAME,
 					LINE_NAME,
 					NUMBER_LINE_NAME,
@@ -98,10 +98,10 @@
 					CODE_BLOCK_NAME,
 					i + 1,
 					lines[i].length > 0 ? lines[i] : ' '
-				);
+				]);
 			}
 
-			element.innerHTML = '<table class="{0}">{1}</table>'.format(TABLE_NAME, html);
+			element.innerHTML = format('<table class="{0}">{1}</table>', [ TABLE_NAME, html ]);
 		}
 	}
 
