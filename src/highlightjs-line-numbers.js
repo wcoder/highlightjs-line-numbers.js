@@ -1,4 +1,4 @@
-(function (w) {
+(function (w, d) {
 	'use strict';
 
 	var TABLE_NAME = 'hljs-ln',
@@ -16,17 +16,17 @@
 		});
 	};
 
-	if (typeof w.hljs === 'undefined') {
-		console.error('highlight.js not detected!');
-	} else {
+	if (w.hljs) {
 		w.hljs.initLineNumbersOnLoad = initLineNumbersOnLoad;
 		w.hljs.lineNumbersBlock = lineNumbersBlock;
 
 		addStyles();
+	} else {
+		w.console.error('highlight.js not detected!');
 	}
 
 	function addStyles () {
-		var css = document.createElement('style');
+		var css = d.createElement('style');
 		css.type = 'text/css';
 		css.innerHTML = format(
 			'.{0}{border-collapse:collapse}\
@@ -37,11 +37,11 @@
 			NUMBER_LINE_NAME,
 			DATA_ATTR_NAME
 		]);
-		document.getElementsByTagName('head')[0].appendChild(css);
+		d.getElementsByTagName('head')[0].appendChild(css);
 	}
 
 	function initLineNumbersOnLoad (options) {
-		if (document.readyState === 'complete') {
+		if (d.readyState === 'complete') {
 			documentReady(options);
 		} else {
 			w.addEventListener('DOMContentLoaded', function () {
@@ -52,7 +52,7 @@
 
 	function documentReady (options) {
 		try {
-			var blocks = document.querySelectorAll('code.hljs');
+			var blocks = d.querySelectorAll('code.hljs');
 
 			for (var i in blocks) {
 				if (blocks.hasOwnProperty(i)) {
@@ -60,7 +60,7 @@
 				}
 			}
 		} catch (e) {
-			console.error('LineNumbers error: ', e);
+			w.console.error('LineNumbers error: ', e);
 		}
 	}
 
@@ -110,4 +110,4 @@
 		return text.split(/\r\n|\r|\n/g);
 	}
 
-}(window));
+}(window, document));
