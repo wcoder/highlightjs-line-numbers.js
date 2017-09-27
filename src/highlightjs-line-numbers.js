@@ -75,6 +75,13 @@
 		// convert options
 		var firstLineIndex = !!options.singleLine ? 0 : 1;
 
+		async(function () {
+			addLineNumbersBlockFor(element, firstLineIndex);
+		});
+	}
+
+	function addLineNumbersBlockFor (element, firstLineIndex) {
+
 		var lines = getLines(element.innerHTML);
 
 		if (lines.length > firstLineIndex) {
@@ -108,6 +115,10 @@
 	function getLines(text) {
 		if (text.length === 0) return [];
 		return text.split(/\r\n|\r|\n/g);
+	}
+
+	function async (func) {
+		w.setTimeout(func, 0);
 	}
 
 }(window, document));
