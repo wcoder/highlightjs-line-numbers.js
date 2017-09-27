@@ -16,6 +16,11 @@ bower install highlightjs-line-numbers.js
 npm install highlightjs-line-numbers.js
 ```
 
+#### Getting the library from CDN
+```html
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.1.0/highlightjs-line-numbers.min.js"></script>
+```
+
 ## Usage
 
 Download plugin and include file after highlight.js:
