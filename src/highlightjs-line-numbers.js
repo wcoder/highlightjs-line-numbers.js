@@ -2,10 +2,10 @@
 	'use strict';
 
 	var TABLE_NAME = 'hljs-ln',
-	    LINE_NAME = 'hljs-ln-line',
-	    CODE_BLOCK_NAME = 'hljs-ln-code',
-	    NUMBERS_BLOCK_NAME = 'hljs-ln-numbers',
-	    NUMBER_LINE_NAME = 'hljs-ln-n',
+		LINE_NAME = 'hljs-ln-line',
+		CODE_BLOCK_NAME = 'hljs-ln-code',
+		NUMBERS_BLOCK_NAME = 'hljs-ln-numbers',
+		NUMBER_LINE_NAME = 'hljs-ln-n',
 		DATA_ATTR_NAME = 'data-line-number';
 
 	// string format
@@ -75,7 +75,8 @@
 		// convert options
 		var firstLineIndex = !!options.singleLine ? 0 : 1;
 
-		var lines = getLines(element.innerHTML);
+		var text = changeMultilineComments(element);
+		var lines = getLines(text);
 
 		if (lines.length > firstLineIndex) {
 			var html = '';
@@ -103,6 +104,37 @@
 
 			element.innerHTML = format('<table class="{0}">{1}</table>', [ TABLE_NAME, html ]);
 		}
+	}
+
+	function duplicateMultilineTag(element){
+		var result = '';
+		var lines = element.innerText.split(/\r\n|\r|\n/g);
+		for(var i = 0; i<lines.length; i++){
+			element.innerText = lines[i];
+			result += element.outerHTML;
+			if(i < lines.length -1)
+				result += '\n';
+		}
+		return result;
+	}
+
+	function changeMultilineComments(element) {
+		var result = '';
+		var children = element.childNodes;
+		for(var child in children){
+			if(children.hasOwnProperty(child)) {
+				if(children[child].className === "hljs-comment"){
+					result += duplicateMultilineTag(children[child]);
+				}
+				else if(children[child].childNodes.length) {
+					result += children[child].outerHTML;
+				}
+				else {
+					result += children[child].textContent;
+				}
+			}
+		}
+		return result;
 	}
 
 	function getLines(text) {
