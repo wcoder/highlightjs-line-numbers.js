@@ -107,7 +107,12 @@
 
 	function getLines(text) {
 		if (text.length === 0) return [];
-		return text.split(/\r\n|\r|\n/g);
+		var _lines = text.split(/\r\n|\r|\n/g);
+		// if last line contains only carriage return remove it
+		if (_lines[_lines.length-1].trim() === '') {
+			_lines.pop();
+		}
+		return _lines;
 	}
 
 }(window, document));
