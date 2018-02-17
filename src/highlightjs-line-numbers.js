@@ -6,7 +6,8 @@
 	    CODE_BLOCK_NAME = 'hljs-ln-code',
 	    NUMBERS_BLOCK_NAME = 'hljs-ln-numbers',
 	    NUMBER_LINE_NAME = 'hljs-ln-n',
-		DATA_ATTR_NAME = 'data-line-number';
+	    DATA_ATTR_NAME = 'data-line-number',
+	    BREAK_LINE_REGEXP = /\r\n|\r|\n/g;
 
 	// string format
 	// https://wcoder.github.io/notes/string-format-for-string-formating-in-javascript
@@ -76,6 +77,9 @@
 		var firstLineIndex = !!options.singleLine ? 0 : 1;
 
 		async(function () {
+
+			dublicateMiltilineNodes(element);
+
 			addLineNumbersBlockFor(element, firstLineIndex);
 		});
 	}
@@ -112,9 +116,50 @@
 		}
 	}
 
+	/**
+	 * Recursive method for fix multi-line elements implementation in highlight.js
+	 * Doing deep passage on child nodes.
+	 * @param {HTMLElement} element
+	 */
+	function dublicateMiltilineNodes(element) {
+		var nodes = element.childNodes;
+		for (var node in nodes){
+			if (nodes.hasOwnProperty(node)) {
+				var child = nodes[node];
+				if (getLinesCount(child.textContent) > 0) {
+					if (child.childNodes.length > 0) {
+						dublicateMiltilineNodes(child);
+					} else {
+						dublicateMiltilineNode(child);
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Method for fix multi-line elements implementation in highlight.js
+	 * @param {HTMLElement} element
+	 */
+	function dublicateMiltilineNode(element) {
+		var className = element.parentNode.className;
+
+		if ( ! /hljs-/.test(className)) return;
+
+		var lines = getLines(element.textContent);
+		for (var i = 0, result = ''; i < lines.length; i++) {
+			result += format('<span class="{0}">{1}</span>\n', [ className, lines[i] ]);
+		}
+		element.parentNode.innerHTML = result.trim();
+	}
+
 	function getLines(text) {
 		if (text.length === 0) return [];
-		return text.split(/\r\n|\r|\n/g);
+		return text.split(BREAK_LINE_REGEXP);
+	}
+
+	function getLinesCount(text) {
+		return (text.trim().match(BREAK_LINE_REGEXP) || []).length;
 	}
 
 	function async (func) {
