@@ -74,13 +74,13 @@
 
 			duplicateMultilineNodes(element);
 
-			addLineNumbersBlockFor(element, firstLineIndex);
+			element.innerHTML = addLineNumbersBlockFor(element.innerHTML, firstLineIndex);
 		});
 	}
 
-	function addLineNumbersBlockFor (element, firstLineIndex) {
+	function addLineNumbersBlockFor (inputHtml, firstLineIndex) {
 
-		var lines = getLines(element.innerHTML);
+		var lines = getLines(inputHtml);
 
 		if (lines.length > firstLineIndex) {
 			var html = '';
@@ -106,8 +106,10 @@
 				]);
 			}
 
-			element.innerHTML = format('<table class="{0}">{1}</table>', [ TABLE_NAME, html ]);
+			return format('<table class="{0}">{1}</table>', [ TABLE_NAME, html ]);
 		}
+
+		return inputHtml;
 	}
 
 	/**
