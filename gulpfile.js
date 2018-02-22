@@ -4,11 +4,11 @@ var rename = require("gulp-rename");
 var replace = require('gulp-replace');
 
 gulp.task('build', function() {
-	return gulp.src('src/*.js')
-		.pipe(uglify())
-		.pipe(replace('\\t', ''))
-		.pipe(rename({
-			extname: '.min.js'
-		}))
-		.pipe(gulp.dest('dist'));
+    return gulp.src('src/*.js')
+        .pipe(uglify())
+        .pipe(replace('    ', ''))
+        .pipe(rename({
+            extname: '.min.js'
+        }))
+        .pipe(gulp.dest('dist'));
 });

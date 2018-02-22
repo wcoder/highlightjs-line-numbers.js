@@ -1,6 +1,6 @@
 {
   "name": "highlightjs-line-numbers.js",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Highlight.js line numbers plugin.",
   "main": "src/highlightjs-line-numbers.js",
   "dependencies": {},
