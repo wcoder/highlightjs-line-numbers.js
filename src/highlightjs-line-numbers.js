@@ -72,7 +72,7 @@
 
 		async(function () {
 
-			dublicateMiltilineNodes(element);
+			duplicateMultilineNodes(element);
 
 			addLineNumbersBlockFor(element, firstLineIndex);
 		});
@@ -115,16 +115,16 @@
 	 * Doing deep passage on child nodes.
 	 * @param {HTMLElement} element
 	 */
-	function dublicateMiltilineNodes (element) {
+	function duplicateMultilineNodes (element) {
 		var nodes = element.childNodes;
 		for (var node in nodes){
 			if (nodes.hasOwnProperty(node)) {
 				var child = nodes[node];
 				if (getLinesCount(child.textContent) > 0) {
 					if (child.childNodes.length > 0) {
-						dublicateMiltilineNodes(child);
+						duplicateMultilineNodes(child);
 					} else {
-						dublicateMiltilineNode(child);
+						duplicateMultilineNode(child);
 					}
 				}
 			}
@@ -135,7 +135,7 @@
 	 * Method for fix multi-line elements implementation in highlight.js
 	 * @param {HTMLElement} element
 	 */
-	function dublicateMiltilineNode (element) {
+	function duplicateMultilineNode (element) {
 		var className = element.parentNode.className;
 
 		if ( ! /hljs-/.test(className)) return;
