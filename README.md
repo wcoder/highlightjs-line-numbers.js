@@ -1,4 +1,4 @@
-# highlightjs-line-numbers.js [![version](http://img.shields.io/badge/release-v2.1.0-brightgreen.svg?style=flat)](https://github.com/wcoder/highlightjs-line-numbers.js/archive/master.zip)
+# highlightjs-line-numbers.js [![version](http://img.shields.io/badge/release-v2.2.0-brightgreen.svg?style=flat)](https://github.com/wcoder/highlightjs-line-numbers.js/archive/master.zip)
 
 Highlight.js line numbers plugin.
 
@@ -18,7 +18,7 @@ npm install highlightjs-line-numbers.js
 
 #### Getting the library from CDN
 ```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.1.0/highlightjs-line-numbers.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.2.0/highlightjs-line-numbers.min.js"></script>
 ```
 
 ## Usage
