@@ -82,6 +82,11 @@
 
         var lines = getLines(inputHtml);
 
+        // if last line contains only carriage return remove it
+        if (lines[lines.length-1].trim() === '') {
+            lines.pop();
+        }
+
         if (lines.length > firstLineIndex) {
             var html = '';
 
@@ -119,14 +124,14 @@
      */
     function duplicateMultilineNodes (element) {
         var nodes = element.childNodes;
-        for (var node in nodes){
+        for (var node in nodes) {
             if (nodes.hasOwnProperty(node)) {
                 var child = nodes[node];
                 if (getLinesCount(child.textContent) > 0) {
                     if (child.childNodes.length > 0) {
                         duplicateMultilineNodes(child);
                     } else {
-                        duplicateMultilineNode(child);
+                        duplicateMultilineNode(child.parentNode);
                     }
                 }
             }
@@ -138,16 +143,17 @@
      * @param {HTMLElement} element
      */
     function duplicateMultilineNode (element) {
-        var className = element.parentNode.className;
+        var className = element.className;
 
         if ( ! /hljs-/.test(className)) return;
 
-        var lines = getLines(element.textContent);
+        var lines = getLines(element.innerHTML);
 
         for (var i = 0, result = ''; i < lines.length; i++) {
             result += format('<span class="{0}">{1}</span>\n', [ className, lines[i] ]);
         }
-        element.parentNode.innerHTML = result.trim();
+
+        element.innerHTML = result.trim();
     }
 
     function getLines (text) {
