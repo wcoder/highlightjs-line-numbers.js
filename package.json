@@ -1,6 +1,6 @@
 {
   "name": "highlightjs-line-numbers.js",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Highlight.js line numbers plugin.",
   "main": "src/highlightjs-line-numbers.js",
   "dependencies": {},
@@ -22,5 +22,5 @@
   "bugs": {
     "url": "https://github.com/wcoder/highlightjs-line-numbers.js/issues"
   },
-  "homepage": "https://github.com/wcoder/highlightjs-line-numbers.js"
+  "homepage": "http://wcoder.github.io/highlightjs-line-numbers.js/"
 }
