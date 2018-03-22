@@ -1,4 +1,4 @@
-# highlightjs-line-numbers.js [![npm](https://img.shields.io/npm/v/highlightjs-line-numbers.js.svg)](https://www.npmjs.com/package/highlightjs-line-numbers.js) ![npm](https://img.shields.io/npm/dw/highlightjs-line-numbers.js.svg)
+# highlightjs-line-numbers.js [![npm](https://img.shields.io/npm/v/highlightjs-line-numbers.js.png)](https://www.npmjs.com/package/highlightjs-line-numbers.js) ![npm](https://img.shields.io/npm/dw/highlightjs-line-numbers.js.png)
 
 Highlight.js line numbers plugin.
 
