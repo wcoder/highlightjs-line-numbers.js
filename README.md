@@ -20,6 +20,9 @@ npm install highlightjs-line-numbers.js
 ```html
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
 ```
+```html
+<script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.3.0/dist/highlightjs-line-numbers.min.js"></script>
+```
 
 ## Usage
 
