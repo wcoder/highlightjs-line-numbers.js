@@ -150,7 +150,9 @@
         var lines = getLines(element.innerHTML);
 
         for (var i = 0, result = ''; i < lines.length; i++) {
-            result += format('<span class="{0}">{1}</span>\n', [ className, lines[i] ]);
+            if (!!lines[i]) {
+                result += format('<span class="{0}">{1}</span>\n', [ className, lines[i] ]);
+            }
         }
 
         element.innerHTML = result.trim();
