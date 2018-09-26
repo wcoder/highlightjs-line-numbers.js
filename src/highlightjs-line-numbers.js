@@ -36,7 +36,7 @@
     }
 
     function initLineNumbersOnLoad (options) {
-        if (d.readyState === 'complete') {
+        if (d.readyState === 'interactive' || d.readyState === 'complete') {
             documentReady(options);
         } else {
             w.addEventListener('DOMContentLoaded', function () {
