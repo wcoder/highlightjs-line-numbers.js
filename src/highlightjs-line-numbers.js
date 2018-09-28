@@ -36,7 +36,7 @@
     }
 
     function initLineNumbersOnLoad (options) {
-        if (d.readyState === 'complete') {
+        if (d.readyState === 'interactive' || d.readyState === 'complete') {
             documentReady(options);
         } else {
             w.addEventListener('DOMContentLoaded', function () {
@@ -150,7 +150,8 @@
         var lines = getLines(element.innerHTML);
 
         for (var i = 0, result = ''; i < lines.length; i++) {
-            result += format('<span class="{0}">{1}</span>\n', [ className, lines[i] ]);
+            var lineText = lines[i].length > 0 ? lines[i] : ' ';
+            result += format('<span class="{0}">{1}</span>\n', [ className,  lineText ]);
         }
 
         element.innerHTML = result.trim();
