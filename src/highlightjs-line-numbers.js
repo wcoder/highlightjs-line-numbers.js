@@ -24,9 +24,9 @@
         var css = d.createElement('style');
         css.type = 'text/css';
         css.innerHTML = format(
-            '.{0}{border-collapse:collapse}\
-            .{0} td{padding:0}\
-            .{1}:before{content:attr({2})}',
+            '.{0}{border-collapse:collapse}' +
+            '.{0} td{padding:0}' +
+            '.{1}:before{content:attr({2})}',
         [
             TABLE_NAME,
             NUMBER_LINE_NAME,
@@ -92,14 +92,14 @@
 
             for (var i = 0, l = lines.length; i < l; i++) {
                 html += format(
-                    '<tr>\
-                        <td class="{0}">\
-                            <div class="{1} {2}" {3}="{5}"></div>\
-                        </td>\
-                        <td class="{4}">\
-                            <div class="{1}">{6}</div>\
-                        </td>\
-                    </tr>',
+                    '<tr>' +
+                        '<td class="{0}">' +
+                            '<div class="{1} {2}" {3}="{5}"></div>' +
+                        '</td>' +
+                        '<td class="{4}">' +
+                            '<div class="{1}">{6}</div>' +
+                        '</td>' +
+                    '</tr>',
                 [
                     NUMBERS_BLOCK_NAME,
                     LINE_NAME,
