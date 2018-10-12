@@ -47,7 +47,7 @@
 
     function documentReady (options) {
         try {
-            var blocks = d.querySelectorAll('code.hljs');
+            var blocks = d.querySelectorAll('code.hljs,code.nohighlight');
 
             for (var i in blocks) {
                 if (blocks.hasOwnProperty(i)) {
