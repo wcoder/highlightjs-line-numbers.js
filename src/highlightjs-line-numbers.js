@@ -14,6 +14,7 @@
     if (w.hljs) {
         w.hljs.initLineNumbersOnLoad = initLineNumbersOnLoad;
         w.hljs.lineNumbersBlock = lineNumbersBlock;
+        w.hljs.lineNumbersValue = lineNumbersValue;
 
         addStyles();
     } else {
@@ -76,6 +77,25 @@
 
             element.innerHTML = addLineNumbersBlockFor(element.innerHTML, firstLineIndex);
         });
+    }
+
+    function lineNumbersValue (value, options) {
+        if (typeof value !== 'string') return;
+
+        // define options or set default
+        options = options || {
+            singleLine: false
+        };
+
+        var element = document.createElement('code')
+        element.innerHTML = value
+
+        // convert options
+        var firstLineIndex = !!options.singleLine ? 0 : 1;
+
+        duplicateMultilineNodes(element);
+
+        return addLineNumbersBlockFor(element.innerHTML, firstLineIndex);
     }
 
     function addLineNumbersBlockFor (inputHtml, firstLineIndex) {
