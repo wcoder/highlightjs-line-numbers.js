@@ -52,7 +52,7 @@ $(document).ready(function() {
 If your needs cool style, add styles by taste:
 ```css
 /* for block of numbers */
-td.hljs-ln-numbers {
+.hljs-ln td.hljs-ln-numbers {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -70,7 +70,7 @@ td.hljs-ln-numbers {
 }
 
 /* for block of code */
-td.hljs-ln-code {
+.hljs-ln td.hljs-ln-code {
     padding-left: 10px;
 }
 ```
