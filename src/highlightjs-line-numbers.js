@@ -5,11 +5,15 @@
 
     var TABLE_NAME = 'hljs-ln',
         LINE_NAME = 'hljs-ln-line',
+        NUMBERS_CONTAINER_NAME = 'hljs-ln-numbers-container',
+        CODE_CONTAINER_NAME = 'hljs-ln-code-container',
         CODE_BLOCK_NAME = 'hljs-ln-code',
         NUMBERS_BLOCK_NAME = 'hljs-ln-numbers',
         NUMBER_LINE_NAME = 'hljs-ln-n',
         DATA_ATTR_NAME = 'data-line-number',
         BREAK_LINE_REGEXP = /\r\n|\r|\n/g;
+
+    var resizeHandlerSet = false;
 
     if (w.hljs) {
         w.hljs.initLineNumbersOnLoad = initLineNumbersOnLoad;
@@ -25,13 +29,19 @@
         var css = d.createElement('style');
         css.type = 'text/css';
         css.innerHTML = format(
-            '.{0}{border-collapse:collapse}' +
-            '.{0} td{padding:0}' +
-            '.{1}:before{content:attr({2})}',
+            '.{0} table {float: left; border-collapse: collapse}' +
+            '.{0} table td {padding: 0}' +
+            '.{1}::before {content: attr({2})}' +
+            // force display of empty lines of code
+            '.{3}::before {content: "\\200B"}' +
+            // ensure consistent line heights in dom elements for numbers and code
+            '.{3},.{4} {line-height: 16px; line-height: 1rem}',
         [
             TABLE_NAME,
             NUMBER_LINE_NAME,
-            DATA_ATTR_NAME
+            DATA_ATTR_NAME,
+            CODE_BLOCK_NAME,
+            NUMBERS_BLOCK_NAME
         ]);
         d.getElementsByTagName('head')[0].appendChild(css);
     }
@@ -60,11 +70,44 @@
         }
     }
 
+    function adjustLineNumbersHeights(element) {
+        var lnNumbers = element.querySelectorAll('.' + NUMBERS_BLOCK_NAME);
+        var lnCode = element.querySelectorAll('.' + CODE_BLOCK_NAME);
+
+        for (var i = 0 ; i < lnNumbers.length; ++i) {
+            lnNumbers[i].style.height = lnCode[i].offsetHeight + 'px';
+        }
+    }
+
     function lineNumbersBlock (element, options) {
         if (typeof element !== 'object') return;
-
         async(function () {
             element.innerHTML = lineNumbersInternal(element, options);
+            // adjust left margin of code div as line numbers is a float left dom element
+            var lineNumbersContainer = element.querySelector('.' + NUMBERS_CONTAINER_NAME);
+            if (lineNumbersContainer) {
+                var codeMargin = lineNumbersContainer.offsetWidth;
+                var codeContainerStyle = 'margin-left:' + codeMargin + 'px';
+                var codeContainer = element.querySelector('.' + CODE_CONTAINER_NAME);
+                codeContainer.style.cssText = codeContainerStyle;
+
+                // adjust each line number cell height to the one of the div containing
+                // the wrapped line of code and set a handler to execute this
+                // operation when the browser window gets resized.
+                // execute this operation asynchronously once the code has been rendered
+                async(adjustLineNumbersHeights(element));
+                if (!resizeHandlerSet) {
+                    window.addEventListener('resize', function() {
+                        async(function() {
+                            var hljsLnElts = document.querySelectorAll('.' + TABLE_NAME);
+                            for (var i = 0 ; i < hljsLnElts.length; ++i) {
+                                adjustLineNumbersHeights(hljsLnElts[i]);
+                            }
+                        });
+                    });
+                    resizeHandlerSet = true;
+                }
+            }
         });
     }
 
@@ -101,30 +144,57 @@
         }
 
         if (lines.length > firstLineIndex) {
-            var html = '';
+            // Previous implementation was using a single table element
+            // to render the line numbers and the lines of code.
+            // But to overcome an annoying copy/paste behavior when using Firefox or Edge
+            // (see https://github.com/wcoder/highlightjs-line-numbers.js/issues/51)
+            // the following workaround is used while obtaining the exact same rendering
+            // as before:
+            //    1. render the lines number in a table with single column
+            //    2. render the lines of code in a div
+            //    3. wrap these in a div and make the table float left
+            //    4. adjust the left margin of the code div once inserted in the dom
+            var htmlLinesNumber = '';
+            var htmlCode = '';
 
             for (var i = 0, l = lines.length; i < l; i++) {
-                html += format(
-                    '<tr>' +
-                        '<td class="{0}">' +
-                            '<div class="{1} {2}" {3}="{5}"></div>' +
-                        '</td>' +
-                        '<td class="{4}">' +
-                            '<div class="{1}">{6}</div>' +
+                htmlLinesNumber += format(
+                    '<tr class="{0} {1}" {3}="{4}">' +
+                        '<td>' +
+                            '<div class="{2}" {3}="{4}"></div>' +
                         '</td>' +
                     '</tr>',
                 [
-                    NUMBERS_BLOCK_NAME,
                     LINE_NAME,
+                    NUMBERS_BLOCK_NAME,
                     NUMBER_LINE_NAME,
                     DATA_ATTR_NAME,
+                    i + 1
+                ]);
+
+                htmlCode += format(
+                    '<div class="{0} {1}" {2}="{3}">{4}</div>',
+                [
+                    LINE_NAME,
                     CODE_BLOCK_NAME,
+                    DATA_ATTR_NAME,
                     i + 1,
                     lines[i].length > 0 ? lines[i] : ' '
                 ]);
             }
 
-            return format('<table class="{0}">{1}</table>', [ TABLE_NAME, html ]);
+            return format(
+              '<div class="{0}">' +
+                  '<table class="{1}">{2}</table>' +
+                  '<div class="{3}">{4}</div>' +
+              '</div>',
+            [
+                TABLE_NAME,
+                NUMBERS_CONTAINER_NAME,
+                htmlLinesNumber,
+                CODE_CONTAINER_NAME,
+                htmlCode
+            ]);
         }
 
         return inputHtml;
