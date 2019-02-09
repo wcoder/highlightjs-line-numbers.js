@@ -120,7 +120,7 @@
                     DATA_ATTR_NAME,
                     CODE_BLOCK_NAME,
                     i + 1,
-                    lines[i].length > 0 ? lines[i] : ' '
+                    lines[i].length > 0 ? lines[i] : ''
                 ]);
             }
 
@@ -163,7 +163,7 @@
         var lines = getLines(element.innerHTML);
 
         for (var i = 0, result = ''; i < lines.length; i++) {
-            var lineText = lines[i].length > 0 ? lines[i] : ' ';
+            var lineText = lines[i].length > 0 ? lines[i] : '';
             result += format('<span class="{0}">{1}</span>\n', [ className,  lineText ]);
         }
 
@@ -190,7 +190,7 @@
      */
     function format (format, args) {
         return format.replace(/\{(\d+)\}/g, function(m, n){
-            return args[n] ? args[n] : m;
+            return args[n] === '' || args[n] ? args[n] : m;
         });
     }
 
