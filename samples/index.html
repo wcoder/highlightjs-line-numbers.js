@@ -1,0 +1,4475 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Line numbering plugin for Highlight.js by Yauheni Pakala</title>
+
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> -->
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="../src/highlightjs-line-numbers.js"></script>
+  <!-- <script src="../dist/highlightjs-line-numbers.min.js"></script> -->
+	<script>
+		hljs.initHighlightingOnLoad();
+		hljs.initLineNumbersOnLoad();
+	</script>
+	<style>
+
+.hljs-ln-numbers {
+      text-align: center;
+      color: #ccc;
+      border-right: 1px solid #999;
+      vertical-align: top;
+      padding-right: 5px;
+
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .hljs-ln-code {
+      padding-left: 10px;
+    }
+
+    /* .hljs-ln-code,
+    .hljs-ln-numbers {
+      line-height: 14px;
+    } */
+
+    code {
+      white-space: pre-wrap;
+      overflow: auto;
+    }
+
+
+	</style>
+</head>
+<body>
+
+<h1>Examples</h1>
+
+
+<pre><code class="nohighlight">var a = 1;
+
+func as(int a)
+{
+  return a * 1000;
+}
+</code></pre>
+
+
+<pre><code>{
+  "averageBuyFee" : 1.3999999999999999,
+  "timestamp" : 1527721200000,
+  "rates" : {
+    "HUF" : 274.05874999999997,
+    "HRK" : 6.3338999999999999,
+    "CDF" : 1614.661462,
+    "ILS" : 3.56968,
+    "NGN" : 360.24833999999998,
+    "GYD" : 208.950526,
+    "BHD" : 0.37757800000000002,
+    "SZL" : 12.539944,
+    "INR" : 67.439999999999998,
+    "SDG" : 18.044215000000001,
+    "PEN" : 3.2682959999999999,
+    "QAR" : 3.6410819999999999,
+    "EUR" : 0.85727299999999995,
+    "PGK" : 3.2629299999999999,
+    "LRD" : 138.1113,
+    "ISK" : 105.34,
+    "SYP" : 514.96999000000005,
+    "TRY" : 4.4670449999999997,
+    "UAH" : 26.113116000000002,
+    "SGD" : 1.339046,
+    "MMK" : 1354.149087,
+    "NIO" : 31.548477999999999,
+    "BIF" : 1768.5704430000001,
+    "AFN" : 71.386266000000006,
+    "LKR" : 158.013589,
+    "GTQ" : 7.4797250000000002,
+    "CHF" : 0.98897100000000004,
+    "XPT" : 0.00110042,
+    "THB" : 32.031666999999999,
+    "AMD" : 484.44491900000003,
+    "AOA" : 237.339,
+    "SEK" : 8.8073490000000003,
+    "SAR" : 3.7513000000000001,
+    "KWD" : 0.30244599999999999,
+    "WST" : 2.5682330000000002,
+    "IRR" : 42157.265155000001,
+    "BMD" : 1,
+    "BGN" : 1.67479,
+    "PHP" : 52.542000000000002,
+    "XAF" : 562.334157,
+    "ZMW" : 10.268117999999999,
+    "BDT" : 84.448802999999998,
+    "NOK" : 8.1833340000000003,
+    "BOB" : 6.9053979999999999,
+    "TZS" : 2281,
+    "VEF" : 79902.5,
+    "VUV" : 108.462901,
+    "BND" : 1.365947,
+    "SCR" : 13.454981,
+    "XAG" : 0.060565220000000003,
+    "XCD" : 2.70255,
+    "ANG" : 1.7938430000000001,
+    "KYD" : 0.83285299999999995,
+    "DJF" : 178,
+    "CLF" : 0.022929999999999999,
+    "LSL" : 12.539552,
+    "MOP" : 8.0757530000000006,
+    "ALL" : 108.396237,
+    "UZS" : 8000.9282050000002,
+    "PLN" : 3.6911580000000002,
+    "UYU" : 31.165526,
+    "LYD" : 1.3612089999999999,
+    "JPY" : 108.82599999999999,
+    "MNT" : 2404.4274110000001,
+    "FJD" : 2.0859999999999999,
+    "ZWL" : 322.35501099999999,
+    "KPW" : 900,
+    "PKR" : 115.668333,
+    "MRO" : 355.5,
+    "OMR" : 0.38504300000000002,
+    "GBP" : 0.752745,
+    "SHP" : 0.752745,
+    "GEL" : 2.4720840000000002,
+    "TND" : 2.556092,
+    "DKK" : 6.3805290000000001,
+    "KRW" : 1076.1783330000001,
+    "NPR" : 107.89304199999999,
+    "BSD" : 1,
+    "CRC" : 565.55771700000003,
+    "EGP" : 17.921500000000002,
+    "AUD" : 1.320354,
+    "MAD" : 9.4990600000000001,
+    "SLL" : 7823.3006290000003,
+    "MWK" : 719.82837300000006,
+    "RSD" : 101.295891,
+    "NZD" : 1.4312769999999999,
+    "SRD" : 7.468,
+    "CLP" : 627.70000000000005,
+    "RUB" : 62.107999999999997,
+    "HKD" : 7.8472340000000003,
+    "NAD" : 12.539552,
+    "GMD" : 47.159999999999997,
+    "VND" : 22845.908908000001,
+    "LAK" : 8379.8500000000004,
+    "CUC" : 1,
+    "RON" : 3.986386,
+    "MUR" : 34.847499999999997,
+    "XAU" : 0.00076787999999999997,
+    "BRL" : 3.7237,
+    "STD" : 21076.892414000002,
+    "MXN" : 19.778500000000001,
+    "AWG" : 1.7849980000000001,
+    "MVR" : 15.509850999999999,
+    "PAB" : 1,
+    "TJS" : 8.9870079999999994,
+    "GNF" : 9033.9833330000001,
+    "MGA" : 3327.9333329999999,
+    "XDR" : 0.70712399999999997,
+    "ETB" : 27.550000000000001,
+    "COP" : 2899.1596639999998,
+    "ZAR" : 12.528663,
+    "IDR" : 13999.130101000001,
+    "SVC" : 8.7445249999999994,
+    "CVE" : 95.25,
+    "TTD" : 6.7357120000000004,
+    "GIP" : 0.752745,
+    "PYG" : 5731.4847490000002,
+    "MZN" : 60.387998000000003,
+    "FKP" : 0.752745,
+    "KZT" : 329.554575,
+    "UGX" : 3767.4893870000001,
+    "USD" : 1,
+    "RWF" : 866.26532099999997,
+    "ARS" : 24.927,
+    "GHS" : 4.6670319999999998,
+    "DOP" : 49.524921999999997,
+    "LBP" : 1510.147766,
+    "BTN" : 67.441953999999996,
+    "BZD" : 2.0086949999999999,
+    "YER" : 250.319142,
+    "MYR" : 3.9874999999999998,
+    "JMD" : 127.013092,
+    "TOP" : 2.2954629999999998,
+    "SOS" : 575.82003899999995,
+    "TMT" : 3.504988,
+    "XPD" : 0.0010126899999999999,
+    "MDL" : 16.926297000000002,
+    "XOF" : 562.334157,
+    "TWD" : 29.909185999999998,
+    "BBD" : 2,
+    "CAD" : 1.288872,
+    "CNY" : 6.4198170000000001,
+    "JOD" : 0.70950299999999999,
+    "XPF" : 102.299868,
+    "IQD" : 1190.1505790000001,
+    "HNL" : 23.889554,
+    "AED" : 3.673181,
+    "KES" : 101.55004599999999,
+    "ERN" : 14.996267,
+    "SSP" : 130.26339999999999,
+    "KMF" : 422.54243500000001,
+    "DZD" : 116.678772,
+    "MKD" : 52.774999999999999,
+    "CUP" : 25.5,
+    "BWP" : 9.9635840000000009,
+    "AZN" : 1.7024999999999999,
+    "SBD" : 7.9034870000000002,
+    "KGS" : 68.359093000000001,
+    "KHR" : 4077.6333330000002,
+    "HTG" : 65.057357999999994,
+    "CZK" : 22.1663,
+    "BAM" : 1.6809190000000001
+  },
+  "base" : "USD",
+  "excludedCurrencies" : [
+    "XDR",
+    "BYN",
+    "XPT",
+    "XAU",
+    "ZWL",
+    "XPD",
+    "JEP",
+    "GGP",
+    "CLF",
+    "IMP",
+    "XAG",
+    "ZMK",
+    "BTC"
+  ]
+}</code></pre>
+
+<pre><code>var test = "single line";
+</code></pre>
+
+
+  <pre><code class="php language-php">&lt;div class="arbitrary"&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="php">
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+* @ORM\Entity
+*/
+class Post
+{
+    const NUM_ITEMS = 10;
+
+    /**
+    * @ORM\Id
+    * @ORM\GeneratedValue
+    * @ORM\Column(type="integer")
+    */
+    private $id;
+
+    /**
+    * @ORM\Column(type="string")
+    */
+    private $title;
+
+    /**
+    * @ORM\Column(type="string")
+    */
+    private $slug;
+
+    /**
+        * @ORM\Column(type="text")
+        */
+    private $content;
+
+    /**
+        * @ORM\Column(type="string")
+        */
+    private $authorEmail;
+
+    /**
+        * @ORM\Column(type="datetime")
+        */
+    private $publishedAt;
+
+    /**
+        * @ORM\OneToMany(
+        *      targetEntity="Comment",
+        *      mappedBy="post",
+        *      orphanRemoval=true
+        * )
+        * @ORM\OrderBy({"publishedAt"="ASC"})
+        */
+    private $comments;
+
+    public function __construct()
+    {
+        $this->publishedAt = new \DateTime();
+        $this->comments = new ArrayCollection();
+    }
+
+    // getters and setters ...
+}
+</code></pre>
+
+<pre><code class="python">
+import os
+import shutil
+
+def incremental_update(a_folder_path: str,
+                       b_folder_path: str,
+                       c_folder_path: str) -> None:
+  """Incremental update.
+</code></pre>
+
+    <h2>1C</h2>
+    <pre><code class="1c">#Если Клиент Тогда
+Перем СимвольныйКодКаталога = &quot;ля-ля-ля&quot;; //комментарий
+Функция Сообщить(Знач ТекстСообщения, ТекстСообщения2) Экспорт //комментарий к функции
+  x=ТекстСообщения+ТекстСообщения2+&quot;
+  |строка1
+  |строка2
+  |строка3&quot;;
+КонецФункции
+#КонецЕсли
+
+// Процедура ПриНачалеРаботыСистемы
+//
+Процедура ПриНачалеРаботыСистемы()
+  Обработки.Помощник.ПолучитьФорму(&quot;Форма&quot;).Открыть();
+  d = &#39;21.01.2008&#39;
+КонецПроцедуры
+	</code></pre>
+
+    <h2>ActionScript</h2>
+    <pre><code class="actionscript">package org.example.dummy {
+    import org.dummy.*;
+
+    /*define package inline interface*/
+    public interface IFooBarzable {
+        public function foo(... pairs):Array;
+    }
+
+    public class FooBar implements IFooBarzable {
+        static private var cnt:uint = 0;
+        private var bar:String;
+
+        //constructor
+        public function TestBar(bar:String):void {
+            bar = bar;
+            ++cnt;
+        }
+
+        public function foo(... pairs):Array {
+            pairs.push(bar);
+            return pairs;
+        }
+    }
+}</code></pre>
+
+    <h2>Apache</h2>
+    <pre><code class="apache"># rewrite&#96;s rules for wordpress pretty url
+LoadModule rewrite_module  modules/mod_rewrite.so
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [NC,L]
+
+ExpiresActive On
+ExpiresByType application/x-javascript  &quot;access plus 1 days&quot;
+
+Order Deny,Allow
+Allow from All
+
+&lt;Location /maps/&gt;
+  RewriteMap map txt:map.txt
+  RewriteMap lower int:tolower
+  RewriteCond %{REQUEST_URI} ^/([^/.]+)\.html$ [NC]
+  RewriteCond ${map:${lower:%1}|NOT_FOUND} !NOT_FOUND
+  RewriteRule .? /index.php?q=${map:${lower:%1}} [NC,L]
+&lt;/Location&gt;
+</code></pre>
+
+    <h2>AppleScript</h2>
+    <pre><code class="applescript">repeat 5 times
+    if foo is greater than bar then
+        display dialog &quot;Hello there&quot;
+    else
+        beep
+    end if
+end repeat
+
+(* comment (*nested comment*) *)
+on do_something(s, y)
+    return {s + pi, y mod 4}
+end do_something
+
+do shell script &quot;/bin/echo &#39;hello&#39;&quot;
+</code></pre>
+
+    <h2>AsciiDoc</h2>
+    <pre><code class="asciidoc">Hello, World!
+============
+Author Name, &lt;author@domain.foo&gt;
+
+you can write text http://example.com[with links], optionally
+using an explicit link:http://example.com[link prefix].
+
+* single quotes around a phrase place &#39;emphasis&#39;
+** alternatively, you can put underlines around a phrase to add _emphasis_
+* astericks around a phrase make the text *bold*
+* pluses around a phrase make it +monospaced+
+* &#96;smart&#39; quotes using a leading backtick and trailing single quote
+** use two of each for double &#96;&#96;smart&#39;&#39; quotes
+
+- escape characters are supported
+- you can escape a quote inside emphasized text like &#39;here\&#39;s johnny!&#39;
+
+term:: definition
+ another term:: another definition
+
+// this is just a comment
+
+Let&#39;s make a break.
+
+&#39;&#39;&#39;
+
+////
+we&#39;ll be right with you
+
+after this brief interruption.
+////
+
+== We&#39;re back!
+
+Want to see a image::images/tiger.png[Tiger]?
+
+.Nested highlighting
+++++
+&lt;this_is inline=&quot;xml&quot;&gt;&lt;/this_is&gt;
+++++
+
+____
+asciidoc is so powerful.
+____
+
+another quote:
+
+[quote, Sir Arthur Conan Doyle, The Adventures of Sherlock Holmes]
+____
+When you have eliminated all which is impossible, then whatever remains, however improbable, must be the truth.
+____
+
+Getting Literal
+---------------
+
+ want to get literal? prefix a line with a space.
+
+....
+I&#39;ll join that party, too.
+....
+
+. one thing (yeah!)
+. two thing &#96;i can write code&#96;, and &#96;more&#96; wipee!
+
+NOTE: AsciiDoc is quite cool, you should try it.
+
+
+asdf
+a
+sdf
+as
+df
+as
+df
+as
+dfagasd
+f085a
+sdf
+asdf
+
+asdf
+asdf
+as
+dfagasdf
+
+
+
+<>>0909-0
+
+
+a
+sdf
+as
+dfagsadf<><><><><><>
+<><>&)(*@!_(_#+!@(*#+!@#)))
+
+
+
+@!+#@!+#!@*#!@_&$*^!@)&%)&!^@_*4_*^_($*^!+(@{OHS:HF[-foj'kJAS{u990j'm'fasd[0f9=(U[0*Y$w-8[41524612-94[IFH_@68-4'kr;oh32i-=35roq]w
+fK|EPO|@+(!80]4ori
+[W]-fr9825rp
+lKF}Pou0(J-1l,r
+":F
+k]9@U$}_o+!@
+
+11</code></pre>
+    <h2>AspectJ</h2>
+    <pre><code class="aspectj">package com.aspectj.syntax;
+import org.aspectj.lang.annotation.AdviceName;
+
+privileged public aspect LoggingAspect percflowbelow(ajia.services.*){
+  private pointcut getResult() : call(* *(..) throws SQLException) &amp;&amp; args(Account, .., int);
+  @AdviceName(&quot;CheckValidEmail&quot;)
+  before (Customer hu) : getResult(hu){
+    System.out.println(&quot;Your mail address is valid!&quot;);
+  }
+  Object around() throws InsufficientBalanceException: getResult() &amp;&amp; call(Customer.new(String,String,int,int,int)){
+    return	proceed();
+  }
+  public Cache getCache() {
+    return this.cache;
+  }
+  pointcut beanPropertyChange(BeanSupport bean, Object newValue): execution(void BeanSupport+.set*(*)) &amp;&amp; args(newValue) &amp;&amp; this(bean);
+  declare parents: banking.entities.* implements BeanSupport;
+  declare warning : call(void TestSoftening.perform()): &quot;Please ensure you are not calling this from an AWT thread&quot;;
+  private String Identifiable.id;
+  public void Identifiable.setId(String id) {
+    this.id = id;
+  }
+}</code></pre>
+
+    <h2>AutoHotkey</h2>
+    <pre><code class="autohotkey">; hotkeys and hotstrings
+#a::WinSet, AlwaysOnTop, Toggle, A
+#Space::
+  MsgBox, Percent sign (&#96;%) need to be escaped.
+  Run &quot;C:\Program Files\some\program.exe&quot;
+  Gosub, label1
+return
+::btw::by the way
+; volume
+#Numpad8::Send {Volume_Up}
+#Numpad5::Send {Volume_Mute}
+#Numpad2::Send {Volume_Down}
+
+label1:
+  if (Clipboard = &quot;&quot;)
+  {
+    MsgBox, , Clipboard, Empty!
+  }
+  else
+  {
+    StringReplace, temp, Clipboard, old, new, All
+    MsgBox, , Clipboard, %temp%
+  }
+return
+</code></pre>
+
+    <h2>AVR Assembler</h2>
+    <pre><code class="avrasm">;* Title:       Block Copy Routines
+;* Version:     1.1
+
+.include &quot;8515def.inc&quot;
+
+    rjmp    RESET   ;reset handle
+
+.def    flashsize=r16       ;size of block to be copied
+
+flash2ram:
+    lpm         ;get constant
+    st  Y+,r0       ;store in SRAM and increment Y-pointer
+    adiw    ZL,1        ;increment Z-pointer
+    dec flashsize
+    brne    flash2ram   ;if not end of table, loop more
+    ret
+
+.def    ramtemp =r1     ;temporary storage register
+.def    ramsize =r16        ;size of block to be copied
+</code></pre>
+
+    <h2>Axapta</h2>
+    <pre><code class="axapta">class ExchRateLoadBatch extends RunBaseBatch {
+  ExchRateLoad rbc;
+  container currencies;
+  boolean actual;
+  boolean overwrite;
+  date beg;
+  date end;
+
+  #define.CurrentVersion(5)
+
+  #localmacro.CurrentList
+    currencies,
+    actual,
+    beg,
+    end
+  #endmacro
+}
+
+public boolean unpack(container packedClass) {
+  container       base;
+  boolean         ret;
+  Integer         version    = runbase::getVersion(packedClass);
+
+  switch (version) {
+    case #CurrentVersion:
+      [version, #CurrentList] = packedClass;
+      return true;
+    default:
+      return false;
+  }
+  return ret;
+}
+</code></pre>
+
+    <h2>Bash</h2>
+    <pre><code class="bash">#!/bin/bash
+
+###### BEGIN CONFIG
+ACCEPTED_HOSTS=&quot;/root/.hag_accepted.conf&quot;
+BE_VERBOSE=false
+###### END CONFIG
+
+if [ &quot;$UID&quot; -ne 0 ]
+then
+ echo &quot;Superuser rights is required&quot;
+ echo &#39;Printing the # sign&#39;
+ exit 2
+fi
+
+if test $# -eq 0
+then
+elif test [ $1 == &#39;start&#39; ]
+else
+fi
+
+genApacheConf(){
+ if [[ &quot;$2&quot; = &quot;www&quot; ]]
+ then
+  full_domain=$1
+ else
+  full_domain=$2.$1
+ fi
+ host_root=&quot;${APACHE_HOME_DIR}$1/$2/$(title)&quot;
+ echo -e &quot;# Host $1/$2 :&quot;
+}
+</code></pre>
+
+    <h2>Brainfuck</h2>
+    <pre><code class="brainfuck">++++++++++
+[ 3*10 and 10*10
+  -&gt;+++&gt;++++++++++&lt;&lt;
+]&gt;&gt;
+[ filling cells
+  -&gt;++&gt;&gt;++&gt;++&gt;+&gt;++&gt;&gt;++&gt;++&gt;++&gt;++&gt;++&gt;++&gt;++&gt;++&gt;++&gt;++&gt;++[&lt;/]&lt;[&lt;]&lt;[&lt;]&gt;&gt;
+]&lt;
++++++++++&lt;&lt;
+[ rough codes correction loop
+  -&gt;&gt;&gt;+&gt;+&gt;+&gt;+++&gt;+&gt;+&gt;+&gt;+&gt;+&gt;+&gt;+&gt;+&gt;+&gt;+&gt;+&gt;+&gt;+&gt;+[&lt;]&lt;
+]
+more accurate сodes correction
+&gt;&gt;&gt;++&gt;
+--&gt;+++++++&gt;------&gt;++++++&gt;++&gt;+++++++++&gt;++++++++++&gt;++++++++&gt;---&gt;++++++++++&gt;------&gt;++++++&gt;
+++&gt;+++++++++++&gt;++++++++++++&gt;------&gt;+++
+rewind and output
+[&lt;]&gt;[.&gt;]
+</code></pre>
+
+    <h2>Cap’n Proto</h2>
+    <pre><code class="capnproto">@0xdbb9ad1f14bf0b36;  # unique file ID, generated by &#96;capnp id&#96;
+
+struct Person {
+  name @0 :Text;
+  birthdate @3 :Date;
+
+  email @1 :Text;
+  phones @2 :List(PhoneNumber);
+
+  struct PhoneNumber {
+    number @0 :Text;
+    type @1 :Type;
+
+    enum Type {
+      mobile @0;
+      home @1;
+      work @2;
+    }
+  }
+}
+
+struct Date {
+  year @0 :Int16;
+  month @1 :UInt8;
+  day @2 :UInt8;
+  flags @3 :List(Bool) = [ true, false, false, true ];
+}
+
+interface Node {
+  isDirectory @0 () -&gt; (result :Bool);
+}
+
+interface Directory extends(Node) {
+  list @0 () -&gt; (list: List(Entry));
+  struct Entry {
+    name @0 :Text;
+    node @1 :Node;
+  }
+
+  create @1 (name :Text) -&gt; (file :File);
+  mkdir @2 (name :Text) -&gt; (directory :Directory)
+  open @3 (name :Text) -&gt; (node :Node);
+  delete @4 (name :Text);
+  link @5 (name :Text, node :Node);
+}
+
+interface File extends(Node) {
+  size @0 () -&gt; (size: UInt64);
+  read @1 (startAt :UInt64 = 0, amount :UInt64 = 0xffffffffffffffff)
+       -&gt; (data: Data);
+  # Default params = read entire file.
+
+  write @2 (startAt :UInt64, data :Data);
+  truncate @3 (size :UInt64);
+}</code></pre>
+
+    <h2>Clojure REPL</h2>
+    <pre><code class="clojure-repl">user=&gt; (defn f [x y]
+  #_=&gt;   (+ x y))
+#&#39;user/f
+user=&gt; (f 5 7)
+12
+user=&gt; nil
+nil
+</code></pre>
+
+    <h2>Clojure</h2>
+    <pre><code class="clojure">; Comment
+
+(def
+  ^{:macro true
+    :added &quot;1.0&quot;}
+  let (fn* let [&amp;form &amp;env &amp; decl] (cons &#39;let* decl)))
+
+(def ^:dynamic chunk-size 17)
+
+(defn next-chunk [rdr]
+  (let [buf (char-array chunk-size)
+        s (.read rdr buf)]
+  (when (pos? s)
+    (java.nio.CharBuffer/wrap buf 0 s))))
+
+(defn chunk-seq [rdr]
+  (when-let [chunk (next-chunk rdr)]
+    (cons chunk (lazy-seq (chunk-seq rdr)))))
+</code></pre>
+
+    <h2>CMake</h2>
+    <pre><code class="cmake">cmake_minimum_required(VERSION 2.8.8)
+project(cmake_example)
+
+# Show message on Linux platform
+if (${CMAKE_SYSTEM_NAME} MATCHES Linux)
+    message(&quot;Good choice, bro!&quot;)
+endif()
+
+# Tell CMake to run moc when necessary:
+set(CMAKE_AUTOMOC ON)
+# As moc files are generated in the binary dir,
+# tell CMake to always look for includes there:
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+# Widgets finds its own dependencies.
+find_package(Qt5Widgets REQUIRED)
+
+add_executable(myproject main.cpp mainwindow.cpp)
+qt5_use_modules(myproject Widgets)
+</code></pre>
+
+    <h2>CoffeeScript</h2>
+    <pre><code class="coffeescript">grade = (student, period=(if b? then 7 else 6), messages={&quot;A&quot;: &quot;Excellent&quot;}) -&gt;
+  if student.excellentWork
+    &quot;A+&quot;
+  else if student.okayStuff
+    if student.triedHard then &quot;B&quot; else &quot;B-&quot;
+  else
+    &quot;C&quot;
+
+square = (x) -&gt; x * x
+
+two = -&gt; 2
+
+math =
+  root:   Math.sqrt
+  square: square
+  cube:   (x) -&gt; x * square x
+
+race = (winner, runners...) -&gt;
+  print winner, runners
+
+class Animal extends Being
+  constructor: (@name) -&gt;
+
+  move: (meters) -&gt;
+    alert @name + &quot; moved #{meters}m.&quot;
+
+hi = &#96;function() {
+  return [document.title, &quot;Hello JavaScript&quot;].join(&quot;: &quot;);
+}&#96;
+
+heredoc = &quot;&quot;&quot;
+CoffeeScript subst test #{ 010 + 0xf / 0b10 + &quot;nested string #{ /\n/ }&quot;}
+&quot;&quot;&quot;
+
+###
+CoffeeScript Compiler v1.2.0
+Released under the MIT License
+###
+
+OPERATOR = /// ^ (
+?: [-=]&gt;             # function
+) ///
+</code></pre>
+
+    <h2>C++</h2>
+    <pre><code class="cpp">#include &lt;iostream&gt;
+#define IABS(x) ((x) &lt; 0 ? -(x) : (x))
+
+int main(int argc, char *argv[]) {
+
+  /* An annoying &quot;Hello World&quot; example */
+  for (auto i = 0; i &lt; 0xFFFF; i++)
+    cout &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; endl;
+
+  char c = &#39;\n&#39;;
+  unordered_map &lt;string, vector&lt;string&gt; &gt; m;
+  m[&quot;key&quot;] = &quot;\\\\&quot;; // this is an error
+
+  return -2e3 + 12l;
+}
+</code></pre>
+
+    <h2>C#</h2>
+    <pre><code class="cs">using System;
+
+#pragma warning disable 414, 3021
+
+public class Program
+{
+    /// &lt;summary&gt;The entry point to the program.&lt;/summary&gt;
+    public static int Main(string[] args)
+    {
+        Console.WriteLine(&quot;Hello, World!&quot;);
+        string s = @&quot;This
+&quot;&quot;string&quot;&quot;
+spans
+multiple
+lines!&quot;;
+
+        dynamic x = new ExpandoObject();
+        x.MyProperty = 2;
+
+        return 0;
+    }
+}
+
+async Task&lt;int&gt; AccessTheWebAsync()
+{
+    // ...
+    string urlContents = await getStringTask;
+    return urlContents.Length;
+}
+
+internal static void ExceptionFilters()
+{
+  try
+  {
+      throw new Exception();
+  }
+  catch (Exception e) when (e.Message == &quot;My error&quot;) { }
+}</code></pre>
+
+    <h2>CSS</h2>
+    <pre><code class="css">@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  body:first-of-type pre::after {
+    content: &#39;highlight: &#39; attr(class);
+  }
+  body {
+    background: linear-gradient(45deg, blue, red);
+  }
+}
+
+@import url(&#39;print.css&#39;);
+@page:right {
+ margin: 1cm 2cm 1.3cm 4cm;
+}
+
+@font-face {
+  font-family: Chunkfive; src: url(&#39;Chunkfive.otf&#39;);
+}
+
+div.text,
+#content,
+li[lang=ru] {
+  font: Tahoma, Chunkfive, sans-serif;
+  background: url(&#39;hatch.png&#39;) /* wtf? */;  color: #F0F0F0 !important;
+  width: 100%;
+}
+</code></pre>
+
+    <h2>D</h2>
+    <pre><code class="d">#!/usr/bin/rdmd
+// Computes average line length for standard input.
+import std.stdio;
+
+/+
+  this is a /+ nesting +/ comment
++/
+
+enum COMPILED_ON = __TIMESTAMP__;  // special token
+
+enum character = &#39;©&#39;;
+enum copy_valid = &#39;&amp;copy;&#39;;
+enum backslash_escaped = &#39;\\&#39;;
+
+// string literals
+enum str = &#96;hello &quot;world&quot;!&#96;;
+enum multiline = r&quot;lorem
+ipsum
+dolor&quot;;  // wysiwyg string, no escapes here allowed
+enum multiline2 = &quot;sit
+amet
+\&quot;adipiscing\&quot;
+elit.&quot;;
+enum hex = x&quot;66 6f 6f&quot;;   // same as &quot;foo&quot;
+
+#line 5
+
+// float literals
+enum f = [3.14f, .1, 1., 1e100, 0xc0de.01p+100];
+
+static if (something == true) {
+   import std.algorithm;
+}
+
+void main() pure nothrow @safe {
+    ulong lines = 0;
+    double sumLength = 0;
+    foreach (line; stdin.byLine()) {
+        ++lines;
+        sumLength += line.length;
+    }
+    writeln(&quot;Average line length: &quot;,
+        lines ? sumLength / lines : 0);
+}
+</code></pre>
+
+    <h2>Dart</h2>
+    <pre><code class="dart">library app;
+import &#39;dart:html&#39;;
+
+part &#39;app2.dart&#39;;
+
+/**
+ * Class description and [link](http://dartlang.org/).
+ */
+@Awesome(&#39;it works!&#39;)
+class SomeClass&lt;S extends Iterable&gt; extends BaseClass&lt;S&gt; implements Comparable {
+  factory SomeClass(num param);
+  SomeClass._internal(int q) : super() {
+    assert(q != 1);
+    double z = 0.0;
+  }
+
+  /// **Sum** function
+  int sum(int a, int b) =&gt; a + b;
+
+  ElementList els() =&gt; querySelectorAll(&#39;.dart&#39;);
+}
+
+String str = &#39; (${&#39;parameter&#39; + &#39;zxc&#39;})&#39;;
+String str = &quot; (${true ? 2 + 2 / 2 : null})&quot;;
+String str = r&#39;\nraw\&#39;;
+String str = r&quot;\nraw\&quot;;
+var str = &#39;&#39;&#39;
+Something ${2+3}
+&#39;&#39;&#39;;
+var str = r&quot;&quot;&quot;
+Something ${2+3}
+&quot;&quot;&quot;;
+</code></pre>
+
+    <h2>Delphi</h2>
+    <pre><code class="delphi">TList = Class(TObject)
+Private
+  Some: String;
+Public
+  Procedure Inside; // Suxx
+End;{TList}
+
+Procedure CopyFile(InFileName, var OutFileName: String);
+Const
+  BufSize = 4096; (* Huh? *)
+Var
+  InFile, OutFile: TStream;
+  Buffer: Array[1..BufSize] Of Byte;
+  ReadBufSize: Integer;
+Begin
+  InFile := Nil;
+  OutFile := Nil;
+  Try
+    InFile := TFileStream.Create(InFileName, fmOpenRead);
+    OutFile := TFileStream.Create(OutFileName, fmCreate);
+    Repeat
+      ReadBufSize := InFile.Read(Buffer, BufSize);
+      OutFile.Write(Buffer, ReadBufSize);
+    Until ReadBufSize&lt;&gt;BufSize;
+    Log(&#39;File &#39;&#39;&#39; + InFileName + &#39;&#39;&#39; copied&#39;#13#10);
+  Finally
+    InFile.Free;
+    OutFile.Free;
+  End;{Try}
+End;{CopyFile}
+</code></pre>
+
+    <h2>Diff</h2>
+    <pre><code class="diff">Index: languages/ini.js
+===================================================================
+--- languages/ini.js    (revision 199)
++++ languages/ini.js    (revision 200)
+@@ -1,8 +1,7 @@
+ hljs.LANGUAGES.ini =
+ {
+   case_insensitive: true,
+-  defaultMode:
+-  {
++  defaultMode: {
+     contains: [&#39;comment&#39;, &#39;title&#39;, &#39;setting&#39;],
+     illegal: &#39;[^\\s]&#39;
+   },
+
+*** /path/to/original timestamp
+--- /path/to/new      timestamp
+***************
+*** 1,3 ****
+--- 1,9 ----
++ This is an important
++ notice! It should
++ therefore be located at
++ the beginning of this
++ document!
+
+! compress the size of the
+! changes.
+
+  It is important to spell
+</code></pre>
+
+    <h2>Django</h2>
+    <pre><code class="django">{% if articles|length %}
+{% for article in articles %}
+
+{# Striped table #}
+&lt;tr class=&quot;{% cycle odd,even %}&quot;&gt;
+  &lt;td&gt;{{ article|default:&quot;Hi... &quot;|escape }}&lt;/td&gt;
+  &lt;td {% if article.today %}class=&quot;today&quot;{% endif %}&gt;{{ article.date|date:&#39;d.m.Y&#39; }}&lt;/td&gt;
+&lt;/tr&gt;
+
+{% endfor %}
+{% endif %}
+
+{% comment %}
+Comments may be long and multiline.
+Markup is &lt;em&gt;not&lt;/em&gt; highlighted within comments.
+{% endcomment %}
+</code></pre>
+
+    <h2>Dockerfile</h2>
+    <pre><code class="dockerfile"># Example instructions from https://docs.docker.com/reference/builder/
+FROM ubuntu:14.04
+
+MAINTAINER example@example.com
+
+ENV foo /bar
+WORKDIR ${foo}   # WORKDIR /bar
+ADD . $foo       # ADD . /bar
+COPY \$foo /quux # COPY $foo /quux
+
+RUN apt-get update &amp;&amp; apt-get install -y software-properties-common\
+    zsh curl wget git htop\
+    unzip vim telnet
+RUN [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;echo hello ${USER}&quot;]
+
+CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]
+CMD command param1 param2
+
+EXPOSE 1337
+
+ENV myName=&quot;John Doe&quot; myDog=Rex\ The\ Dog \
+    myCat=fluffy
+
+ENV myName John Doe
+ENV myDog Rex The Dog
+ENV myCat fluffy
+
+ADD hom* /mydir/        # adds all files starting with &quot;hom&quot;
+ADD hom?.txt /mydir/    # ? is replaced with any single character
+
+COPY hom* /mydir/        # adds all files starting with &quot;hom&quot;
+COPY hom?.txt /mydir/    # ? is replaced with any single character
+
+ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]
+ENTRYPOINT command param1 param2
+
+VOLUME [&quot;/data&quot;]
+
+USER daemon
+
+WORKDIR /path/to/workdir
+
+ONBUILD ADD . /app/src
+</code></pre>
+
+    <h2>DOS .bat</h2>
+    <pre><code class="dos">cd \
+copy a b
+ping 192.168.0.1
+@rem ping 192.168.0.1
+net stop sharedaccess
+del %tmp% /f /s /q
+del %temp% /f /s /q
+ipconfig /flushdns
+taskkill /F /IM JAVA.EXE /T
+
+cd Photoshop/Adobe Photoshop CS3/AMT/
+if exist application.sif (
+    ren application.sif _application.sif
+) else (
+    ren _application.sif application.sif
+)
+
+taskkill /F /IM proquota.exe /T
+
+sfc /SCANNOW
+
+set path = test
+
+xcopy %1\*.* %2
+</code></pre>
+
+    <h2>Dust</h2>
+    <pre><code class="dust">&lt;h3&gt;Hours&lt;/h3&gt;
+
+&lt;ul&gt;
+  {#users}
+  &lt;li {hello}}&gt;{firstName}&lt;/li&gt;{~n}
+  {/users}
+&lt;/ul&gt;
+</code></pre>
+
+    <h2>Elixir</h2>
+    <pre><code class="elixir">defrecord Person, first_name: nil, last_name: &quot;Dudington&quot; do
+  def name record do # huh ?
+    &quot;#{record.first_name} #{record.last_name}&quot;
+  end
+end
+
+defrecord User, name: &quot;José&quot;, age: 25
+
+guy = Person.new first_name: &quot;Guy&quot;
+guy.name
+
+defmodule ListServer do
+  @moduledoc &quot;&quot;&quot;
+  This module provides an easy to use ListServer, useful for keeping
+  lists of things.
+  &quot;&quot;&quot;
+  use GenServer.Behaviour
+  alias Foo.Bar
+
+  ### Public API
+  @doc &quot;&quot;&quot;
+  Starts and links a new ListServer, returning {:ok, pid}
+
+  ## Example
+
+    iex&gt; {:ok, pid} = ListServer.start_link
+
+  &quot;&quot;&quot;
+  def start_link do
+    :gen_server.start_link({:local, :list}, __MODULE__, [], [])
+  end
+
+  ### GenServer API
+  def init(list) do
+    {:ok, list}
+  end
+
+  # Clear the list
+  def handle_cast :clear, list do
+    {:noreply, []}
+  end
+end
+
+{:ok, pid} = ListServer.start_link
+pid &lt;- {:foo, &quot;bar&quot;}
+
+greeter = fn(x) -&gt; IO.puts &quot;hey #{x}&quot; end
+greeter.(&quot;Bob&quot;)
+
+</code></pre>
+
+    <h2>ERB (Embedded Ruby)</h2>
+    <pre><code class="erb">&lt;%# this is a comment %&gt;
+
+&lt;% @posts.each do |post| %&gt;
+  &lt;p&gt;&lt;%= link_to post.title, post %&gt;&lt;/p&gt;
+&lt;% end %&gt;
+
+&lt;%- available_things = things.select(&amp;:available?) -%&gt;
+&lt;%%- x = 1 + 2 -%%&gt;
+&lt;%% value = &#39;real string #{@value}&#39; %%&gt;
+&lt;%%= available_things.inspect %%&gt;
+</code></pre>
+
+    <h2>Erlang REPL</h2>
+    <pre><code class="erlang-repl">1&gt; Str = &quot;abcd&quot;.
+&quot;abcd&quot;
+2&gt; L = test:length(Str).
+4
+3&gt; Descriptor = {L, list_to_atom(Str)}.
+{4,abcd}
+4&gt; L.
+4
+5&gt; b().
+Descriptor = {4,abcd}
+L = 4
+Str = &quot;abcd&quot;
+ok
+6&gt; f(L).
+ok
+7&gt; b().
+Descriptor = {4,abcd}
+Str = &quot;abcd&quot;
+ok
+8&gt; {L, _} = Descriptor.
+{4,abcd}
+9&gt; L.
+4
+10&gt; 2#101.
+5
+11&gt; 1.85e+3.
+1850
+</code></pre>
+
+    <h2>Erlang</h2>
+    <pre><code class="erlang">-module(ssh_cli).
+
+-behaviour(ssh_channel).
+
+-include(&quot;ssh.hrl&quot;).
+%% backwards compatibility
+-export([listen/1, listen/2, listen/3, listen/4, stop/1]).
+
+if L =/= [] -&gt;      % If L is not empty
+    sum(L) / count(L);
+true -&gt;
+    error
+end.
+
+%% state
+-record(state, {
+    cm,
+    channel
+   }).
+
+-spec foo(integer()) -&gt; integer().
+foo(X) -&gt; 1 + X.
+
+test(Foo)-&gt;Foo.
+
+init([Shell, Exec]) -&gt;
+    {ok, #state{shell = Shell, exec = Exec}};
+init([Shell]) -&gt;
+    false = not true,
+    io:format(&quot;Hello, \&quot;~p!~n&quot;, [atom_to_list(&#39;World&#39;)]),
+    {ok, #state{shell = Shell}}.
+
+concat([Single]) -&gt; Single;
+concat(RList) -&gt;
+    EpsilonFree = lists:filter(
+        fun (Element) -&gt;
+            case Element of
+                epsilon -&gt; false;
+                _ -&gt; true
+            end
+        end,
+        RList),
+    case EpsilonFree of
+        [Single] -&gt; Single;
+        Other -&gt; {concat, Other}
+    end.
+
+union_dot_union({union, _}=U1, {union, _}=U2) -&gt;
+    union(lists:flatten(
+        lists:map(
+            fun (X1) -&gt;
+                lists:map(
+                    fun (X2) -&gt;
+                        concat([X1, X2])
+                    end,
+                    union_to_list(U2)
+                )
+            end,
+            union_to_list(U1)
+        ))).
+</code></pre>
+
+    <h2>FIX</h2>
+    <pre><code class="fix">8=FIX.4.2␁9=0␁35=8␁49=SENDERTEST␁56=TARGETTEST␁34=00000001526␁52=20120429-13:30:08.137␁1=ABC12345␁11=2012abc1234␁14=100␁17=201254321␁20=0␁30=NYSE␁31=108.20␁32=100␁38=100␁39=2␁40=1␁47=A␁54=5␁55=BRK␁59=2␁60=20120429-13:30:08.000␁65=B␁76=BROKER␁84=0␁100=NYSE␁111=100␁150=2␁151=0␁167=CS␁377=N␁10000=SampleCustomTag␁10=123␁
+
+8=FIX.4.29=035=849=SENDERTEST56=TARGETTEST34=0000000152652=20120429-13:30:08.1371=ABC1234511=2012abc123414=10017=20125432120=030=NYSE31=108.2032=10038=10039=240=147=A54=555=BRK59=260=20120429-13:30:08.00065=B76=BROKER84=0100=NYSE111=100150=2151=0167=CS377=N10000=SampleCustomTag10=123
+</code></pre>
+
+    <h2>Fortran</h2>
+    <pre><code class="fortran">subroutine test_sub(k)
+    implicit none
+
+  !===============================
+  !   This is a test subroutine
+  !===============================
+
+    integer, intent(in)           :: k
+    double precision, allocatable :: a(:)
+    integer, parameter            :: nmax=10
+    integer                       :: i
+
+    allocate (a(nmax))
+
+    do i=1,nmax
+      a(i) = dble(i)*5.d0
+    enddo
+
+    print *, &#39;Hello world&#39;
+    write (*,*) a(:)
+
+end subroutine test_sub
+</code></pre>
+
+    <h2>F#</h2>
+    <pre><code class="fsharp">open System
+
+// Single line comment...
+(*
+  This is a
+  multiline comment.
+*)
+let checkList alist =
+    match alist with
+    | [] -&gt; 0
+    | [a] -&gt; 1
+    | [a; b] -&gt; 2
+    | [a; b; c] -&gt; 3
+    | _ -&gt; failwith &quot;List is too big!&quot;
+
+
+let text = &quot;Some text...&quot;
+let text2 = @&quot;A &quot;&quot;verbatim&quot;&quot; string...&quot;
+let catalog = &quot;&quot;&quot;
+Some &quot;long&quot; string...
+&quot;&quot;&quot;
+
+let rec fib x = if x &lt;= 2 then 1 else fib(x-1) + fib(x-2)
+
+let fibs =
+    Async.Parallel [ for i in 0..40 -&gt; async { return fib(i) } ]
+    |&gt; Async.RunSynchronously
+
+type Sprocket(gears) =
+  member this.Gears : int = gears
+
+[&lt;AbstractClass&gt;]
+type Animal =
+  abstract Speak : unit -&gt; unit
+
+type Widget =
+  | RedWidget
+  | GreenWidget
+
+type Point = {X: float; Y: float;}
+
+[&lt;Measure&gt;]
+type s
+let minutte = 60&lt;s&gt;
+
+type DefaultMailbox&lt;&#39;a&gt;() =
+    let mutable inbox = ConcurrentQueue&lt;&#39;a&gt;()
+    let awaitMsg = new AutoResetEvent(false)
+</code></pre>
+
+    <h2>G-code (ISO 6983)</h2>
+    <pre><code class="gcode">O003 (DIAMOND SQUARE)
+N2 G54 G90 G49 G80
+N3 M6 T1 (1.ENDMILL)
+N4 M3 S1800
+N5 G0 X-.6 Y2.050
+N6 G43  H1  Z.1
+N7 G1 Z-.3 F50.
+N8 G41 D1 Y1.45
+N9 G1 X0 F20.
+N10 G2 J-1.45
+(CUTTER COMP CANCEL)
+N11 G1 Z-.2 F50.
+N12 Y-.990
+N13 G40
+N14 G0 X-.6 Y1.590
+N15 G0 Z.1
+N16 M5 G49 G28 G91 Z0
+N17 CALL O9456
+N18 #500=0.004
+N19 #503=[#500+#501]
+N20 VC45=0.0006
+VS4=0.0007
+N21 G90 G10 L20 P3 X5.Y4. Z6.567
+N22 G0 X5000
+N23 IF [#1 LT 0.370] GOTO 49
+N24 X-0.678 Y+.990
+N25 G84.3 X-0.1
+N26 #4=#5*COS[45]
+N27 #4=#5*SIN[45]
+N28 VZOFZ=652.9658
+%
+</code></pre>
+
+    <h2>Gherkin</h2>
+    <pre><code class="gherkin"># language: en
+Feature: Addition
+  In order to avoid silly mistakes
+  As a math idiot
+  I want to be told the sum of two numbers
+
+  @this_is_a_tag
+  Scenario Outline: Add two numbers
+    * I have a calculator
+    Given I have entered &lt;input_1&gt; into the calculator
+    And I have entered &lt;input_2&gt; into the calculator
+    When I press &lt;button&gt;
+    Then the result should be &lt;output&gt; on the screen
+    And I have a string like
+    &quot;&quot;&quot;
+    Here is
+    some
+    multiline text
+    &quot;&quot;&quot;
+
+  Examples:
+    | input_1 | input_2 | button | output |
+    | 20      | 30      | add    | 50     |
+    | 2       | 5       | add    | 7      |
+    | 0       | 40      | add    | 40     |
+</code></pre>
+
+    <h2>GLSL</h2>
+    <pre><code class="glsl">// vertex shader
+#version 150
+in  vec2 in_Position;
+in  vec3 in_Color;
+
+out vec3 ex_Color;
+void main(void) {
+    gl_Position = vec4(in_Position.x, in_Position.y, 0.0, 1.0);
+    ex_Color = in_Color;
+}
+
+
+// geometry shader
+#version 150
+
+layout(triangles) in;
+layout(triangle_strip, max_vertices = 3) out;
+
+void main() {
+  for(int i = 0; i &lt; gl_in.length(); i++) {
+    gl_Position = gl_in[i].gl_Position;
+    EmitVertex();
+  }
+  EndPrimitive();
+}
+
+
+// fragment shader
+#version 150
+precision highp float;
+
+in  vec3 ex_Color;
+out vec4 gl_FragColor;
+
+void main(void) {
+    gl_FragColor = vec4(ex_Color, 1.0);
+}
+</code></pre>
+
+    <h2>Go</h2>
+    <pre><code class="go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;os&quot;
+)
+
+const (
+    Sunday = iota
+    numberOfDays  // this constant is not exported
+)
+
+type Foo interface {
+    FooFunc(int, float32) (complex128, []int)
+}
+
+type Bar struct {
+    os.File /* multi-line
+               comment */
+    PublicData chan int
+}
+
+func main() {
+    ch := make(chan int)
+    ch &lt;- 1
+    x, ok := &lt;- ch
+    ok = true
+    float_var := 1.0e10
+    defer fmt.Println(&#39;\&#39;&#39;)
+    defer fmt.Println(&#96;exitting now\&#96;)
+    var fv1 float64 = 0.75
+    go println(len(&quot;hello world!&quot;))
+    return
+}
+</code></pre>
+
+    <h2>Gradle</h2>
+    <pre><code class="gradle">
+apply plugin: &#39;android&#39;
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion &quot;19.1&quot;
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 19
+        versionCode 5
+        versionName &quot;0.4.4&quot;
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    signingConfigs {
+        release
+    }
+    buildTypes {
+        release {
+            // runProguard true
+            proguardFiles getDefaultProguardFile(&#39;proguard-android.txt&#39;), &#39;proguard-rules.txt&#39;
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])
+
+    compile &#39;com.example:example-lib:1.0.0&#39;
+}
+
+
+def propFile = file(&#39;../signing.properties&#39;)
+if( propFile.canRead() ) {
+    def Properties p = new Properties()
+    p.load(new FileInputStream(propFile))
+
+    if( p!=null
+    &amp;&amp;  p.containsKey(&quot;STORE_FILE&quot;)
+    &amp;&amp;  p.containsKey(&#39;STORE_PASSWORD&#39;)
+    &amp;&amp;  p.containsKey(&#39;KEY_ALIAS&#39;)
+    &amp;&amp;  p.containsKey(&#39;KEY_PASSWORD&#39;)
+    ) {
+        println &quot;RELEASE_BUILD: Signing...&quot;
+
+        android.signingConfigs.release.storeFile = file( p[&#39;STORE_FILE&#39;] )
+        android.signingConfigs.release.storePassword = p[&#39;STORE_PASSWORD&#39;]
+        android.signingConfigs.release.keyAlias = p[&#39;KEY_ALIAS&#39;]
+        android.signingConfigs.release.keyPassword = p[&#39;KEY_PASSWORD&#39;]
+    } else {
+        println &quot;RELEASE_BUILD: Required properties in signing.properties are missing&quot;
+        android.buildTypes.release.signingConfig = null
+    }
+} else {
+    println &quot;RELEASE_BUILD: signing.properties not found&quot;
+    android.buildTypes.release.signingProperties = null
+}
+</code></pre>
+
+    <h2>Groovy</h2>
+    <pre><code class="groovy">#!/usr/bin/env groovy
+package model
+
+import groovy.transform.CompileStatic
+import java.util.List as MyList
+
+trait Distributable {
+    void distribute(String version) {}
+}
+
+@CompileStatic
+class Distribution implements Distributable {
+    double number = 1234.234 / 567
+    def otherNumber = 3 / 4
+    boolean archivable = condition ?: true
+    def ternary = a ? b : c
+    String name = &quot;Guillaume&quot;
+    Closure description = null
+    List&lt;DownloadPackage&gt; packages = []
+    String regex = ~/.*foo.*/
+    String multi = &#39;&#39;&#39;
+        multi line string
+    &#39;&#39;&#39; + &quot;&quot;&quot;
+        now with double quotes and ${gstring}
+    &quot;&quot;&quot; + $/
+        even with dollar slashy strings
+    /$
+
+    /**
+     * description method
+     * @param cl the closure
+     */
+    void description(Closure cl) { this.description = cl }
+
+    void version(String name, Closure versionSpec) {
+        def closure = { println &quot;hi&quot; } as Runnable
+
+        MyList ml = [1, 2, [a: 1, b:2,c :3]]
+        for (ch in &quot;name&quot;) {}
+
+        // single line comment
+        DownloadPackage pkg = new DownloadPackage(version: name)
+
+        check that: true
+
+        label:
+        def clone = versionSpec.rehydrate(pkg, pkg, pkg)
+        /*
+            now clone() in a multiline comment
+        */
+        clone()
+        packages.add(pkg)
+
+        assert 4 / 2 == 2
+    }
+}
+</code></pre>
+
+    <h2>Haml</h2>
+    <pre><code class="haml">!!! XML
+%html
+  %body
+    %h1.jumbo{:id=&gt;&quot;a&quot;, :style=&gt;&#39;font-weight: normal&#39;, :title=&gt;title} highlight.js
+    /html comment
+    -# ignore this line
+    %ul(style=&#39;margin: 0&#39;)
+    -items.each do |i|
+      %i= i
+    = variable
+    =variable2
+    ~ variable3
+    ~variable4
+    The current year is #{DataTime.now.year}.
+</code></pre>
+
+    <h2>Handlebars</h2>
+    <pre><code class="handlebars">&lt;h3&gt;Hours&lt;/h3&gt;
+
+&lt;ul&gt;
+  {{#each content.users}}
+  &lt;li {{bindAttr hello=&quot;world&quot;}}&gt;{{firstName}}&lt;/li&gt;
+  {{/each}}
+&lt;/ul&gt;
+</code></pre>
+
+    <h2>Haskell</h2>
+    <pre><code class="haskell">{-# LANGUAGE TypeSynonymInstances #-}
+module Network.UDP
+( DataPacket(..)
+, openBoundUDPPort
+, openListeningUDPPort
+, pingUDPPort
+, sendUDPPacketTo
+, recvUDPPacket
+, recvUDPPacketFrom
+) where
+
+import qualified Data.ByteString as Strict (ByteString, concat, singleton)
+import qualified Data.ByteString.Lazy as Lazy (ByteString, toChunks, fromChunks)
+import Data.ByteString.Char8 (pack, unpack)
+import Network.Socket hiding (sendTo, recv, recvFrom)
+import Network.Socket.ByteString (sendTo, recv, recvFrom)
+
+-- Type class for converting StringLike types to and from strict ByteStrings
+class DataPacket a where
+  toStrictBS :: a -&gt; Strict.ByteString
+  fromStrictBS :: Strict.ByteString -&gt; a
+
+instance DataPacket Strict.ByteString where
+  toStrictBS = id
+  {-# INLINE toStrictBS #-}
+  fromStrictBS = id
+  {-# INLINE fromStrictBS #-}
+
+openBoundUDPPort :: String -&gt; Int -&gt; IO Socket
+openBoundUDPPort uri port = do
+  s &lt;- getUDPSocket
+  bindAddr &lt;- inet_addr uri
+  let a = SockAddrInet (toEnum port) bindAddr
+  bindSocket s a
+  return s
+
+pingUDPPort :: Socket -&gt; SockAddr -&gt; IO ()
+pingUDPPort s a = sendTo s (Strict.singleton 0) a &gt;&gt; return ()
+</code></pre>
+
+    <h2>Haxe</h2>
+    <pre><code class="haxe">
+// quicksort example from http://haxe.org/doc/snip/quicksort
+class Quicksort {
+
+    static var arr = [4,8,0,3,9,1,5,2,6,7];
+
+    static function quicksort( lo : Int, hi : Int ) : Void {
+        var i = lo;
+        var j = hi;
+        var buf = arr;
+        var p = buf[(lo+hi)&gt;&gt;1];
+        while( i &lt;= j ) {
+            while( arr[i] &gt; p ) i++;
+            while( arr[j] &lt; p ) j--;
+            if( i &lt;= j ) {
+                var t = buf[i];
+                buf[i++] = buf[j];
+                buf[j--] = t;
+            }
+        }
+        if( lo &lt; j ) quicksort( lo, j );
+        if( i &lt; hi ) quicksort( i, hi );
+    }
+
+    static function main() {
+        quicksort( 0, arr.length-1 );
+        trace(arr);
+    }
+}
+</code></pre>
+
+    <h2>HTTP</h2>
+    <pre><code class="http">POST /task?id=1 HTTP/1.1
+Host: example.org
+Content-Type: application/json; charset=utf-8
+Content-Length: 19
+
+{&quot;status&quot;: &quot;ok&quot;, &quot;extended&quot;: true}
+</code></pre>
+
+    <h2>Ini</h2>
+    <pre><code class="ini">;Settings relating to the location and loading of the database
+[Database]
+ProfileDir=.
+ShowProfileMgr=smart
+Profile1_Name[] = &quot;\|/_-=MegaDestoyer=-_\|/&quot;
+DefaultProfile=True
+AutoCreate = no
+
+[AutoExec]
+use-prompt=&quot;prompt&quot;
+Glob=autoexec_*.ini
+AskAboutIgnoredPlugins=0
+</code></pre>
+
+    <h2>Java</h2>
+    <pre><code class="java">/**
+ * @author John Smith &lt;john.smith@example.com&gt;
+ * @version 1.0
+*/
+package l2f.gameserver.model;
+
+import java.util.ArrayList;
+
+public abstract class L2Character extends L2Object {
+  public static final Short ABNORMAL_EFFECT_BLEEDING = 0x0_0_0_1; // not sure
+
+  public void moveTo(int x, int y, int z) {
+    _ai = null;
+    _log.warning(&quot;Should not be called&quot;);
+    if (1 &gt; 5) {
+      return;
+    }
+  }
+
+  /** Task of AI notification */
+  @SuppressWarnings( { &quot;nls&quot;, &quot;unqualified-field-access&quot;, &quot;boxing&quot; })
+  public class NotifyAITask implements Runnable {
+    private final CtrlEvent _evt;
+
+    List&lt;String&gt; mList = new ArrayList&lt;String&gt;()
+
+    public void run() {
+      try {
+        getAI().notifyEvent(_evt, _evt.class, null);
+      } catch (Throwable t) {
+        t.printStackTrace();
+      }
+    }
+  }
+}
+</code></pre>
+
+    <h2>JavaScript</h2>
+    <pre><code class="javascript">import {x, y} as p from &#39;point&#39;;
+const ANSWER = 42;
+
+class Car extends Vehicle {
+  constructor(speed, cost) {
+    super(speed);
+
+    var c = Symbol(&#39;cost&#39;);
+    this[c] = cost;
+
+    this.intro = &#96;This is a car runs at
+      ${speed}.&#96;;
+  }
+}
+
+for (let num of [1, 2, 3]) {
+  console.log(num + 0b111110111);
+}
+
+function $initHighlight(block, flags) {
+  try {
+    if (block.className.search(/\bno\-highlight\b/) != -1)
+      return processBlock(block.function, true, 0x0F) + &#39; class=&quot;&quot;&#39;;
+  } catch (e) {
+    /* handle exception */
+    var e4x =
+        &lt;div&gt;Example
+            &lt;p&gt;1234&lt;/p&gt;&lt;/div&gt;;
+  }
+  for (var i = 0 / 2; i &lt; classes.length; i++) { // &quot;0 / 2&quot; should not be parsed as regexp
+    if (checkCondition(classes[i]) === undefined)
+      return /\d+[\s/]/g;
+  }
+  console.log(Array.every(classes, Boolean));
+}
+
+export  $initHighlight;
+</code></pre>
+
+    <h2>JSON</h2>
+    <pre><code class="json">[
+  {
+    &quot;title&quot;: &quot;apples&quot;,
+    &quot;count&quot;: [12000, 20000],
+    &quot;description&quot;: {&quot;text&quot;: &quot;...&quot;, &quot;sensitive&quot;: false}
+  },
+  {
+    &quot;title&quot;: &quot;oranges&quot;,
+    &quot;count&quot;: [17500, null],
+    &quot;description&quot;: {&quot;text&quot;: &quot;...&quot;, &quot;sensitive&quot;: false}
+  }
+]
+</code></pre>
+
+    <h2>Julia</h2>
+    <pre><code class="julia">using Profile
+
+# type definition
+immutable Point{T&lt;:FloatingPoint}
+    index::Int
+    x::T
+    y::T
+end
+
+#=
+Multi
+Line
+Comment
+=#
+function method0(x, y::Int; version::VersionNumber=v&quot;0.1.2&quot;)
+    &quot;&quot;&quot;
+    Triple
+    Quoted
+    String
+    &quot;&quot;&quot;
+
+    @assert π &gt; e
+
+    s = 1.2
+    変数 = &quot;variable&quot;
+
+    if s * 100_000 ≥ 5.2e+10 &amp;&amp; true || is(x, nothing)
+        s = 1. + .5im
+    elseif 1 ∈ [1, 2, 3]
+        println(&quot;s is $s and 変数 is $変数&quot;)
+    else
+        x = [1 2 3; 4 5 6]
+        @show x&#39;
+    end
+
+    local var = rand(10)
+    var[1:5]
+    var[5:end-1]
+    var[end]
+
+    opt = &quot;-la&quot;
+    run(&#96;ls $opt&#96;)
+
+    &#39;\u2200&#39; != &#39;T&#39;
+
+    return 5s / 2
+end
+</code></pre>
+
+    <h2>Kotlin</h2>
+    <pre><code class="kotlin">import kotlin.lang.test
+
+trait A {
+    fun x()
+}
+
+fun xxx() : Int {
+	return 888
+}
+
+public fun main(args : Array&lt;String&gt;) {
+}
+</code></pre>
+
+    <h2>Lasso</h2>
+    <pre><code class="lasso">&lt;?LassoScript
+/* Lasso 8 */
+  local(&#39;query&#39; = &#39;SELECT * FROM &#96;&#39;+var:&#39;table&#39;+&#39;&#96; WHERE &#96;id&#96; &gt; 10
+    ORDER BY &#96;Name&#96; LIMIT 30&#39;);
+  Inline: -Username=$DBuser, -Password=$DBpass, -Database=$DBname, -sql=#query;
+    var(&quot;class1.name&quot; = (found_count != 0 ? &quot;subtotal&quot; | &quot;nonefound&quot;),
+        &quot;total_amount&quot; = found_count);
+    records;
+      output: &quot;&lt;tr&gt;&quot;loop_count&quot;&lt;/tr&gt;&quot;;
+    /records;
+  /Inline;
+?&gt;&lt;div class=&quot;[$class1.name]&quot;&gt;[$total_amount]&lt;/div&gt;
+&lt;?lasso
+/* Lasso 9 */ ?&gt;
+[noprocess] causes [delimiters] to be &lt;?=skipped?&gt; until the next [/noprocess]
+[
+  define strings_combine(value::string, ...other)::string =&gt; {
+    local(result = #value-&gt;append(#other-&gt;asString&amp;trim))
+    return #result
+  }
+  /**! descriptive text */
+  define person =&gt; type {
+    parent entity
+    data name::string, protected nickname, birthdate :: date
+    data private ssn = null
+    private showAge() =&gt; { return ..age }
+    protected fullName() =&gt; &#96;&quot;&#96; + .nickname + &#96;&quot;&#96; + .&#39;name&#39;
+    public ssnListed::boolean =&gt; .ssn() ? true | false
+  }
+  define person-&gt;name=(value) =&gt; {
+    .&#39;name&#39; = #value
+    return self-&gt;&#39;name&#39;
+  }
+] &lt;!-- an HTML comment &lt;?=disables delimiters?&gt; as well --&gt;
+[no_square_brackets] disables [square brackets] for the rest of the file
+&lt;?=
+  // query expression
+  with n in array((:-12, 0xABCD, 3.14159e14), (:NaN, -infinity, .57721))
+  let swapped = pair(#n-&gt;second, #n-&gt;first)
+  group #swapped by #n-&gt;first into t
+  let key = #t-&gt;key
+  order by #key
+  select pair(#key, #1)
+  do {^
+    #n-&gt;upperCase
+  ^}
+?&gt;
+</code></pre>
+
+    <h2>Less</h2>
+    <pre><code class="less">/*
+Using the most minimal language subset to ensure we
+have enough relevance hints for proper Less detection
+*/
+
+@import &quot;fruits&quot;;
+
+@rhythm: 1.5em;
+
+@media screen and (min-resolution: 2dppx) {
+    body {font-size: 125%}
+}
+
+section &gt; .foo + #bar:hover [href*=&quot;less&quot;] {
+    margin:     @rhythm 0 0 @rhythm;
+    padding:    calc(5% + 20px);
+    background: #f00ba7 url(http://placehold.alpha-centauri/42.png) no-repeat;
+    background-image: linear-gradient(-135deg, wheat, fuchsia) !important ;
+    background-blend-mode: multiply;
+}
+
+@font-face {
+    font-family: /* ? */ &#39;Omega&#39;;
+    src: url(&#39;../fonts/omega-webfont.woff?v=2.0.2&#39;);
+}
+
+.icon-baz::before {
+    display:     inline-block;
+    font-family: &quot;Omega&quot;, Alpha, sans-serif;
+    content:     &quot;\f085&quot;;
+    color:       rgba(98, 76 /* or 54 */, 231, .75);
+}
+</code></pre>
+
+    <h2>Lisp</h2>
+    <pre><code class="lisp">#!/usr/bin/env csi
+
+(defun prompt-for-cd ()
+   &quot;Prompts
+    for CD&quot;
+   (prompt-read &quot;Title&quot; 1.53 1 2/4 1.7 1.7e0 2.9E-4 +42 -7 #b001 #b001/100 #o777 #O777 #xabc55 #c(0 -5.6))
+   (prompt-read &quot;Artist&quot; &amp;rest)
+   (or (parse-integer (prompt-read &quot;Rating&quot;) :junk-allowed t) 0)
+  (if x (format t &quot;yes&quot;) (format t &quot;no&quot; nil) ;and here comment
+  )
+  ;; second line comment
+  &#39;(+ 1 2)
+  (defvar *lines*)                ; list of all lines
+  (position-if-not #&#39;sys::whitespacep line :start beg))
+  (quote (privet 1 2 3))
+  &#39;(hello world)
+  (* 5 7)
+  (1 2 34 5)
+  (:use &quot;aaaa&quot;)
+  (let ((x 10) (y 20))
+    (print (+ x y))
+  )</code></pre>
+
+    <h2>LiveCode</h2>
+    <pre><code class="livecodeserver">&lt;?rev
+
+global gControllerHandlers, gData
+local sTest
+put &quot;blog,index&quot; into gControllerHandlers
+
+
+command blog
+  -- simple comment
+  put &quot;Hello World!&quot; into sTest
+  # ANOTHER COMMENT
+  put &quot;form,url,asset&quot; into tHelpers
+  rigLoadHelper tHelpers
+end blog
+
+/*Hello
+block comment!*/
+
+function myFunction
+  if the secs &gt; 2000000000 then
+    put &quot;Welcome to the future!&quot;
+  else
+    return &quot;something&quot;
+  end if
+end myFunction
+
+
+--| END OF blog.lc
+--| Location: ./system/application/controllers/blog.lc
+----------------------------------------------------------------------
+</code></pre>
+
+    <h2>LiveScript</h2>
+    <pre><code class="livescript"># take the first n objects from a list
+take = (n, [x, ...xs]:list) --&gt;
+  | n &lt;= 0     =&gt; []
+  | empty list =&gt; []
+  | otherwise  =&gt; [x] ++ take n - 1, xs
+
+take 2, [1, 2, 3, 4, 5]
+
+# Curried functions
+take-three = take 3
+take-three [6, 7, 8, 9, 10]
+
+# Function composition
+last-three = reverse &gt;&gt; take-three &gt;&gt; reverse
+last-three [1 to 8]
+
+# List comprehensions and piping
+t1 =
+  * id: 1
+    name: &#39;george&#39;
+  * id: 2
+    name: &#39;mike&#39;
+  * id: 3
+    name: &#39;donald&#39;
+
+t2 =
+  * id: 2
+    age: 21
+  * id: 1
+    age: 20
+  * id: 3
+    age: 26
+[{id:id1, name, age}
+  for {id:id1, name} in t1
+  for {id:id2, age} in t2
+  where id1 is id2]
+  |&gt; sort-by \id
+  |&gt; JSON.stringify
+</code></pre>
+
+    <h2>Lua</h2>
+    <pre><code class="lua">--[[
+Simple signal/slot implementation
+]]
+local signal_mt = {
+    __index = {
+        register = table.insert
+    }
+}
+function signal_mt.__index:emit(... --[[ Comment in params ]])
+    for _, slot in ipairs(self) do
+        slot(self, ...)
+    end
+end
+local function create_signal()
+    return setmetatable({}, signal_mt)
+end
+
+-- Signal test
+local signal = create_signal()
+signal:register(function(signal, ...)
+    print(...)
+end)
+signal:emit(&#39;Answer to Life, the Universe, and Everything:&#39;, 42)
+
+--[==[ [=[ [[
+Nested ]]
+multi-line ]=]
+comment ]==]
+[==[ Nested
+[=[ multi-line
+[[ string
+]] ]=] ]==]
+</code></pre>
+
+    <h2>Makefile</h2>
+    <pre><code class="makefile"># Makefile
+
+BUILDDIR      = _build
+EXTRAS       ?= $(BUILDDIR)/extras
+
+.PHONY: main clean
+
+main:
+	@echo &quot;Building main facility...&quot;
+	build_main $(BUILDDIR)
+
+clean:
+	rm -rf $(BUILDDIR)/*
+</code></pre>
+
+    <h2>Markdown</h2>
+    <pre><code class="markdown"># hello world
+
+you can write text [with links](http://example.com) inline or [link references][1].
+
+* one _thing_ has *em*phasis
+* two __things__ are **bold**
+
+[1]: http://example.com
+
+---
+
+hello world
+===========
+
+&lt;this_is inline=&quot;xml&quot;&gt;&lt;/this_is&gt;
+
+&gt; markdown is so cool
+
+    so are code segments
+
+1. one thing (yeah!)
+2. two thing &#96;i can write code&#96;, and &#96;more&#96; wipee!
+
+</code></pre>
+
+    <h2>Mathematica</h2>
+    <pre><code class="mathematica">(* ::Package:: *)
+
+(* Mathematica Package *)
+
+BeginPackage[&quot;SomePkg&#96;&quot;]
+
+Begin[&quot;&#96;Private&#96;&quot;]
+
+SomeFn[ns_List] := Fold[Function[{x, y}, x + y], 0, Map[# * 2 &amp;, ns]];
+Print[$ActivationKey];
+
+End[] (* End Private Context *)
+
+EndPackage[]
+</code></pre>
+
+    <h2>Matlab</h2>
+    <pre><code class="matlab">n = 20; % number of points
+points = [random(&#39;unid&#39;, 100, n, 1), random(&#39;unid&#39;, 100, n, 1)];
+len = zeros(1, n - 1);
+points = sortrows(points);
+%% Initial set of points
+plot(points(:,1),points(:,2));
+for i = 1: n-1
+    len(i) = points(i + 1, 1) - points(i, 1);
+end
+while(max(len) &gt; 2 * min(len))
+    [d, i] = max(len);
+    k = on_margin(points, i, d, -1);
+    m = on_margin(points, i + 1, d, 1);
+    xm = 0; ym = 0;
+%% New point
+    if(i == 1 || i + 1 == n)
+        xm = mean(points([i,i+1],1))
+        ym = mean(points([i,i+1],2))
+    else
+        [xm, ym] = dlg1(points([k, i, i + 1, m], 1), ...
+            points([k, i, i + 1, m], 2))
+    end
+
+    points = [ points(1:i, :); [xm, ym]; points(i + 1:end, :)];
+end
+
+%{
+    This is a block comment. Please ignore me.
+%}
+
+function [net] = get_fit_network(inputs, targets)
+    % Create Network
+    numHiddenNeurons = 20;  % Adjust as desired
+    net = newfit(inputs,targets,numHiddenNeurons);
+    net.trainParam.goal = 0.01;
+    net.trainParam.epochs = 1000;
+    % Train and Apply Network
+    [net,tr] = train(net,inputs,targets);
+end
+
+foo_matrix = [1, 2, 3; 4, 5, 6]&#39;&#39;&#39;;
+foo_cell = {1, 2, 3; 4, 5, 6}&#39;&#39;.&#39;.&#39;;
+
+cell2flatten = {1,2,3,4,5};
+flattenedcell = cat(1, cell2flatten{:});
+</code></pre>
+
+    <h2>MEL</h2>
+    <pre><code class="mel">proc string[] getSelectedLights()
+
+{
+  string $selectedLights[];
+
+  string $select[] = &#96;ls -sl -dag -leaf&#96;;
+
+  for ( $shape in $select )
+  {
+    // Determine if this is a light.
+    //
+    string $class[] = getClassification( &#96;nodeType $shape&#96; );
+
+
+    if ( ( &#96;size $class&#96; ) &gt; 0 &amp;&amp; ( &quot;light&quot; == $class[0] ) )
+    {
+      $selectedLights[ &#96;size $selectedLights&#96; ] = $shape;
+    }
+  }
+
+  // Result is an array of all lights included in
+
+  // current selection list.
+  return $selectedLights;
+}
+</code></pre>
+
+    <h2>Mercury</h2>
+    <pre><code class="mercury">% &quot;Hello World&quot; in Mercury.
+:- module hello.
+
+
+:- interface.
+:- import_module io.
+
+:- pred main(io::di, io::uo) is det.
+
+
+:- implementation.
+
+main(!IO) :-
+    io.write_string(&quot;Hello, world\n&quot;, !IO).
+
+:- pred filter(pred(T), list(T), list(T), list(T) ).
+:- mode filter(in(pred(in) is semidet), in, out, out ) is det.
+
+filter(_, [], [], []).
+filter(P, [X | Xs], Ys, Zs) :-
+    filter(P, Xs, Ys0, Zs0),
+    ( if P(X)   then    Ys = [X | Ys0],   Zs = Zs0
+                else    Ys = Ys0      ,   Zs = [X | Zs0]
+    ).
+</code></pre>
+
+    <h2>Mizar</h2>
+    <pre><code class="mizar">::: ## Lambda calculus
+
+environ
+
+  vocabularies LAMBDA,
+      NUMBERS,
+      NAT_1, XBOOLE_0, SUBSET_1, FINSEQ_1, XXREAL_0, CARD_1,
+      ARYTM_1, ARYTM_3, TARSKI, RELAT_1, ORDINAL4, FUNCOP_1;
+
+  :: etc...
+
+begin
+
+reserve D for DecoratedTree,
+        p,q,r for FinSequence of NAT,
+        x for set;
+
+definition
+  let D;
+
+  attr D is LambdaTerm-like means
+    (dom D qua Tree) is finite &amp;
+::&gt;                          *143,306
+    for r st r in dom D holds
+      r is FinSequence of {0,1} &amp;
+      r^&lt;*0*&gt; in dom D implies D.r = 0;
+end;
+
+registration
+  cluster LambdaTerm-like for DecoratedTree of NAT;
+  existence;
+::&gt;       *4
+end;
+
+definition
+  mode LambdaTerm is LambdaTerm-like DecoratedTree of NAT;
+end;
+
+::: Then we extend this ordinary one-step beta reduction, that is,
+:::  any subterm is also allowed to reduce.
+definition
+  let M,N;
+
+  pred M beta N means
+    ex p st
+      M|p beta_shallow N|p &amp;
+      for q st not p is_a_prefix_of q holds
+        [r,x] in M iff [r,x] in N;
+end;
+
+theorem Th4:
+  ProperPrefixes (v^&lt;*x*&gt;) = ProperPrefixes v \/ {v}
+proof
+  thus ProperPrefixes (v^&lt;*x*&gt;) c= ProperPrefixes v \/ {v}
+  proof
+    let y;
+    assume y in ProperPrefixes (v^&lt;*x*&gt;);
+    then consider v1 such that
+A1: y = v1 and
+A2: v1 is_a_proper_prefix_of v^&lt;*x*&gt; by TREES_1:def 2;
+ v1 is_a_prefix_of v &amp; v1 &lt;&gt; v or v1 = v by A2,TREES_1:9;
+then
+ v1 is_a_proper_prefix_of v or v1 in {v} by TARSKI:def 1,XBOOLE_0:def 8;
+then  y in ProperPrefixes v or y in {v} by A1,TREES_1:def 2;
+    hence thesis by XBOOLE_0:def 3;
+  end;
+  let y;
+  assume y in ProperPrefixes v \/ {v};
+then A3: y in ProperPrefixes v or y in {v} by XBOOLE_0:def 3;
+A4: now
+    assume y in ProperPrefixes v;
+    then consider v1 such that
+A5: y = v1 and
+A6: v1 is_a_proper_prefix_of v by TREES_1:def 2;
+ v is_a_prefix_of v^&lt;*x*&gt; by TREES_1:1;
+then  v1 is_a_proper_prefix_of v^&lt;*x*&gt; by A6,XBOOLE_1:58;
+    hence thesis by A5,TREES_1:def 2;
+  end;
+ v^{} = v by FINSEQ_1:34;
+  then
+ v is_a_prefix_of v^&lt;*x*&gt; &amp; v &lt;&gt; v^&lt;*x*&gt; by FINSEQ_1:33,TREES_1:1;
+then  v is_a_proper_prefix_of v^&lt;*x*&gt; by XBOOLE_0:def 8;
+then  y in ProperPrefixes v or y = v &amp; v in ProperPrefixes (v^&lt;*x*&gt;)
+  by A3,TARSKI:def 1,TREES_1:def 2;
+  hence thesis by A4;
+end;</code></pre>
+
+    <h2>Monkey</h2>
+    <pre><code class="monkey">#IMAGE_FILES=&quot;*.png|*.jpg&quot;
+#SOUND_FILES=&quot;*.wav|*.ogg&quot;
+#MUSIC_FILES=&quot;*.wav|*.ogg&quot;
+#BINARY_FILES=&quot;*.bin|*.dat&quot;
+
+Import mojo
+
+&#39; The main class which expends Mojo&#39;s &#39;App&#39; class:
+Class GameApp Extends App
+    Field player:Player
+
+    Method OnCreate:Int()
+        Local img:Image = LoadImage(&quot;player.png&quot;)
+        Self.player = New Player()
+        SetUpdateRate(60)
+
+        Return 0
+    End
+
+    Method OnUpdate:Int()
+        player.x += HALFPI
+
+        If (player.x &gt; 100) Then
+            player.x = 0
+        Endif
+
+        Return 0
+    End
+
+    Method OnRender:Int()
+        Cls(32, 64, 128)
+        player.Draw()
+
+        player = Null
+        Return 0
+    End
+End
+</code></pre>
+
+    <h2>Nginx</h2>
+    <pre><code class="nginx">user  www www;
+worker_processes  2;
+pid /var/run/nginx.pid;
+error_log  /var/log/nginx.error_log  debug | info | notice | warn | error | crit;
+
+events {
+    connections   2000;
+    use kqueue | rtsig | epoll | /dev/poll | select | poll;
+}
+
+http {
+    log_format main      &#39;$remote_addr - $remote_user [$time_local] &#39;
+                         &#39;&quot;$request&quot; $status $bytes_sent &#39;
+                         &#39;&quot;$http_referer&quot; &quot;$http_user_agent&quot; &#39;
+                         &#39;&quot;$gzip_ratio&quot;&#39;;
+
+    send_timeout 3m;
+    client_header_buffer_size 1k;
+
+    gzip on;
+    gzip_min_length 1100;
+
+    #lingering_time 30;
+
+    server {
+        server_name   one.example.com  www.one.example.com;
+        access_log   /var/log/nginx.access_log  main;
+
+        rewrite (.*) /index.php?page=$1 break;
+
+        location / {
+            proxy_pass         http://127.0.0.1/;
+            proxy_redirect     off;
+            proxy_set_header   Host             $host;
+            proxy_set_header   X-Real-IP        $remote_addr;
+            charset            koi8-r;
+        }
+
+        location /api/ {
+            fastcgi_pass 127.0.0.1:9000;
+        }
+
+        location ~* \.(jpg|jpeg|gif)$ {
+            root         /spool/www;
+        }
+    }
+}
+</code></pre>
+
+    <h2>Nimrod</h2>
+    <pre><code class="nimrod">
+import module1, module2, module3
+from module4 import nil
+
+type
+  TFoo = object ## Doc comment
+    a: int32
+  PFoo = ref TFoo
+
+proc do_stuff314(param_1: TFoo, par2am: var PFoo): PFoo {.exportc: &quot;dostuff&quot; .} =
+  # Regular comment
+  discard &quot;&quot;&quot;
+  dfag
+sdfg&quot;&quot;
+&quot;&quot;&quot;
+  result = nil
+
+method abc(a: TFoo) = discard 1u32 + 0xabcdefABCDEFi32 + 0o01234567i8 + 0b010
+
+discard rawstring&quot;asdf&quot;&quot;adfa&quot;
+var normalstring = &quot;asdf&quot;
+let a: uint32 = 0xFFaF&#39;u32
+</code></pre>
+
+    <h2>Nix</h2>
+    <pre><code class="nix">{ stdenv, foo, bar ? false, ... }:
+
+/*
+ * foo
+ */
+
+let
+  a = 1; # just a comment
+  b = null;
+  c = toString 10;
+in stdenv.mkDerivation rec {
+  name = &quot;foo-${version}&quot;;
+  version = &quot;1.3&quot;;
+
+  configureFlags = [ &quot;--with-foo2&quot; ] ++ stdenv.lib.optional bar &quot;--with-foo=${ with stdenv.lib; foo }&quot;
+
+  postInstall = &#39;&#39;
+    ${ if true then &quot;--${test}&quot; else false }
+  &#39;&#39;;
+
+  meta = with stdenv.lib; {
+    homepage = https://nixos.org;
+  };
+}
+</code></pre>
+
+    <h2>NSIS</h2>
+    <pre><code class="nsis">/*
+  NSIS Scheme
+  for highlight.js
+*/
+
+; Includes
+!include MUI2.nsh
+
+; Settings
+Name &quot;installer_name&quot;
+OutFile &quot;installer_name.exe&quot;
+RequestExecutionLevel user
+CRCCheck on
+!ifdef x64
+  InstallDir &quot;$PROGRAMFILES64\installer_name&quot;
+!else
+  InstallDir &quot;$PROGRAMFILES\installer_name&quot;
+!endif
+
+; Pages
+!insertmacro MUI_PAGE_INSTFILES
+
+; Sections
+Section &quot;section_name&quot; section_index
+  # your code here
+SectionEnd
+
+; Functions
+Function .onInit
+
+  MessageBox MB_OK &quot;Here comes a$\n$\rline-break!&quot;
+
+FunctionEnd
+</code></pre>
+
+    <h2>Objective C</h2>
+    <pre><code class="objectivec">#import &lt;UIKit/UIKit.h&gt;
+#import &quot;Dependency.h&quot;
+
+@protocol WorldDataSource
+@optional
+- (NSString*)worldName;
+@required
+- (BOOL)allowsToLive;
+@end
+
+@interface Test : NSObject &lt;HelloDelegate, WorldDataSource&gt; {
+  NSString *_greeting;
+}
+
+@property (nonatomic, readonly) NSString *greeting;
+- (IBAction) show;
+@end
+
+@implementation Test
+
+@synthesize test=_test;
+
++ (id) test {
+  return [self testWithGreeting:@&quot;Hello, world!\nFoo bar!&quot;];
+}
+
++ (id) testWithGreeting:(NSString*)greeting {
+  return [[[self alloc] initWithGreeting:greeting] autorelease];
+}
+
+- (id) initWithGreeting:(NSString*)greeting {
+  if ( (self = [super init]) ) {
+    _greeting = [greeting retain];
+  }
+  return self;
+}
+
+- (void) dealloc {
+  [_greeting release];
+  [super dealloc];
+}
+
+@end
+</code></pre>
+
+    <h2>OCaml</h2>
+    <pre><code class="ocaml">(* This is a
+multiline, (* nested *) comment *)
+type point = { x: float; y: float };;
+let some_string = &quot;this is a string&quot;;;
+let rec length lst =
+    match lst with
+      [] -&gt; 0
+    | head :: tail -&gt; 1 + length tail
+  ;;
+exception Test;;
+type expression =
+      Const of float
+    | Var of string
+    | Sum of expression * expression    (* e1 + e2 *)
+    | Diff of expression * expression   (* e1 - e2 *)
+    | Prod of expression * expression   (* e1 * e2 *)
+    | Quot of expression * expression   (* e1 / e2 *)
+class point =
+    object
+      val mutable x = 0
+      method get_x = x
+      method private move d = x &lt;- x + d
+    end;;
+</code></pre>
+
+    <h2>Oxygene</h2>
+    <pre><code class="oxygene">namespace LinkedList;
+
+interface
+
+uses
+  System.Text;
+
+type
+  List&lt;T&gt; = public class
+    where T is Object;
+  private
+    method AppendToString(aBuilder: StringBuilder);
+  public
+    constructor(aData: T);
+    constructor(aData: T; aNext: List&lt;T&gt;);
+    property Next: List&lt;T&gt;;
+    property Data: T;
+
+    method ToString: string; override;
+  end;
+
+implementation
+
+constructor List&lt;T&gt;(aData: T);
+begin
+  Data := aData;
+end;
+
+constructor List&lt;T&gt;(aData: T; aNext: List&lt;T&gt;);
+begin
+  constructor(aData);
+  Next := aNext;
+end;
+
+method List&lt;T&gt;.ToString: string;
+begin
+  with lBuilder := new StringBuilder do begin
+    AppendToString(lBuilder);
+    result := lBuilder.ToString();
+  end;
+end;
+
+method List&lt;T&gt;.AppendToString(aBuilder: StringBuilder);
+begin
+  if assigned(Data) then
+    aBuilder.Append(Data.ToString)
+  else
+    aBuilder.Append(&#39;nil&#39;);
+
+  if assigned(Next) then begin
+    aBuilder.Append(&#39;, &#39;);
+    Next.AppendToString(aBuilder);
+  end;
+end;
+
+end.
+</code></pre>
+
+    <h2>Parser3</h2>
+    <pre><code class="parser3">@CLASS
+base
+
+@USE
+module.p
+
+@BASE
+class
+
+# Comment for code
+@create[aParam1;aParam2][local1;local2]
+  ^connect[mysql://host/database?ClientCharset=windows-1251]
+  ^for[i](1;10){
+    &lt;p class=&quot;paragraph&quot;&gt;^eval($i+10)&lt;/p&gt;
+    ^connect[mysql://host/database]{
+      $tab[^table::sql{select * from &#96;table&#96; where a=&#39;1&#39;}]
+      $var_Name[some${value}]
+    }
+  }
+
+  ^rem{
+    Multiline comment with code: $var
+    ^while(true){
+      ^for[i](1;10){
+        ^sleep[]
+      }
+    }
+  }
+  ^taint[^#0A]
+
+@GET_base[]
+## Comment for code
+  # Isn&#39;t comment
+  $result[$.hash_item1[one] $.hash_item2[two]]
+</code></pre>
+
+    <h2>Perl</h2>
+    <pre><code class="perl"># loads object
+sub load
+{
+  my $flds = $c-&gt;db_load($id,@_) || do {
+    Carp::carp &quot;Can&#96;t load (class: $c, id: $id): &#39;$!&#39;&quot;; return undef
+  };
+  my $o = $c-&gt;_perl_new();
+  $id12 = $id / 24 / 3600;
+  $o-&gt;{&#39;ID&#39;} = $id12 + 123;
+  #$o-&gt;{&#39;SHCUT&#39;} = $flds-&gt;{&#39;SHCUT&#39;};
+  my $p = $o-&gt;props;
+  my $vt;
+  $string =~ m/^sought_text$/;
+  $items = split //, &#39;abc&#39;;
+  $string //= &quot;bar&quot;;
+  for my $key (keys %$p)
+  {
+    if(${$vt.&#39;::property&#39;}) {
+      $o-&gt;{$key . &#39;_real&#39;} = $flds-&gt;{$key};
+      tie $o-&gt;{$key}, &#39;CMSBuilder::Property&#39;, $o, $key;
+    }
+  }
+  $o-&gt;save if delete $o-&gt;{&#39;_save_after_load&#39;};
+
+  # GH-117
+  my $g = glob(&quot;/usr/bin/*&quot;);
+
+  return $o;
+}
+
+=head1 NAME
+POD till the end of file
+</code></pre>
+
+    <h2>pf</h2>
+    <pre><code class="pf"># from the PF FAQ: http://www.openbsd.org/faq/pf/example1.html
+
+# macros
+
+int_if=&quot;xl0&quot;
+
+tcp_services=&quot;{ 22, 113 }&quot;
+icmp_types=&quot;echoreq&quot;
+
+comp3=&quot;192.168.0.3&quot;
+
+# options
+
+set block-policy return
+set loginterface egress
+set skip on lo
+
+# FTP Proxy rules
+
+anchor &quot;ftp-proxy/*&quot;
+
+pass in quick on $int_if inet proto tcp to any port ftp \
+    divert-to 127.0.0.1 port 8021
+
+# match rules
+
+match out on egress inet from !(egress:network) to any nat-to (egress:0)
+
+# filter rules
+
+block in log
+pass out quick
+
+antispoof quick for { lo $int_if }
+
+pass in on egress inet proto tcp from any to (egress) \
+    port $tcp_services
+
+pass in on egress inet proto tcp to (egress) port 80 rdr-to $comp3
+
+pass in inet proto icmp all icmp-type $icmp_types
+
+pass in on $int_if
+</code></pre>
+
+    <h2>PHP</h2>
+    <pre><code class="php">require_once &#39;Zend/Uri/Http.php&#39;;
+
+namespace Location\Web;
+
+interface Factory
+{
+    static function _factory();
+}
+
+abstract class URI extends BaseURI implements Factory
+{
+    abstract function test();
+
+    public static $st1 = 1;
+    const ME = &quot;Yo&quot;;
+    var $list = NULL;
+    private $var;
+
+    /**
+     * Returns a URI
+     *
+     * @return URI
+     */
+    static public function _factory($stats = array(), $uri = &#39;http&#39;)
+    {
+        echo __METHOD__;
+        $uri = explode(&#39;:&#39;, $uri, 0b10);
+        $schemeSpecific = isset($uri[1]) ? $uri[1] : &#39;&#39;;
+        $desc = &#39;Multi
+line description&#39;;
+
+        // Security check
+        if (!ctype_alnum($scheme)) {
+            throw new Zend_Uri_Exception(&#39;Illegal scheme&#39;);
+        }
+
+        $this-&gt;var = 0 - self::$st;
+        $this-&gt;list = list(Array(&quot;1&quot;=&gt; 2, 2=&gt;self::ME, 3 =&gt; \Location\Web\URI::class));
+
+        return [
+            &#39;uri&#39;   =&gt; $uri,
+            &#39;value&#39; =&gt; null,
+        ];
+    }
+}
+
+echo URI::ME . URI::$st1;
+
+__halt_compiler () ; datahere
+datahere
+datahere */
+datahere
+</code></pre>
+
+    <h2>PowerShell</h2>
+    <pre><code class="powershell">$initialDate = [datetime]&#39;2013/1/8&#39;
+
+$rollingDate = $initialDate
+
+do {
+    $client = New-Object System.Net.WebClient
+    $results = $client.DownloadString(&quot;http://not.a.real.url&quot;)
+    Write-Host &quot;$rollingDate.ToShortDateString() - $results&quot;
+    $rollingDate = $rollingDate.AddDays(21)
+    $username = [System.Environment]::UserName
+} until ($rollingDate -ge [datetime]&#39;2013/12/31&#39;)
+</code></pre>
+
+    <h2>Processing</h2>
+    <pre><code class="processing">import java.util.LinkedList;
+import java.awt.Point;
+
+PGraphics pg;
+String load;
+
+void setup() {
+  size(displayWidth, displayHeight, P3D);
+  pg = createGraphics(displayWidth*2,displayHeight,P2D);
+  pg.beginDraw();
+  pg.background(255,255,255);
+  //pg.smooth(8);
+  pg.endDraw();
+}
+void draw(){
+  background(255);
+}
+</code></pre>
+
+    <h2>Python profile</h2>
+    <pre><code class="profile">       261917242 function calls in 686.251 CPU seconds
+
+       ncalls  tottime  filename:lineno(function)
+       152824  513.894  {method &#39;sort&#39; of &#39;list&#39; objects}
+    129590630   83.894  rrule.py:842(__cmp__)
+    129590630   82.439  {cmp}
+       153900    1.296  rrule.py:399(_iter)
+304393/151570    0.963  rrule.py:102(_iter_cached)
+</code></pre>
+
+    <h2>Prolog</h2>
+    <pre><code class="prolog">mergesort([],[]). % special case
+mergesort([A],[A]).
+mergesort([A,B|R],S) :-
+   split([A,B|R],L1,L2),
+   mergesort(L1,S1),
+   mergesort(L2,S2),
+   merge(S1,S2,S).
+
+split([],[],[]).
+split([A],[A],[]).
+split([A,B|R],[A|Ra],[B|Rb]) :-  split(R,Ra,Rb).
+</code></pre>
+
+    <h2>Protocol Buffers</h2>
+    <pre><code class="protobuf">package languages.protobuf;
+
+option java_package = &quot;org.highlightjs.languages.protobuf&quot;;
+
+message Customer {
+  required int64 customer_id = 1;
+  optional string name = 2;
+  optional string real_name = 3 [default = &quot;Anonymous&quot;];
+  optional Gender gender = 4;
+  repeated string email_addresses = 5;
+
+  optional bool is_admin = 6 [default = false]; // or should this be a repeated field in Account?
+
+  enum Gender {
+    MALE = 1,
+    FEMALE = 2
+  }
+}
+
+service CustomerSearch {
+  rpc FirstMatch(CustomerRequest) returns (CustomerResponse);
+  rpc AllMatches(CustomerRequest) returns (CustomerResponse);
+}</code></pre>
+
+    <h2>Puppet</h2>
+    <pre><code class="puppet">class hg_punch::library {
+
+  firewall {&#39;101 puppet library access&#39;:
+    proto       =&gt; &#39;tcp&#39;,
+    dport       =&gt; &#39;80&#39;,
+    action      =&gt; &#39;accept&#39;,
+  }
+
+  package { &#39;git&#39;:
+    ensure =&gt; present,
+  }
+
+  vcsrepo { &quot;puppet-library&quot;:
+    path =&gt; &#39;/var/www/puppet-library/&#39;,
+    ensure =&gt; present,
+    owner =&gt; &#39;root&#39;,
+    group =&gt; &#39;root&#39;,
+    provider =&gt; git,
+    source =&gt; &#39;https://github.com/Moliholy/puppet-library.git&#39;,
+    revision =&gt; &#39;master&#39;,
+    require =&gt; Package[&#39;git&#39;],
+  }
+
+  package { &#39;nfs-utils&#39;:
+    ensure =&gt; present,
+  }
+
+  package { &#39;bundler&#39;:
+    ensure =&gt; present,
+    provider =&gt; gem,
+  }
+
+  package { [ &quot;ruby&quot;, &quot;ruby-devel&quot;, &quot;gcc&quot;, &quot;make&quot; ]:
+    ensure =&gt; present,
+  }
+
+  exec { &#39;bundler update&#39;:
+    command =&gt; &quot;bundler update &amp;&amp; bundler&quot;,
+    cwd =&gt; &#39;/var/www/puppet-library&#39;,
+    path =&gt; [&quot;/usr/bin&quot;, &quot;/bin&quot;, &quot;/usr/sbin&quot;],
+    require =&gt; [ Package[&#39;ruby&#39;], Package[&#39;ruby-devel&#39;],
+                Package[&#39;gcc&#39;], Package[&#39;make&#39;],
+                Package[&#39;bundler&#39;], Vcsrepo[&#39;puppet-library&#39;] ]
+  }
+
+  package { &#39;mod_passenger&#39;:
+    ensure =&gt; present,
+  }
+
+  file { &quot;/etc/httpd/conf.d/puppetlibrary.conf&quot;:
+    owner   =&gt; root,
+    group   =&gt; root,
+    mode    =&gt; 0644,
+    content =&gt; template(&#39;hg_punch/puppetlibrary.conf.erb&#39;),
+    require =&gt; Package[&#39;mod_passenger&#39;],
+    selinux_ignore_defaults =&gt; true,
+  }
+
+  file { &quot;/var/www/puppet-library/config.ru&quot;:
+    owner   =&gt; root,
+    group   =&gt; root,
+    mode    =&gt; 0644,
+    content =&gt; template(&#39;hg_punch/config.ru.erb&#39;),
+    require =&gt; Vcsrepo[&#39;puppet-library&#39;],
+  }
+
+  file { [ &#39;/var/www/puppet-library/public&#39;, &#39;/var/www/puppet-library/tmp&#39; ]:
+    ensure =&gt; directory,
+    owner   =&gt; root,
+    group   =&gt; root,
+    mode =&gt; 755,
+    require =&gt; Vcsrepo[&#39;puppet-library&#39;],
+  }
+
+  # Disable SELinux
+  package { &quot;augeas&quot;:
+    ensure =&gt; present,
+  }
+
+  augeas {&#39;disable_selinux&#39;:
+    context =&gt; &#39;/files/etc/sysconfig/selinux&#39;,
+    changes =&gt; &#39;set SELINUX disabled&#39;,
+    lens    =&gt; &#39;shellvars.lns&#39;,
+    incl     =&gt; &#39;/etc/sysconfig/selinux&#39;
+  } ~&gt;
+  exec {&#39;sudo disable_selinux&#39;:
+    command =&gt; &#39;/bin/echo 0 &gt; /selinux/enforce&#39;,
+    refreshonly =&gt; true,
+  }
+
+  service { &quot;httpd&quot;:
+    enable =&gt; true,
+    ensure =&gt; running,
+    hasrestart =&gt; true,
+    require =&gt; [ Exec[&#39;bundler update&#39;],
+                File[&#39;/etc/httpd/conf.d/puppetlibrary.conf&#39;],
+                File[&#39;/var/www/puppet-library/public&#39;],
+                File[&#39;/var/www/puppet-library/tmp&#39;],
+                Vcsrepo[&#39;puppet-library&#39;],
+                Package[&#39;mod_passenger&#39;] ],
+  }
+
+}
+</code></pre>
+
+    <h2>Python</h2>
+    <pre><code class="python">@requires_authorization
+def somefunc(param1=&#39;&#39;, param2=0):
+    r&#39;&#39;&#39;A docstring&#39;&#39;&#39;
+    if param1 &gt; param2: # interesting
+        print &#39;Gre\&#39;ater&#39;
+    return (param2 - param1 + 1 + 0b10l) or None
+
+class SomeClass:
+    pass
+
+&gt;&gt;&gt; message = &#39;&#39;&#39;interpreter
+... prompt&#39;&#39;&#39;
+</code></pre>
+
+    <h2>Q</h2>
+    <pre><code class="q">select time, price by date,stock from quote where price=(max;price)fby stock
+data:raze value flip trade
+select vwap:size wavg price by 5 xbar time.minute from aapl where date within (.z.d-10;.z.d)
+f1:{[x;y;z] show (x;y+z);sum 1 2 3}
+.z.pc:{[handle] show -3!(&#96;long$.z.p;&quot;Closed&quot;;handle)}
+// random normal distribution, e.g. nor 10
+nor:{$[x=2*n:x div 2;raze sqrt[-2*log n?1f]*/:(sin;cos)@\:(2*pi)*n?1f;-1_.z.s 1+x]}
+
+mode:{where g=max g:count each group x}		// mode function</code></pre>
+
+    <h2>R</h2>
+    <pre><code class="r">library(ggplot2)
+
+centre &lt;- function(x, type, ...) {
+  switch(type,
+         mean = mean(x),
+         median = median(x),
+         trimmed = mean(x, trim = .1))
+}
+
+myVar1
+myVar.2
+data$x
+foo &quot;bar&quot; baz
+# test &quot;test&quot;
+&quot;test # test&quot;
+
+(123) (1) (10) (0.1) (.2) (1e-7)
+(1.2e+7) (2e) (3e+10) (0x0) (0xa)
+(0xabcdef1234567890) (123L) (1L)
+(0x10L) (10000000L) (1e6L) (1.1L)
+(1e-3L) (4123.381E-10i)
+(3.) (3.E10) # BUG: .E10 should be part of number
+
+# Numbers in some different contexts
+1L
+0x40
+.234
+3.
+1L + 30
+plot(cars, xlim=20)
+plot(cars, xlim=0x20)
+foo&lt;-30
+my.data.3 &lt;- read() # not a number
+c(1,2,3)
+1%%2
+
+&quot;this is a quote that spans
+multiple lines
+\&quot;
+
+is this still a quote? it should be.
+# even still!
+
+&quot; # now we&#39;re done.
+
+&#39;same for
+single quotes #&#39;
+
+# keywords
+NULL, NA, TRUE, FALSE, Inf, NaN, NA_integer_,
+NA_real_, NA_character_, NA_complex_, function,
+while, repeat, for, if, in, else, next, break,
+..., ..1, ..2
+
+# not keywords
+the quick brown fox jumped over the lazy dogs
+null na true false inf nan na_integer_ na_real_
+na_character_ na_complex_ Function While Repeat
+For If In Else Next Break .. .... &quot;NULL&quot; &#96;NULL&#96; &#39;NULL&#39;
+
+# operators
++, -, *, /, %%, ^, &gt;, &gt;=, &lt;, &lt;=, ==, !=, !, &amp;, |, ~,
+-&gt;, &lt;-, &lt;&lt;-, $, :, ::
+
+# infix operator
+foo %union% bar
+%&quot;test&quot;%
+&#96;&quot;test&quot;&#96;
+
+</code></pre>
+
+    <h2>RenderMan RIB</h2>
+    <pre><code class="rib">FrameBegin 0
+Display &quot;Scene&quot; &quot;framebuffer&quot; &quot;rgb&quot;
+Option &quot;searchpath&quot; &quot;shader&quot; &quot;+&amp;:/home/kew&quot;
+Option &quot;trace&quot; &quot;int maxdepth&quot; [4]
+Attribute &quot;visibility&quot; &quot;trace&quot; [1]
+Attribute &quot;irradiance&quot; &quot;maxerror&quot; [0.1]
+Attribute &quot;visibility&quot; &quot;transmission&quot; &quot;opaque&quot;
+Format 640 480 1.0
+ShadingRate 2
+PixelFilter &quot;catmull-rom&quot; 1 1
+PixelSamples 4 4
+Projection &quot;perspective&quot; &quot;fov&quot; 49.5502811377
+Scale 1 1 -1
+
+WorldBegin
+
+ReadArchive &quot;Lamp.002_Light/instance.rib&quot;
+Surface &quot;plastic&quot;
+ReadArchive &quot;Cube.004_Mesh/instance.rib&quot;
+# ReadArchive &quot;Sphere.010_Mesh/instance.rib&quot;
+# ReadArchive &quot;Sphere.009_Mesh/instance.rib&quot;
+ReadArchive &quot;Sphere.006_Mesh/instance.rib&quot;
+
+WorldEnd
+FrameEnd
+</code></pre>
+
+    <h2>Roboconf</h2>
+    <pre><code class="roboconf"># This is a comment
+import toto.graph;
+
+##
+# Facet
+##
+facet VM {
+	installer: iaas;
+}
+
+# Components
+VM_ec2 {
+	facets: VM;
+	children: cluster-node, mysql;
+}
+
+VM_openstack {
+	facets: VM;
+	children: cluster-node, mysql;
+}
+
+cluster-node {
+	alias: a cluster node;
+	installer: puppet;
+	exports: ip, port, optional-property1, optional_property2;
+	imports: cluster-node.ip (optional), cluster-node.port (optional), mysql.ip, mysql.port;
+}
+
+mysql {
+	alias: a MySQL database;
+	installer: puppet;
+	exports: ip, port;
+}
+
+##
+# Normally, instances are defined in another file...
+##
+instance of VM_ec2 {
+	name: VM_;
+	count: 3;
+	my-instance-property: whatever;
+
+	instance of cluster-node {
+		name: cluster node;		# An in-line comment
+	}
+}
+
+instance of VM_openstack {
+	name: VM_database;
+
+	instance of mysql {
+		name: mysql;
+	}
+}
+</code></pre>
+
+    <h2>RenderMan RSL</h2>
+    <pre><code class="rsl">#define TEST_DEFINE 3.14
+/*  plastic surface shader
+ *
+ *  Pixie is:
+ *  (c) Copyright 1999-2003 Okan Arikan. All rights reserved.
+ */
+
+surface plastic (float Ka = 1, Kd = 0.5, Ks = 0.5, roughness = 0.1;
+                 color specularcolor = 1;) {
+  normal Nf = faceforward (normalize(N),I);
+  Ci = Cs * (Ka*ambient() + Kd*diffuse(Nf)) + specularcolor * Ks *
+       specular(Nf,-normalize(I),roughness);
+  Oi = Os;
+  Ci *= Oi;
+}
+</code></pre>
+
+    <h2>Ruby</h2>
+    <pre><code class="ruby">class A &lt; B; def self.create(object = User) object end end
+class Zebra; def inspect; &quot;X#{2 + self.object_id}&quot; end end
+
+module ABC::DEF
+  include Comparable
+
+  # @param test
+  # @return [String] nothing
+  def foo(test)
+    Thread.new do |blockvar|
+      ABC::DEF.reverse(:a_symbol, :&#39;a symbol&#39;, :&lt;=&gt;, &#39;test&#39; + ?\012)
+      answer = valid?4 &amp;&amp; valid?CONST &amp;&amp; ?A &amp;&amp; ?A.ord
+    end.join
+  end
+
+  def [](index) self[index] end
+  def ==(other) other == self end
+end
+
+class Car &lt; ActiveRecord::Base
+  has_many :wheels, class_name: &#39;Wheel&#39;, foreign_key: &#39;car_id&#39;
+  scope :available, -&gt; { where(available: true) }
+end
+
+hash = {1 =&gt; &#39;one&#39;, 2 =&gt; &#39;two&#39;}
+
+2.0.0p0 :001 &gt; [&#39;some&#39;]
+ =&gt; [&quot;some&quot;]
+</code></pre>
+
+    <h2>Oracle Rules Language</h2>
+    <pre><code class="ruleslanguage">//This is a comment
+ABORT &quot;You experienced an abort.&quot;;
+WARN &quot;THIS IS A WARNING&quot;;
+CALL &quot;RIDER_X&quot;;
+DONE;
+FOR EACH X IN CSV_FILE &quot;d:\lodestar\user\d377.lse&quot;
+ LEAVE FOR;
+END FOR;
+IF ((BILL_KW = 0) AND (KW &gt; 0)) THEN
+END IF;
+INCLUDE &quot;R1&quot;;
+LEAVE RIDER;
+SELECT BILL_PERIOD
+   WHEN &quot;WINTER&quot;
+      BLOCK KWH
+      FROM 0 TO 400 CHARGE $0.03709
+      FROM 400 CHARGE $0.03000
+      TOTAL $ENERGY_CHARGE_WIN;
+   WHEN &quot;SUMMER&quot;
+      $VOLTAGE_DISCOUNT_SUM = $0.00
+   OTHERWISE
+      $VOLTAGE_DISCOUNT_SUM = $1.00
+END SELECT;
+/* Report top five peaks */
+LABEL PK.NM &quot;Peak Number&quot;;
+SAVE_UPDATE MV TO TABLE &quot;METERVALUE&quot;;
+
+FOR EACH INX IN ARRAYUPPERBOUND(#MYARRAY[])
+  #MYARRAY[INX].VALUE = 2;
+  CLEAR #MYARRAY[];
+END FOR
+
+//Interval Data
+HNDL_1_ADD_EDI = INTDADDATTRIBUTE(HNDL_1, &quot;EDI_TRANSACTION&quot;, EDI_ID);
+HNDL_1_ADD_VAL_MSG = INTDADDVMSG(HNDL_1,&quot;Missing (Status Code 9) values found&quot;);
+EMPTY_HNDL = INTDCREATEHANDLE(&#39;05/03/2006 00:00:00&#39;, &#39;05/03/2006 23:59:59&#39;, 3600, &quot;Y&quot;, &quot;0&quot;, &quot; &quot;);
+</code></pre>
+
+    <h2>Rust</h2>
+    <pre><code class="rust">use std;
+
+#![warn(unstable)]
+
+/* Factorial */
+fn fac(n: int) -&gt; int {
+    let s: str = &quot;This is
+a multi-line string.
+
+It ends with an unescaped &#39;\&quot;&#39;.&quot;;
+    let c: char = &#39;Ф&#39;;
+    let r: str = r##&quot; raw string &quot;##;
+
+    let result = 1, i = 1;
+    while i &lt;= n { // No parens around the condition
+        result *= i;
+        i += 1;
+    }
+    ret result;
+}
+
+pure fn pure_length&lt;T&gt;(ls: list&lt;T&gt;) -&gt; uint { /* ... */ }
+
+type t = map::hashtbl&lt;int,str&gt;;
+let x = id::&lt;int&gt;(10);
+
+// Define some modules.
+#[path = &quot;foo.rs&quot;]
+mod foo;
+
+impl &lt;T&gt; Seq&lt;T&gt; for [T] {
+    fn len() -&gt; uint { vec::len(self) }
+    fn iter(b: fn(T)) {
+        for elt in self { b(elt); }
+    }
+}
+
+enum list&lt;T&gt; {
+    Nil;
+    Cons(T, @list&lt;T&gt;);
+}
+
+let a: list&lt;int&gt; = Cons(7, @cons(13, @nil));
+
+struct Baz&lt;&#39;a&gt; {
+    baz: &amp;&#39;a str,
+}
+
+&#39;h: for i in range(0,10) {
+    &#39;g: loop {
+        if i % 2 == 0 { continue &#39;h; }
+        if i == 9 { break &#39;h; }
+        break &#39;g;
+    }
+}
+</code></pre>
+
+    <h2>Scala</h2>
+    <pre><code class="scala">case class Person(name: String, age: Int)
+
+def absoluteValue(n: Int): Int =
+  if (n &lt; 0) -n else n
+
+val hux = &quot;hux&quot;
+def mux = &quot;mux&quot;
+def qux: String = &quot;qux&quot;
+
+type ξ[A] = (A, A)
+
+trait Hist { lhs =&gt;
+  def ⊕(rhs: Hist): Hist
+}
+
+def gsum[A: Ring](as: Seq[A]): A =
+  as.foldLeft(Ring[A].zero)(_ + _)
+
+sealed trait Compass
+case object North extends Compass
+case object South extends Compass
+case object East extends Compass
+case object West extends Compass
+
+trait Cake {
+  type T;
+  val things: Seq[T]
+
+  abstract class Spindler
+
+  def spindle(s: Spindler, ts: Seq[T], reversed: Boolean = false): Seq[T]
+}
+
+val colors = Map(
+  &quot;red&quot; -&gt; 0xFF0000,
+  &quot;turquoise&quot; -&gt; 0x00FFFF,
+  &quot;black&quot; -&gt; 0x000000,
+  &quot;orange&quot; -&gt; 0xFF8040,
+  &quot;brown&quot; -&gt; 0x804000)
+
+lazy val ns = for {
+  x &lt;- 0 until 100
+  y &lt;- 0 until 100
+} yield (x + y) * 33.33
+</code></pre>
+
+    <h2>Scheme</h2>
+    <pre><code class="scheme">;; Calculation of Hofstadter&#39;s male and female sequences as a list of pairs
+
+(define (hofstadter-male-female n)
+(letrec ((female (lambda (n)
+           (if (= n 0)
+           1
+           (- n (male (female (- n 1)))))))
+     (male (lambda (n)
+         (if (= n 0)
+             0
+             (- n (female (male (- n 1))))))))
+  (let loop ((i 0))
+    (if (&gt; i n)
+    &#39;()
+    (cons (cons (female i)
+            (male i))
+      (loop (+ i 1)))))))
+
+(hofstadter-male-female 8)
+
+(define (find-first func lst)
+(call-with-current-continuation
+ (lambda (return-immediately)
+   (for-each (lambda (x)
+       (if (func x)
+           (return-immediately x)))
+         lst)
+   #f)))
+</code></pre>
+
+    <h2>Scilab</h2>
+    <pre><code class="scilab">// A comment
+function I = foo(dims, varargin)
+  d=[1; matrix(dims(1:$-1),-1,1)]
+  for i=1:size(varargin)
+    if varargin(i)==[] then
+       I=[],
+       return;
+    end
+  end
+endfunction
+
+b = cos(a) + cosh(a);
+bar_matrix = [ &quot;Hello&quot;, &quot;world&quot; ];
+foo_matrix = [1, 2, 3; 4, 5, 6];
+</code></pre>
+
+    <h2>SCSS</h2>
+    <pre><code class="scss">@import &quot;compass/reset&quot;;
+
+// variables
+$colorGreen: #008000;
+$colorGreenDark: darken($colorGreen, 10);
+
+@mixin container {
+    max-width: 980px;
+}
+
+// mixins with parameters
+@mixin button($color:green) {
+    @if ($color == green) {
+        background-color: #008000;
+    }
+    @else if ($color == red) {
+        background-color: #B22222;
+    }
+}
+
+button {
+    @include button(red);
+}
+
+div,
+.navbar,
+#header,
+input[type=&quot;input&quot;] {
+    font-family: &quot;Helvetica Neue&quot;, Arial, sans-serif;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.row-12 &gt; [class*=&quot;spans&quot;] {
+    border-left: 1px solid #B5C583;
+}
+
+// nested definitions
+ul {
+    width: 100%;
+    padding: {
+        left: 5px; right: 5px;
+    }
+  li {
+      float: left; margin-right: 10px;
+      .home {
+          background: url(&#39;http://placehold.it/20&#39;) scroll no-repeat 0 0;
+    }
+  }
+}
+
+.banner {
+    @extend .container;
+}
+
+a {
+  color: $colorGreen;
+  &amp;:hover { color: $colorGreenDark; }
+  &amp;:visited { color: #c458cb; }
+}
+
+@for $i from 1 through 5 {
+    .span#{$i} {
+        width: 20px*$i;
+    }
+}
+
+@mixin mobile {
+  @media screen and (max-width : 600px) {
+    @content;
+  }
+}</code></pre>
+
+    <h2>Smali</h2>
+    <pre><code class="smali">.class public Lcom/test/Preferences;
+.super Landroid/preference/PreferenceActivity;
+.source &quot;Preferences.java&quot;
+
+
+# instance fields
+.field private PACKAGE_NAME:Ljava/lang/String;
+
+
+# direct methods
+.method public constructor &lt;init&gt;()V
+    .registers 1
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            &quot;InlinedApi&quot;
+        }
+    .end annotation
+
+    .prologue
+    .line 25
+    invoke-direct {p0}, Landroid/preference/PreferenceActivity;-&gt;&lt;init&gt;()V
+
+    const-string v4, &quot;ASDF!&quot;
+
+    .line 156
+    .end local v0           #customOther:Landroid/preference/Preference;
+    .end local v1           #customRate:Landroid/preference/Preference;
+    .end local v2           #hideApp:Landroid/preference/Preference;
+    :cond_56
+
+        .line 135
+    invoke-static {p1}, Lcom/google/ads/AdActivity;-&gt;b(Lcom/google/ads/internal/d;)Lcom/google/ads/internal/d;
+
+    .line 140
+    :cond_e
+    monitor-exit v1
+    :try_end_f
+    .catchall {:try_start_5 .. :try_end_f} :catchall_30
+
+    .line 143
+    invoke-virtual {p1}, Lcom/google/ads/internal/d;-&gt;g()Lcom/google/ads/m;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lcom/google/ads/m;-&gt;c:Lcom/google/ads/util/i$d;
+
+    invoke-virtual {v0}, Lcom/google/ads/util/i$d;-&gt;a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/Activity;
+
+    .line 144
+    if-nez v0, :cond_33
+
+    .line 145
+    const-string v0, &quot;activity was null while launching an AdActivity.&quot;
+
+    invoke-static {v0}, Lcom/google/ads/util/b;-&gt;e(Ljava/lang/String;)V
+
+    .line 160
+    :goto_22
+    return-void
+
+    .line 136
+    :cond_23
+    :try_start_23
+    invoke-static {}, Lcom/google/ads/AdActivity;-&gt;c()Lcom/google/ads/internal/d;
+
+    move-result-object v0
+
+    if-eq v0, p1, :cond_e
+
+    return-void
+.end method
+</code></pre>
+
+    <h2>Smalltalk</h2>
+    <pre><code class="smalltalk">Object&gt;&gt;method: num
+    &quot;comment 123&quot;
+    | var1 var2 |
+    (1 to: num) do: [:i | |var| ^i].
+    Klass with: var1.
+    Klass new.
+    arr := #(&#39;123&#39; 123.345 #hello Transcript var $@).
+    arr := #().
+    var2 = arr at: 3.
+    ^ self abc
+
+heapExample
+    &quot;HeapTest new heapExample&quot;
+    &quot;Multiline
+    decription&quot;
+    | n rnd array time sorted |
+    n := 5000.
+    &quot;# of elements to sort&quot;
+    rnd := Random new.
+    array := (1 to: n)
+                collect: [:i | rnd next].
+    &quot;First, the heap version&quot;
+    time := Time
+                millisecondsToRun: [sorted := Heap withAll: array.
+    1
+        to: n
+        do: [:i |
+            sorted removeFirst.
+            sorted add: rnd next]].
+    Transcript cr; show: &#39;Time for Heap: &#39; , time printString , &#39; msecs&#39;.
+    &quot;The quicksort version&quot;
+    time := Time
+                millisecondsToRun: [sorted := SortedCollection withAll: array.
+    1
+        to: n
+        do: [:i |
+            sorted removeFirst.
+            sorted add: rnd next]].
+    Transcript cr; show: &#39;Time for SortedCollection: &#39; , time printString , &#39; msecs&#39;
+</code></pre>
+
+    <h2>SML</h2>
+    <pre><code class="sml">(* list.sml
+ *
+ * COPYRIGHT (c) 2009 The Fellowship of SML/NJ (http://www.smlnj.org)
+ * All rights reserved.
+ *
+ * Available (unqualified) at top level:
+ *   type list
+ *   val nil, ::, hd, tl, null, length, @, app, map, foldr, foldl, rev
+ *   exception Empty
+ *
+ * Consequently the following are not visible at top level:
+ *   val last, nth, take, drop, concat, revAppend, mapPartial, find, filter,
+ *       partition, exists, all, tabulate
+ *
+ * The following infix declarations will hold at top level:
+ *   infixr 5 :: @
+ *
+ *)
+
+structure List : LIST =
+  struct
+
+    val op +  = InlineT.DfltInt.+
+    val op -  = InlineT.DfltInt.-
+    val op &lt;  = InlineT.DfltInt.&lt;
+    val op &lt;= = InlineT.DfltInt.&lt;=
+    val op &gt;  = InlineT.DfltInt.&gt;
+    val op &gt;= = InlineT.DfltInt.&gt;=
+(*    val op =  = InlineT.= *)
+
+    datatype list = datatype list
+
+    exception Empty = Empty
+
+  (* these functions are implemented in base/system/smlnj/init/pervasive.sml *)
+    val null = null
+    val hd = hd
+    val tl = tl
+    val length = length
+    val rev = rev
+    val revAppend = revAppend
+    val op @ = op @
+    val foldr = foldr
+    val foldl = foldl
+    val app = app
+    val map = map
+
+    fun last [] = raise Empty
+      | last [x] = x
+      | last (_::r) = last r
+
+    fun getItem [] = NONE
+      | getItem (x::r) = SOME(x, r)
+
+    fun nth (l,n) = let
+          fun loop ((e::_),0) = e
+            | loop ([],_) = raise Subscript
+            | loop ((_::t),n) = loop(t,n-1)
+          in
+            if n &gt;= 0 then loop (l,n) else raise Subscript
+          end
+
+    fun take (l, n) = let
+          fun loop (l, 0) = []
+            | loop ([], _) = raise Subscript
+            | loop ((x::t), n) = x :: loop (t, n-1)
+          in
+            if n &gt;= 0 then loop (l, n) else raise Subscript
+          end
+
+    fun drop (l, n) = let
+          fun loop (l,0) = l
+            | loop ([],_) = raise Subscript
+            | loop ((_::t),n) = loop(t,n-1)
+          in
+            if n &gt;= 0 then loop (l,n) else raise Subscript
+          end
+
+
+    fun concat [] = []
+      | concat (l::r) = l @ concat r
+
+    fun mapPartial pred l = let
+          fun mapp ([], l) = rev l
+            | mapp (x::r, l) = (case (pred x)
+                 of SOME y =&gt; mapp(r, y::l)
+                  | NONE =&gt; mapp(r, l)
+                (* end case *))
+          in
+            mapp (l, [])
+          end
+
+    fun find pred [] = NONE
+      | find pred (a::rest) = if pred a then SOME a else (find pred rest)
+
+    fun filter pred [] = []
+      | filter pred (a::rest) = if pred a then a::(filter pred rest)
+                                else (filter pred rest)
+
+    fun partition pred l = let
+          fun loop ([],trueList,falseList) = (rev trueList, rev falseList)
+            | loop (h::t,trueList,falseList) =
+                if pred h then loop(t, h::trueList, falseList)
+                else loop(t, trueList, h::falseList)
+          in loop (l,[],[]) end
+
+
+    fun exists pred = let
+          fun f [] = false
+            | f (h::t) = pred h orelse f t
+          in f end
+    fun all pred = let
+          fun f [] = true
+            | f (h::t) = pred h andalso f t
+          in f end
+
+    fun tabulate (len, genfn) =
+          if len &lt; 0 then raise Size
+          else let
+            fun loop n = if n = len then []
+                         else (genfn n)::(loop(n+1))
+            in loop 0 end
+
+    fun collate compare = let
+  fun loop ([], []) = EQUAL
+    | loop ([], _) = LESS
+    | loop (_, []) = GREATER
+    | loop (x :: xs, y :: ys) =
+      (case compare (x, y) of
+     EQUAL =&gt; loop (xs, ys)
+         | unequal =&gt; unequal)
+    in
+  loop
+    end
+
+  end (* structure List *)
+
+</code></pre>
+
+    <h2>SQL</h2>
+    <pre><code class="sql">BEGIN;
+CREATE TABLE &quot;topic&quot; (
+    -- This is the greatest table of all time
+    &quot;id&quot; serial NOT NULL PRIMARY KEY,
+    &quot;forum_id&quot; integer NOT NULL,
+    &quot;subject&quot; varchar(255) NOT NULL -- Because nobody likes an empty subject
+);
+ALTER TABLE &quot;topic&quot; ADD CONSTRAINT forum_id FOREIGN KEY (&quot;forum_id&quot;) REFERENCES &quot;forum&quot; (&quot;id&quot;);
+
+-- Initials
+insert into &quot;topic&quot; (&quot;forum_id&quot;, &quot;subject&quot;) values (2, &#39;D&#39;&#39;artagnian&#39;);
+
+select /* comment */ count(*) from cicero_forum;
+
+-- this line lacks ; at the end to allow people to be sloppy and omit it in one-liners
+/*
+but who cares?
+*/
+COMMIT</code></pre>
+
+    <h2>Stata</h2>
+    <pre><code class="stata">program define gr_log
+version 6.0
+
+local or = &#96;2&#39;
+local xunits = &#96;3&#39;
+local b1 = ln(&#96;or&#39;)
+
+* make summary of logistic data from equation
+set obs &#96;xunits&#39;
+generate pgty = 1 - 1/(1 + exp(score))
+/**
+ * Comment 1
+*/
+reg y x
+* Comment 2
+reg y2 x //comment 3
+This is a &#96;loc&#39; $glob ${glob2}
+This is a &#96;&quot;string &quot; &quot;&#39; &quot;string&#96;1&#39;two${hi}&quot; bad &#96;&quot;string &quot; &quot;&#39; good &#96;&quot;string &quot; &quot;&#39;
+
+//Limit to just the project ados
+cap adopath - SITE
+cap adopath - PLUS
+/*cap adopath - PERSONAL
+cap adopath - OLDPLACE*/
+adopath ++ &quot;${dir_base}/code/ado/&quot;
+A string &#96;&quot;Wow&quot;&#39;. &#96;&quot;&quot;one&quot; &quot;two&quot;&quot;&#39;
+A &#96;local&#39; em&#96;b&#39;ed
+a global ${dir_base} $dir_base em${b}ed
+
+forval i=1/4{
+  if &#96;i&#39;==2{
+    cap reg y x1, robust
+    local x = ln(4)
+    local x =ln(4)
+    local ln = ln
+  }
+}
+
+* add mlibs in the new adopath to the index
+mata: mata mlib index</code></pre>
+
+    <h2>STEP Part 21 (ISO 10303-21)</h2>
+    <pre><code class="step21">ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION((&#39;&#39;),&#39;2;1&#39;);
+FILE_NAME(&#39;CUBE_4SQUARE&#39;,&#39;2013-11-29T&#39;,(&#39;acook&#39;),(&#39;&#39;),
+&#39;SOMETHINGCAD BY SOME CORPORATION, 2012130&#39;,
+&#39;SOMETHINGCAD BY SOME CORPORATION, 2012130&#39;,&#39;&#39;);
+FILE_SCHEMA((&#39;CONFIG_CONTROL_DESIGN&#39;));
+ENDSEC;
+/* file written by SomethingCAD */
+DATA;
+#1=DIRECTION(&#39;&#39;,(1.E0,0.E0,0.E0));
+#2=VECTOR(&#39;&#39;,#1,4.E0);
+#3=CARTESIAN_POINT(&#39;&#39;,(-2.E0,-2.E0,-2.E0));
+#4=LINE(&#39;&#39;,#3,#2);
+#5=DIRECTION(&#39;&#39;,(0.E0,1.E0,0.E0));
+#6=VECTOR(&#39;&#39;,#5,4.E0);
+#7=CARTESIAN_POINT(&#39;&#39;,(2.E0,-2.E0,-2.E0));
+#8=LINE(&#39;&#39;,#7,#6);
+#9=DIRECTION(&#39;&#39;,(-1.E0,0.E0,0.E0));
+#10=VECTOR(&#39;&#39;,#9,4.E0);
+#11=CARTESIAN_POINT(&#39;&#39;,(2.E0,2.E0,-2.E0));
+#12=LINE(&#39;&#39;,#11,#10);
+#13=DIRECTION(&#39;&#39;,(0.E0,-1.E0,0.E0));
+#14=VECTOR(&#39;&#39;,#13,4.E0);
+#15=CARTESIAN_POINT(&#39;&#39;,(-2.E0,2.E0,-2.E0));
+#16=LINE(&#39;&#39;,#15,#14);
+#17=DIRECTION(&#39;&#39;,(0.E0,0.E0,1.E0));
+#18=VECTOR(&#39;&#39;,#17,4.E0);
+#19=CARTESIAN_POINT(&#39;&#39;,(-2.E0,-2.E0,-2.E0));
+#20=LINE(&#39;&#39;,#19,#18);
+#21=DIRECTION(&#39;&#39;,(0.E0,0.E0,1.E0));
+ENDSEC;
+END-ISO-10303-21;
+</code></pre>
+
+    <h2>Stylus</h2>
+    <pre><code class="stylus">@import &quot;nib&quot;
+
+// variables
+$green = #008000
+$green_dark = darken($green, 10)
+
+// mixin/function
+container()
+  max-width 980px
+
+// mixin/function with parameters
+buttonBG($color = green)
+  if $color == green
+    background-color #008000
+  else if $color == red
+    background-color #B22222
+
+button
+  buttonBG(red)
+
+#content, .content
+  font Tahoma, Chunkfive, sans-serif
+  background url(&#39;hatch.png&#39;)
+  color #F0F0F0 !important
+  width 100%
+</code></pre>
+
+    <h2>Swift</h2>
+    <pre><code class="swift">extension MyClass : Interface {
+    class func unarchiveFromFile&lt;A&gt;(file : A, (Int,Int) -&gt; B) -&gt; SKNode? {
+        let path: String = bundle.pathForResource(file, ofType: &quot;file\(name + 5).txt&quot;)
+        let funnyNumber = 3 + 0xC2.15p2 * (1_000_000.000_000_1 - 000123.456) + 0o21
+        var sceneData = NSData.dataWithContentsOfFile(path, options: .DataReadingMappedIfSafe, error: nil)
+        /* a comment /* with a nested comment */ and the end */
+    }
+    @objc override func shouldAutorotate() {
+        return true
+    }
+}
+</code></pre>
+
+    <h2>Tcl</h2>
+    <pre><code class="tcl">package json
+
+source helper.tcl
+# randomness verified by a die throw
+set ::rand 4
+
+proc give::recursive::count {base p} { ; # 2 mandatory params
+    while {$p &gt; 0} {
+        set result [expr $result * $base]; incr p -1
+    }
+    return $result
+}
+
+set a &#39;a&#39;; set b &quot;bcdef&quot;; set lst [list &quot;item&quot;]
+puts [llength $a$b]
+
+set ::my::tid($id) $::my::tid(def)
+lappend lst $arr($idx) $::my::arr($idx) $ar(key)
+lreplace ::my::tid($id) 4 4
+puts $::rand ${::rand} ${::AWESOME::component::variable}
+
+puts &quot;$x + $y is\t [expr $x + $y]&quot;
+
+proc isprime x {
+    expr {$x&gt;1 &amp;&amp; ![regexp {^(oo+?)\1+$} [string repeat o $x]]}
+}
+</code></pre>
+
+    <h2>TeX</h2>
+    <pre><code class="tex">\documentclass{article}
+\usepackage[koi8-r]{inputenc}
+\hoffset=0pt
+\voffset=.3em
+\tolerance=400
+\newcommand{\eTiX}{\TeX}
+\begin{document}
+\section*{Highlight.js}
+\begin{table}[c|c]
+$\frac 12\, + \, \frac 1{x^3}\text{Hello \! world}$ &amp; \textbf{Goodbye\~ world} \\\eTiX $ \pi=400 $
+\end{table}
+Ch\&#39;erie, \c{c}a ne me pla\^\i t pas! % comment \b
+G\&quot;otterd\&quot;ammerung~45\%=34.
+$$
+    \int\limits_{0}^{\pi}\frac{4}{x-7}=3
+$$
+\end{document}
+</code></pre>
+
+    <h2>Thrift</h2>
+    <pre><code class="thrift">namespace * thrift.test
+
+/**
+ * Docstring!
+ */
+enum Numberz
+{
+  ONE = 1,
+  TWO,
+  THREE,
+  FIVE = 5,
+  SIX,
+  EIGHT = 8
+}
+
+const Numberz myNumberz = Numberz.ONE;
+// the following is expected to fail:
+// const Numberz urNumberz = ONE;
+
+typedef i64 UserId
+
+struct Msg
+{
+  1: string message,
+  2: i32 type
+}
+struct NestedListsI32x2
+{
+  1: list&lt;list&lt;i32&gt;&gt; integerlist
+}
+struct NestedListsI32x3
+{
+  1: list&lt;list&lt;list&lt;i32&gt;&gt;&gt; integerlist
+}
+service ThriftTest
+{
+  void        testVoid(),
+  string      testString(1: string thing),
+  oneway void testInit()
+}</code></pre>
+
+    <h2>Twig</h2>
+    <pre><code class="twig">{% if posts|length %}
+  {% for article in articles %}
+  &amp;lt;div&amp;gt;
+  {{ article.title|upper() }}
+
+  {# outputs &#39;WELCOME&#39; #}
+  &amp;lt;/div&amp;gt;
+  {% endfor %}
+{% endif %}
+
+{% set user = json_encode(user) %}
+
+{{ random([&#39;apple&#39;, &#39;orange&#39;, &#39;citrus&#39;]) }}
+
+{{ include(template_from_string(&quot;Hello {{ name }}&quot;)) }}
+
+
+{#
+Comments may be long and multiline.
+Markup is &amp;lt;em&amp;gt;not&amp;lt;/em&amp;gt; highlighted within comments.
+#}
+</code></pre>
+
+    <h2>TypeScript</h2>
+    <pre><code class="typescript">class MyClass {
+    public static myValue: string;
+    constructor(init: string) {
+      this.myValue = init;
+    }
+  }
+  import fs = require(&quot;fs&quot;);
+  module MyModule {
+    export interface MyInterface extends OtherInterface {
+      myProperty: any;
+    }
+  }
+  declare magicNumber number;
+  myArray.forEach(() =&gt; {
+    // fat arrow syntax
+  });</code></pre>
+
+    <h2>Vala</h2>
+    <pre><code class="vala">using DBus;
+
+namespace Test {
+  class Foo : Object {
+    public signal void some_event ();   // definition of the signal
+    public void method () {
+      some_event ();                    // emitting the signal (callbacks get invoked)
+    }
+  }
+}
+
+/* defining a class */
+class Track : GLib.Object, Test.Foo {              /* subclassing &#39;GLib.Object&#39; */
+  public double mass;                  /* a public field */
+  public double name { get; set; }     /* a public property */
+  private bool terminated = false;     /* a private field */
+  public void terminate() {            /* a public method */
+    terminated = true;
+  }
+}
+
+const ALL_UPPER_CASE = &quot;you should follow this convention&quot;;
+
+var t = new Track();      // same as: Track t = new Track();
+var s = &quot;hello&quot;;          // same as: string s = &quot;hello&quot;;
+var l = new List&lt;int&gt;();       // same as: List&lt;int&gt; l = new List&lt;int&gt;();
+var i = 10;               // same as: int i = 10;
+
+
+#if (ololo)
+Regex regex = /foo/;
+#endif
+
+/*
+ * Entry point can be outside class
+ */
+void main () {
+  var long_string = &quot;&quot;&quot;
+    Example of &quot;verbatim string&quot;.
+    Same as in @&quot;string&quot; in C#
+  &quot;&quot;&quot;
+  var foo = new Foo ();
+  foo.some_event.connect (callback_a);      // connecting the callback functions
+  foo.some_event.connect (callback_b);
+  foo.method ();
+}
+</code></pre>
+
+    <h2>VB.NET</h2>
+    <pre><code class="vbnet">Import System
+Import System.IO
+#Const DEBUG = True
+
+Namespace Highlighter.Test
+  &#39;&#39;&#39; &lt;summary&gt;This is an example class.&lt;/summary&gt;
+  Public Class Program
+    Protected Shared hello As Integer = 3
+    Private Const ABC As Boolean = False
+
+#Region &quot;Code&quot;
+    &#39; Cheers!
+    &lt;STAThread()&gt; _
+    Public Shared Sub Main(ByVal args() As String, ParamArray arr As Object) Handles Form1.Click
+      On Error Resume Next
+      If ABC Then
+        While ABC : Console.WriteLine() : End While
+        For i As Long = 0 To 1000 Step 123
+          Try
+            System.Windows.Forms.MessageBox.Show(CInt(&quot;1&quot;).ToString())
+          Catch ex As Exception       &#39; What are you doing? Well...
+            Dim exp = CType(ex, IOException)
+            REM ORZ
+            Return
+          End Try
+        Next
+      Else
+        Dim l As New System.Collections.List&lt;String&gt;()
+        SyncLock l
+          If TypeOf l Is Decimal And l IsNot Nothing Then
+            RemoveHandler button1.Paint, delegate
+          End If
+          Dim d = New System.Threading.Thread(AddressOf ThreadProc)
+          Dim a = New Action(Sub(x, y) x + y)
+          Static u = From x As String In l Select x.Substring(2, 4) Where x.Length &gt; 0
+        End SyncLock
+        Do : Laugh() : Loop Until hello = 4
+      End If
+    End Sub
+#End Region
+  End Class
+End Namespace
+</code></pre>
+
+    <h2>VBScript in HTML</h2>
+    <pre><code class="vbscript-html">&lt;body&gt;
+&lt;%
+If i &lt;  10 Then
+  response.write(&quot;Good morning!&quot;)
+End If
+%&gt;
+&lt;/body&gt;
+</code></pre>
+
+    <h2>VBScript</h2>
+    <pre><code class="vbscript">&#39; creating configuration storage and initializing with default values
+Set cfg = CreateObject(&quot;Scripting.Dictionary&quot;)
+
+&#39; reading ini file
+for i = 0 to ubound(ini_strings)
+    s = trim(ini_strings(i))
+
+    &#39; skipping empty strings and comments
+    if mid(s, 1, 1) &lt;&gt; &quot;#&quot; and len(s) &gt; 0 then
+      &#39; obtaining key and value
+      parts = split(s, &quot;=&quot;, -1, 1)
+
+      if ubound(parts)+1 = 2 then
+        parts(0) = trim(parts(0))
+        parts(1) = trim(parts(1))
+
+        &#39; reading configuration and filenames
+        select case lcase(parts(0))
+          case &quot;uncompressed&quot;&quot;_postfix&quot; cfg.item(&quot;uncompressed&quot;&quot;_postfix&quot;) = parts(1)
+          case &quot;f&quot;
+                    options = split(parts(1), &quot;|&quot;, -1, 1)
+                    if ubound(options)+1 = 2 then
+                      &#39; 0: filename,  1: options
+                      ff.add trim(options(0)), trim(options(1))
+                    end if
+        end select
+      end if
+    end if
+next</code></pre>
+
+    <h2>Verilog</h2>
+    <pre><code class="verilog">&#96;timescale 1ns / 1ps
+
+/**
+ * counter: a generic clearable up-counter
+ */
+
+module counter
+    #(parameter WIDTH=64)
+    (
+        input clk,
+        input ce,
+        input arst_n,
+        output reg [WIDTH-1:0] q
+    );
+
+    // some child
+    clock_buffer #(WIDTH) buffer_inst (
+      .clk(clk),
+      .ce(ce),
+      .reset(arst_n)
+    );
+
+    // Simple gated up-counter with async clear
+
+    always @(posedge clk or negedge arst_n) begin
+        if (arst_n == 1&#39;b0) begin
+            q &lt;= {WIDTH {1&#39;b0}};
+            end
+        else begin
+            q &lt;= q;
+            if (ce == 1&#39;b1) begin
+                q &lt;= q + 1;
+            end
+        end
+    end
+
+endmodule
+</code></pre>
+
+    <h2>VHDL</h2>
+    <pre><code class="vhdl">/*
+ * RS-trigger with assynch. reset
+ */
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity RS_trigger is
+    generic (T: Time := 0ns);
+    port ( R, S  : in  std_logic;
+           Q, nQ : out std_logic;
+           reset, clock : in  std_logic );
+end RS_trigger;
+
+architecture behaviour of RS_trigger is
+    signal QT: std_logic; -- Q(t)
+begin
+    process(clock, reset) is
+        subtype RS is std_logic_vector (1 downto 0);
+    begin
+        if reset = &#39;0&#39; then
+            QT &lt;= &#39;0&#39;;
+        else
+            if rising_edge(C) then
+                if not (R&#39;stable(T) and S&#39;stable(T)) then
+                    QT &lt;= &#39;X&#39;;
+                else
+                    case RS&#39;(R&amp;S) is
+                        when &quot;01&quot; =&gt; QT &lt;= &#39;1&#39;;
+                        when &quot;10&quot; =&gt; QT &lt;= &#39;0&#39;;
+                        when &quot;11&quot; =&gt; QT &lt;= &#39;X&#39;;
+                        when others =&gt; null;
+                    end case;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    Q  &lt;= QT;
+    nQ &lt;= not QT;
+end architecture behaviour;
+</code></pre>
+
+    <h2>Vim Script</h2>
+    <pre><code class="vim">if foo &gt; 2 || has(&quot;gui_running&quot;)
+  syntax on
+  set hlsearch
+endif
+
+set autoindent
+
+&quot; switch on highlighting
+function UnComment(fl, ll)
+  while idx &gt;= a:ll
+    let srclines=getline(idx)
+    let dstlines=substitute(srclines, b:comment, &quot;&quot;, &quot;&quot;)
+    call setline(idx, dstlines)
+  endwhile
+endfunction
+</code></pre>
+
+    <h2>Intel x86 Assembly</h2>
+    <pre><code class="x86asm">section .text
+extern  _MessageBoxA@16
+%if     __NASM_VERSION_ID__ &gt;= 0x02030000
+safeseh handler         ; register handler as &quot;safe handler&quot;
+%endif
+
+handler:
+        push    dword 1 ; MB_OKCANCEL
+        push    dword caption
+        push    dword text
+        push    dword 0
+        call    _MessageBoxA@16
+        sub     eax,1   ; incidentally suits as return value
+                        ; for exception handler
+        ret
+
+global  _main
+_main:  push    dword handler
+        push    dword [fs:0]
+        mov     dword [fs:0], esp
+        xor     eax,eax
+        mov     eax, dword[eax]   ; cause exception
+        pop     dword [fs:0]      ; disengage exception handler
+        add     esp, 4
+        ret
+
+avx2:   vzeroupper
+        push      rbx
+        mov       rbx,   rsp
+        sub       rsp,   0h20
+        vmovdqa   ymm0,  [rcx]
+        vpaddb    ymm0,  [rdx]
+        leave
+        ret
+
+text:   db      &#39;OK to rethrow, CANCEL to generate core dump&#39;,0
+caption:db      &#39;SEGV&#39;,0
+
+section .drectve info
+        db      &#39;/defaultlib:user32.lib /defaultlib:msvcrt.lib &#39;
+</code></pre>
+
+    <h2>XL</h2>
+    <pre><code class="xl">import Animate
+import SeasonsGreetingsTheme
+import &quot;myhelper.xl&quot;
+theme &quot;SeasonsGreetings&quot;
+function X:real -&gt; sin(X*0.5) + 16#0.002
+page &quot;A nice car&quot;,
+// --------------------------------------
+//    Display car model on a pedestal
+// --------------------------------------
+    clear_color 0, 0, 0, 1
+    hand_scale -&gt; 0.3
+
+    // Display the background image
+    background -4000,
+        locally
+            disable_depth_test
+            corridor N:integer -&gt;
+                locally
+                    rotatez 60 * N
+                    translatex 1000
+                    rotatey 90
+                    color &quot;white&quot;
+                    texture &quot;stars.png&quot;
+                    texture_wrap true, true
+                    texture_transform
+                        translate (time + N) * 0.02 mod 1, 0, 0
+                        scale 0.2, 0.3, 0.3
+                    rectangle 0, 0, 100000, 1154
+</code></pre>
+
+    <h2>HTML, XML</h2>
+    <pre><code class="xml">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;response value=&quot;ok&quot; xml:lang=&quot;en&quot;&gt;
+  &lt;text&gt;Ok&lt;/text&gt;
+  &lt;comment html_allowed=&quot;true&quot;/&gt;
+  &lt;ns1:description&gt;&lt;![CDATA[
+  CDATA is &lt;not&gt; magical.
+  ]]&gt;&lt;/ns1:description&gt;
+  &lt;a&gt;&lt;/a&gt; &lt;a/&gt;
+&lt;/response&gt;
+
+
+&lt;!DOCTYPE html&gt;
+&lt;title&gt;Title&lt;/title&gt;
+
+&lt;style&gt;body {width: 500px;}&lt;/style&gt;
+
+&lt;script type=&quot;application/javascript&quot;&gt;
+  function $init() {return true;}
+&lt;/script&gt;
+
+&lt;body&gt;
+  &lt;p checked class=&quot;title&quot; id=&#39;title&#39;&gt;Title&lt;/p&gt;
+  &lt;!-- here goes the rest of the page --&gt;
+&lt;/body&gt;
+</code></pre>
+
+
+</body>
+</html>

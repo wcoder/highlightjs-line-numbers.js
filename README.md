@@ -18,10 +18,10 @@ npm install highlightjs-line-numbers.js
 
 #### Getting the library from CDN
 ```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.6.0/highlightjs-line-numbers.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
 ```
 ```html
-<script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.6.0/dist/highlightjs-line-numbers.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"></script>
 ```
 
 ## Usage
@@ -52,7 +52,7 @@ $(document).ready(function() {
 If your needs cool style, add styles by taste:
 ```css
 /* for block of numbers */
-.hljs-ln td.hljs-ln-numbers {
+.hljs-ln-numbers {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -70,7 +70,7 @@ If your needs cool style, add styles by taste:
 }
 
 /* for block of code */
-.hljs-ln td.hljs-ln-code {
+.hljs-ln-code {
     padding-left: 10px;
 }
 ```
@@ -95,5 +95,19 @@ hljs.initLineNumbersOnLoad({
 hljs.lineNumbersBlock(myCodeBlock, myOptions);
 ```
 
+## CSS selectors
+
+You may need to select some lines of code after rendering. For instance, you may want
+to highlight a range of lines, selected by users, by changing their background color.
+The CSS selectors below can be used to perform these selection operations.
+
+CSS selector                             |  description
+-----------------------------------------|-----------------------
+`.hljs-ln-line`                          | Select all lines, including line numbers
+`.hljs-ln-numbers`                       | Select all line numbers, excluding lines of code
+`.hljs-ln-code`                          | Select all lines of code, excluding line numbers
+`.hljs-ln-line[data-line-number="i"]`    | Select the ith line, including line number
+`.hljs-ln-numbers[data-line-number="i"]` | Select the ith line number, excluding the line of code
+`.hljs-ln-code[data-line-number="i"]`    | Select the ith line of code, excluding the line number
 ---
 &copy; 2018 Yauheni Pakala | MIT License
