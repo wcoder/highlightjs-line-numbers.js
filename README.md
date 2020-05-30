@@ -90,7 +90,7 @@ After version 2.1 plugin has optional parameter `options` - for custom setup.
 version | name       | type    | default value | description
 --------|------------|---------|---------------|-----------------------
 v2.1    | singleLine | boolean | false         | enable plugin for code block with one line
-v2.8    | startFrom  | int     | 1             | [Start numbering from a custom value](startFrom)
+v2.8    | startFrom  | int     | 1             | [Start numbering from a custom value](#startFrom)
 
 ### Examples of using
 
