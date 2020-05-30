@@ -13,7 +13,10 @@
   <!-- <script src="../dist/highlightjs-line-numbers.min.js"></script> -->
 	<script>
 		hljs.initHighlightingOnLoad();
-		hljs.initLineNumbersOnLoad();
+		hljs.initLineNumbersOnLoad({
+            // singleLine:true,
+            startFrom: 5,
+        });
 	</script>
 	<style>
 
@@ -53,7 +56,7 @@
 <h1>Examples</h1>
 
 
-<pre><code class="nohighlight">var a = 1;
+<pre><code class="nohighlight">// nohighlight
 
 func as(int a)
 {
@@ -61,8 +64,16 @@ func as(int a)
 }
 </code></pre>
 
+<pre><code class="nohljsln">// nohljsln
 
-<pre><code>{
+func as(int a)
+{
+    return a * 1000;
+}
+</code></pre>
+
+
+<pre><code data-ln-start-from="10">{
   "averageBuyFee" : 1.3999999999999999,
   "timestamp" : 1527721200000,
   "rates" : {
