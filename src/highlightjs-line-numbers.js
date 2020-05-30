@@ -117,7 +117,7 @@
             var selectionText;
             // workaround an issue with Microsoft Edge as copied line breaks
             // are removed otherwise from the selection string
-            if (window.navigator.userAgent.indexOf("Edge") !== -1) {
+            if (window.navigator.userAgent.indexOf('Edge') !== -1) {
                 selectionText = edgeGetSelectedCodeLines(selection);
             } else {
                 // other browsers can directly use the selection string
@@ -159,12 +159,18 @@
 
             for (var i in blocks) {
                 if (blocks.hasOwnProperty(i)) {
-                    lineNumbersBlock(blocks[i], options);
+                    if (!isPluginDisabledForBlock(blocks[i])) {
+                        lineNumbersBlock(blocks[i], options);
+                    }
                 }
             }
         } catch (e) {
             w.console.error('LineNumbers error: ', e);
         }
+    }
+
+    function isPluginDisabledForBlock(element) {
+        return element.classList.contains('nohljsln');
     }
 
     function lineNumbersBlock (element, options) {
@@ -185,21 +191,15 @@
     }
 
     function lineNumbersInternal (element, options) {
-        // define options or set default
-        options = options || {
-            singleLine: false
-        };
 
-        // convert options
-        var firstLineIndex = !!options.singleLine ? 0 : 1;
+        var internalOptions = mapOptions(element, options);
 
         duplicateMultilineNodes(element);
 
-        return addLineNumbersBlockFor(element.innerHTML, firstLineIndex);
+        return addLineNumbersBlockFor(element.innerHTML, internalOptions);
     }
 
-    function addLineNumbersBlockFor (inputHtml, firstLineIndex) {
-
+    function addLineNumbersBlockFor (inputHtml, options) {
         var lines = getLines(inputHtml);
 
         // if last line contains only carriage return remove it
@@ -207,7 +207,7 @@
             lines.pop();
         }
 
-        if (lines.length > firstLineIndex) {
+        if (lines.length > 1 || options.singleLine) {
             var html = '';
 
             for (var i = 0, l = lines.length; i < l; i++) {
@@ -226,7 +226,7 @@
                     NUMBER_LINE_NAME,
                     DATA_ATTR_NAME,
                     CODE_BLOCK_NAME,
-                    i + 1,
+                    i + options.startFrom,
                     lines[i].length > 0 ? lines[i] : ' '
                 ]);
             }
@@ -235,6 +235,44 @@
         }
 
         return inputHtml;
+    }
+
+    /**
+     * @param {HTMLElement} element Code block.
+     * @param {Object} options External API options.
+     * @returns {Object} Internal API options.
+     */
+    function mapOptions (element, options) {
+        options = options || {};
+        return {
+            singleLine: getSingleLineOption(options),
+            startFrom: getStartFromOption(element, options)
+        };
+    }
+
+    function getSingleLineOption (options) {
+        var defaultValue = false;
+        if (!!options.singleLine) {
+            return options.singleLine;
+        }
+        return defaultValue;
+    }
+
+    function getStartFromOption (element, options) {
+        var defaultValue = 1;
+        var startFrom = defaultValue;
+
+        if (isFinite(options.startFrom)) {
+            startFrom = options.startFrom;
+        }
+
+        // can be overridden because local option is priority
+        var value = getAttribute(element, 'data-ln-start-from');
+        if (value !== null) {
+            startFrom = toNumber(value, defaultValue);
+        }
+
+        return startFrom;
     }
 
     /**
@@ -286,6 +324,10 @@
         return (text.trim().match(BREAK_LINE_REGEXP) || []).length;
     }
 
+    ///
+    /// HELPERS
+    ///
+
     function async (func) {
         w.setTimeout(func, 0);
     }
@@ -297,8 +339,28 @@
      */
     function format (format, args) {
         return format.replace(/\{(\d+)\}/g, function(m, n){
-            return args[n] ? args[n] : m;
+            return args[n] !== undefined ? args[n] : m;
         });
+    }
+
+    /**
+     * @param {HTMLElement} element Code block.
+     * @param {String} attrName Attribute name.
+     * @returns {String} Attribute value or empty.
+     */
+    function getAttribute (element, attrName) {
+        return element.hasAttribute(attrName) ? element.getAttribute(attrName) : null;
+    }
+
+    /**
+     * @param {String} str Source string.
+     * @param {Number} fallback Fallback value.
+     * @returns Parsed number or fallback value.
+     */
+    function toNumber (str, fallback) {
+        if (!str) return fallback;
+        var number = Number(str);
+        return isFinite(number) ? number : fallback;
     }
 
 }(window, document));

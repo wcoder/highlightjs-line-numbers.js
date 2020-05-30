@@ -6,27 +6,32 @@ Highlight.js line numbers plugin.
 
 ## Install
 
-#### Bower
+### Bower
+
 ```
 bower install highlightjs-line-numbers.js
 ```
 
-#### Npm
+### Npm
+
 ```
 npm install highlightjs-line-numbers.js
 ```
 
 #### Getting the library from CDN
+
 ```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 ```
+
 ```html
-<script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
 ```
 
 ## Usage
 
 Download plugin and include file after highlight.js:
+
 ```html
 <script src="path/to/highlight.min.js"></script>
 
@@ -34,6 +39,7 @@ Download plugin and include file after highlight.js:
 ```
 
 Initialize plugin after highlight.js:
+
 ```js
 hljs.initHighlightingOnLoad();
 
@@ -41,6 +47,7 @@ hljs.initLineNumbersOnLoad();
 ```
 
 Here’s an equivalent way to calling `initLineNumbersOnLoad` using jQuery:
+
 ```js
 $(document).ready(function() {
     $('code.hljs').each(function(i, block) {
@@ -50,6 +57,7 @@ $(document).ready(function() {
 ```
 
 If your needs cool style, add styles by taste:
+
 ```css
 /* for block of numbers */
 .hljs-ln-numbers {
@@ -79,11 +87,12 @@ If your needs cool style, add styles by taste:
 
 After version 2.1 plugin has optional parameter `options` - for custom setup.
 
-name       | type    | default value | description
------------|---------|---------------|-----------------------
-singleLine | boolean | false         | enable plugin for code block with one line
+version | name       | type    | default value | description
+--------|------------|---------|---------------|-----------------------
+v2.1    | singleLine | boolean | false         | enable plugin for code block with one line
+v2.8    | startFrom  | int     | 1             | [Start numbering from a custom value](startFrom)
 
-#### Examples of using
+### Examples of using
 
 ```js
 hljs.initLineNumbersOnLoad({
@@ -94,6 +103,40 @@ hljs.initLineNumbersOnLoad({
 ```js
 hljs.lineNumbersBlock(myCodeBlock, myOptions);
 ```
+
+```js
+hljs.lineNumbersValue(myCodeBlock, myOptions);
+```
+
+### startFrom
+
+If you want numbering to start from some other value than `1`, you can specify a _numbering offset_, in one of the following ways:
+
+- Specifying desired offset in `hljs.lineNumbersBlock()` call, as in:
+
+```js
+hljs.lineNumbersBlock(myCodeBlock, {
+    startFrom: 10
+});
+```
+
+- Specifying the desired offset in `data-ln-start-from` attribute of `code` element, as in:
+
+```html
+<pre>
+    <code data-ln-start-from="10">
+    ...
+    </code>
+</pre>
+```
+
+In both cases numbering offset will be `10`, meaning that the numbering will start from `10`.
+
+## Skipping some blocks
+
+(Applies to `hljs.initLineNumbersOnLoad()` initialization only.)
+
+If you want to skip some of your `code` blocks (to leave them unnumbered), you can mark them with `.nohljsln` class.
 
 ## CSS selectors
 
@@ -110,4 +153,4 @@ CSS selector                             |  description
 `.hljs-ln-numbers[data-line-number="i"]` | Select the ith line number, excluding the line of code
 `.hljs-ln-code[data-line-number="i"]`    | Select the ith line of code, excluding the line number
 ---
-&copy; 2018 Yauheni Pakala | MIT License
+&copy; 2020 Yauheni Pakala and [Community](https://github.com/wcoder/highlightjs-line-numbers.js/graphs/contributors) | MIT License

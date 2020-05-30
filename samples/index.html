@@ -7,13 +7,16 @@
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> -->
 
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
   <script src="../src/highlightjs-line-numbers.js"></script>
   <!-- <script src="../dist/highlightjs-line-numbers.min.js"></script> -->
 	<script>
 		hljs.initHighlightingOnLoad();
-		hljs.initLineNumbersOnLoad();
+		hljs.initLineNumbersOnLoad({
+            // singleLine:true,
+            // startFrom: 5,
+        });
 	</script>
 	<style>
 
@@ -53,7 +56,7 @@
 <h1>Examples</h1>
 
 
-<pre><code class="nohighlight">var a = 1;
+<pre><code class="nohighlight">// nohighlight
 
 func as(int a)
 {
@@ -61,190 +64,29 @@ func as(int a)
 }
 </code></pre>
 
+<pre><code class="nohljsln">// nohljsln
 
-<pre><code>{
-  "averageBuyFee" : 1.3999999999999999,
-  "timestamp" : 1527721200000,
+func as(int a)
+{
+    return a * 1000;
+}
+</code></pre>
+
+
+<pre><code data-ln-start-from="10">{
+  "averageBuyFee" : 1.1234,
+  "timestamp" : 1234,
   "rates" : {
-    "HUF" : 274.05874999999997,
-    "HRK" : 6.3338999999999999,
-    "CDF" : 1614.661462,
-    "ILS" : 3.56968,
-    "NGN" : 360.24833999999998,
-    "GYD" : 208.950526,
-    "BHD" : 0.37757800000000002,
-    "SZL" : 12.539944,
-    "INR" : 67.439999999999998,
-    "SDG" : 18.044215000000001,
-    "PEN" : 3.2682959999999999,
-    "QAR" : 3.6410819999999999,
-    "EUR" : 0.85727299999999995,
-    "PGK" : 3.2629299999999999,
-    "LRD" : 138.1113,
-    "ISK" : 105.34,
-    "SYP" : 514.96999000000005,
-    "TRY" : 4.4670449999999997,
-    "UAH" : 26.113116000000002,
-    "SGD" : 1.339046,
-    "MMK" : 1354.149087,
-    "NIO" : 31.548477999999999,
-    "BIF" : 1768.5704430000001,
-    "AFN" : 71.386266000000006,
-    "LKR" : 158.013589,
-    "GTQ" : 7.4797250000000002,
-    "CHF" : 0.98897100000000004,
-    "XPT" : 0.00110042,
-    "THB" : 32.031666999999999,
-    "AMD" : 484.44491900000003,
-    "AOA" : 237.339,
-    "SEK" : 8.8073490000000003,
-    "SAR" : 3.7513000000000001,
-    "KWD" : 0.30244599999999999,
-    "WST" : 2.5682330000000002,
-    "IRR" : 42157.265155000001,
-    "BMD" : 1,
-    "BGN" : 1.67479,
-    "PHP" : 52.542000000000002,
-    "XAF" : 562.334157,
-    "ZMW" : 10.268117999999999,
-    "BDT" : 84.448802999999998,
-    "NOK" : 8.1833340000000003,
-    "BOB" : 6.9053979999999999,
-    "TZS" : 2281,
-    "VEF" : 79902.5,
-    "VUV" : 108.462901,
-    "BND" : 1.365947,
-    "SCR" : 13.454981,
-    "XAG" : 0.060565220000000003,
-    "XCD" : 2.70255,
-    "ANG" : 1.7938430000000001,
-    "KYD" : 0.83285299999999995,
-    "DJF" : 178,
-    "CLF" : 0.022929999999999999,
-    "LSL" : 12.539552,
-    "MOP" : 8.0757530000000006,
-    "ALL" : 108.396237,
-    "UZS" : 8000.9282050000002,
-    "PLN" : 3.6911580000000002,
-    "UYU" : 31.165526,
-    "LYD" : 1.3612089999999999,
-    "JPY" : 108.82599999999999,
-    "MNT" : 2404.4274110000001,
-    "FJD" : 2.0859999999999999,
-    "ZWL" : 322.35501099999999,
-    "KPW" : 900,
-    "PKR" : 115.668333,
-    "MRO" : 355.5,
-    "OMR" : 0.38504300000000002,
-    "GBP" : 0.752745,
-    "SHP" : 0.752745,
-    "GEL" : 2.4720840000000002,
-    "TND" : 2.556092,
-    "DKK" : 6.3805290000000001,
-    "KRW" : 1076.1783330000001,
-    "NPR" : 107.89304199999999,
-    "BSD" : 1,
-    "CRC" : 565.55771700000003,
-    "EGP" : 17.921500000000002,
-    "AUD" : 1.320354,
-    "MAD" : 9.4990600000000001,
-    "SLL" : 7823.3006290000003,
-    "MWK" : 719.82837300000006,
-    "RSD" : 101.295891,
-    "NZD" : 1.4312769999999999,
-    "SRD" : 7.468,
-    "CLP" : 627.70000000000005,
-    "RUB" : 62.107999999999997,
-    "HKD" : 7.8472340000000003,
-    "NAD" : 12.539552,
-    "GMD" : 47.159999999999997,
-    "VND" : 22845.908908000001,
-    "LAK" : 8379.8500000000004,
-    "CUC" : 1,
-    "RON" : 3.986386,
-    "MUR" : 34.847499999999997,
-    "XAU" : 0.00076787999999999997,
-    "BRL" : 3.7237,
-    "STD" : 21076.892414000002,
-    "MXN" : 19.778500000000001,
-    "AWG" : 1.7849980000000001,
-    "MVR" : 15.509850999999999,
-    "PAB" : 1,
-    "TJS" : 8.9870079999999994,
-    "GNF" : 9033.9833330000001,
-    "MGA" : 3327.9333329999999,
-    "XDR" : 0.70712399999999997,
-    "ETB" : 27.550000000000001,
-    "COP" : 2899.1596639999998,
-    "ZAR" : 12.528663,
-    "IDR" : 13999.130101000001,
-    "SVC" : 8.7445249999999994,
-    "CVE" : 95.25,
-    "TTD" : 6.7357120000000004,
-    "GIP" : 0.752745,
-    "PYG" : 5731.4847490000002,
-    "MZN" : 60.387998000000003,
-    "FKP" : 0.752745,
-    "KZT" : 329.554575,
-    "UGX" : 3767.4893870000001,
-    "USD" : 1,
-    "RWF" : 866.26532099999997,
-    "ARS" : 24.927,
-    "GHS" : 4.6670319999999998,
-    "DOP" : 49.524921999999997,
-    "LBP" : 1510.147766,
-    "BTN" : 67.441953999999996,
-    "BZD" : 2.0086949999999999,
-    "YER" : 250.319142,
-    "MYR" : 3.9874999999999998,
-    "JMD" : 127.013092,
-    "TOP" : 2.2954629999999998,
-    "SOS" : 575.82003899999995,
-    "TMT" : 3.504988,
-    "XPD" : 0.0010126899999999999,
-    "MDL" : 16.926297000000002,
-    "XOF" : 562.334157,
-    "TWD" : 29.909185999999998,
-    "BBD" : 2,
-    "CAD" : 1.288872,
-    "CNY" : 6.4198170000000001,
-    "JOD" : 0.70950299999999999,
-    "XPF" : 102.299868,
-    "IQD" : 1190.1505790000001,
-    "HNL" : 23.889554,
-    "AED" : 3.673181,
-    "KES" : 101.55004599999999,
-    "ERN" : 14.996267,
-    "SSP" : 130.26339999999999,
-    "KMF" : 422.54243500000001,
-    "DZD" : 116.678772,
-    "MKD" : 52.774999999999999,
-    "CUP" : 25.5,
-    "BWP" : 9.9635840000000009,
-    "AZN" : 1.7024999999999999,
-    "SBD" : 7.9034870000000002,
-    "KGS" : 68.359093000000001,
-    "KHR" : 4077.6333330000002,
-    "HTG" : 65.057357999999994,
+    "HUF": 274.1234,
     "CZK" : 22.1663,
-    "BAM" : 1.6809190000000001
+    "BAM":1.1234,
   },
   "base" : "USD",
-  "excludedCurrencies" : [
-    "XDR",
-    "BYN",
-    "XPT",
-    "XAU",
-    "ZWL",
-    "XPD",
-    "JEP",
-    "GGP",
-    "CLF",
-    "IMP",
-    "XAG",
+  "excludedCurrencies" : [ "XDR",
     "ZMK",
     "BTC"
-  ]
+  ],
+  _invalid
 }</code></pre>
 
 <pre><code>var test = "single line";
