@@ -117,7 +117,7 @@
             var selectionText;
             // workaround an issue with Microsoft Edge as copied line breaks
             // are removed otherwise from the selection string
-            if (window.navigator.userAgent.indexOf("Edge") !== -1) {
+            if (window.navigator.userAgent.indexOf('Edge') !== -1) {
                 selectionText = edgeGetSelectedCodeLines(selection);
             } else {
                 // other browsers can directly use the selection string
@@ -156,14 +156,21 @@
     function documentReady (options) {
         try {
             var blocks = d.querySelectorAll('code.hljs,code.nohighlight');
+
             for (var i in blocks) {
-                if (blocks.hasOwnProperty(i) && !blocks[i].classList.contains('nohljsln')) {
-                    lineNumbersBlock(blocks[i], options);
+                if (blocks.hasOwnProperty(i)) {
+                    if (!isPluginDisabledForBlock(blocks[i])) {
+                        lineNumbersBlock(blocks[i], options);
+                    }
                 }
             }
         } catch (e) {
             w.console.error('LineNumbers error: ', e);
         }
+    }
+
+    function isPluginDisabledForBlock(element) {
+        return element.classList.contains('nohljsln');
     }
 
     function lineNumbersBlock (element, options) {
@@ -250,15 +257,19 @@
 
     function getStartFromOption (element, options) {
         var defaultValue = 1;
+        var startFrom = defaultValue;
+
         if (isFinite(options.startFrom)) {
-            // local option is priority
-            var value = getAttribute(element, 'data-ln-start-from');
-            if (value !== null) {
-                return toNumber(value, defaultValue);
-            }
-            return options.startFrom;
+            startFrom = options.startFrom;
         }
-        return defaultValue;
+
+        // can be overridden because local option is priority
+        var value = getAttribute(element, 'data-ln-start-from');
+        if (value !== null) {
+            startFrom = toNumber(value, defaultValue);
+        }
+
+        return startFrom;
     }
 
     /**

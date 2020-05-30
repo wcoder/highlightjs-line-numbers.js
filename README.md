@@ -136,7 +136,7 @@ In both cases numbering offset will be `10`, meaning that the numbering will sta
 
 (Applies to `hljs.initLineNumbersOnLoad()` initialization only.)
 
-If you want to skip some of your `code` blocks (to leave them unnumbered), you can mark them with `.nohljs-ln` class.
+If you want to skip some of your `code` blocks (to leave them unnumbered), you can mark them with `.nohljsln` class.
 
 ## CSS selectors
 
