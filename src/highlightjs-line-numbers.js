@@ -252,7 +252,10 @@
 
     function getSingleLineOption (options) {
         var defaultValue = false;
-        return options.singleLine ?? defaultValue;
+        if (!!options.singleLine) {
+            return options.singleLine;
+        }
+        return defaultValue;
     }
 
     function getStartFromOption (element, options) {
