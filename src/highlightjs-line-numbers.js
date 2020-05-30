@@ -154,11 +154,11 @@
     }
 
     function documentReady (options) {
+        console.log('documentReady() called!');
         try {
             var blocks = d.querySelectorAll('code.hljs,code.nohighlight');
-
             for (var i in blocks) {
-                if (blocks.hasOwnProperty(i)) {
+                if (blocks.hasOwnProperty(i) && !blocks[i].classList.contains('hlnoln')) {
                     lineNumbersBlock(blocks[i], options);
                 }
             }
@@ -167,24 +167,45 @@
         }
     }
 
-    function lineNumbersBlock (element, options) {
+    function lineNumbersBlock (element, options, lnOffset) {
         if (typeof element !== 'object') return;
 
+        if (typeof lnOffset === typeof undefined || lnOffset === null || !isFinite(lnOffset)) {
+
+            var lnOffsetAttr = element.attributes['data-ln-offset'];
+
+            if (typeof lnOffsetAttr !== typeof undefined && lnOffsetAttr !== null && isFinite(lnOffsetAttr.value)) {
+                try {
+                    lnOffset = Number(lnOffsetAttr.value);
+                }
+                catch (err) {
+                    lnOffset = 0;
+                }
+            } else
+                lnOffset = 0;
+        }
+
         async(function () {
-            element.innerHTML = lineNumbersInternal(element, options);
+            element.innerHTML = lineNumbersInternal(element, options, lnOffset);
         });
     }
 
-    function lineNumbersValue (value, options) {
+    function lineNumbersValue (value, options, lnOffset) {
         if (typeof value !== 'string') return;
+
+        if (typeof lnOffset === typeof undefined || lnOffset === null || !isFinite(lnOffset))
+            lnOffset = 0;
 
         var element = document.createElement('code')
         element.innerHTML = value
 
-        return lineNumbersInternal(element, options);
+        return lineNumbersInternal(element, options, lnOffset);
     }
 
-    function lineNumbersInternal (element, options) {
+    function lineNumbersInternal (element, options, lnOffset) {
+        if (typeof lnOffset === typeof undefined || lnOffset === null || !isFinite(lnOffset))
+            lnOffset = 0;
+
         // define options or set default
         options = options || {
             singleLine: false
@@ -195,10 +216,12 @@
 
         duplicateMultilineNodes(element);
 
-        return addLineNumbersBlockFor(element.innerHTML, firstLineIndex);
+        return addLineNumbersBlockFor(element.innerHTML, firstLineIndex, lnOffset);
     }
 
-    function addLineNumbersBlockFor (inputHtml, firstLineIndex) {
+    function addLineNumbersBlockFor (inputHtml, firstLineIndex, lnOffset) {
+        if (typeof lnOffset === typeof undefined || lnOffset === null || !isFinite(lnOffset))
+            lnOffset = 0;
 
         var lines = getLines(inputHtml);
 
@@ -226,7 +249,7 @@
                     NUMBER_LINE_NAME,
                     DATA_ATTR_NAME,
                     CODE_BLOCK_NAME,
-                    i + 1,
+                    i + 1 + lnOffset,
                     lines[i].length > 0 ? lines[i] : ' '
                 ]);
             }

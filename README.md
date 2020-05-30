@@ -95,6 +95,33 @@ hljs.initLineNumbersOnLoad({
 hljs.lineNumbersBlock(myCodeBlock, myOptions);
 ```
 
+## Skipping some blocks
+
+(Applies to `hljs.initLineNumbersOnLoad()` initialization only.)
+
+If you want to skip some of your `code` blocks (to leave them unnumbered), you can mark 
+them with `.hlnoln` class.
+
+## Start numbering from a custom value
+
+If you want numbering to start from some other value than `1`, you can specify a 
+_numbering offset_, in one of the following ways:
+
+* Specifying desired offset in `hljs.lineNumbersBlock()` call, as in:
+```js
+hljs.lineNumbersBlock(myCodeBlock, myOptions, 10); // Numbering will start from 11
+```
+* Specifying the desired offset in `data-ln-offset` attribute of `code` element, as in:
+```html
+<pre>
+<code data-ln-offset="10">
+...
+</code>
+</pre>
+```
+
+In both cases numbering offset will be `10`, meaning that the numbering will start from `11`.
+
 ## CSS selectors
 
 You may need to select some lines of code after rendering. For instance, you may want
