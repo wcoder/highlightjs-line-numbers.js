@@ -1,6 +1,6 @@
 # highlightjs-line-numbers.js [![npm](https://img.shields.io/npm/v/highlightjs-line-numbers.js.svg)](https://www.npmjs.com/package/highlightjs-line-numbers.js) ![npm](https://img.shields.io/npm/dw/highlightjs-line-numbers.js.svg)
 
-Highlight.js line numbers plugin.
+[Highlight.js](https://github.com/highlightjs/highlight.js) line numbers plugin.
 
 [DEMO](http://wcoder.github.io/highlightjs-line-numbers.js/) | [SСREENSHOTS](https://github.com/wcoder/highlightjs-line-numbers.js/issues/5)
 
@@ -28,6 +28,8 @@ npm install highlightjs-line-numbers.js
 <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
 ```
 
+highlightjs-line-numbers.js 2.8.0 is known to work with highlight.js 11.3.1.
+
 ## Usage
 
 Download plugin and include file after highlight.js:
@@ -41,7 +43,7 @@ Download plugin and include file after highlight.js:
 Initialize plugin after highlight.js:
 
 ```js
-hljs.initHighlightingOnLoad();
+hljs.highlightAll();
 
 hljs.initLineNumbersOnLoad();
 ```
