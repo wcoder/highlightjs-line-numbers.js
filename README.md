@@ -154,5 +154,10 @@ CSS selector                             |  description
 `.hljs-ln-line[data-line-number="i"]`    | Select the ith line, including line number
 `.hljs-ln-numbers[data-line-number="i"]` | Select the ith line number, excluding the line of code
 `.hljs-ln-code[data-line-number="i"]`    | Select the ith line of code, excluding the line number
+
+## More plugins
+
+- [highlightjs-lang.js](https://github.com/wcoder/highlightjs-lang.js) — plugin to display language name with formatting;
+
 ---
-&copy; 2020 Yauheni Pakala and [Community](https://github.com/wcoder/highlightjs-line-numbers.js/graphs/contributors) | MIT License
+&copy; 2023 Yauheni Pakala and [Community](https://github.com/wcoder/highlightjs-line-numbers.js/graphs/contributors) | MIT License
