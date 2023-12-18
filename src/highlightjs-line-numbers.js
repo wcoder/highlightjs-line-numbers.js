@@ -15,6 +15,7 @@
         w.hljs.initLineNumbersOnLoad = initLineNumbersOnLoad;
         w.hljs.lineNumbersBlock = lineNumbersBlock;
         w.hljs.lineNumbersValue = lineNumbersValue;
+        w.hljs.lineNumbersInternal = lineNumbersInternal;
 
         addStyles();
     } else {
