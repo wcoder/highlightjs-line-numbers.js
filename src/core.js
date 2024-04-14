@@ -1,5 +1,5 @@
 
-var install = function(w,d,hljs) {
+var decorateHljs = function(w,d,hljs) {
     var TABLE_NAME = 'hljs-ln',
         LINE_NAME = 'hljs-ln-line',
         CODE_BLOCK_NAME = 'hljs-ln-code',
@@ -356,4 +356,4 @@ var install = function(w,d,hljs) {
     }
 }
 
-export { install };
+export { decorateHljs };
