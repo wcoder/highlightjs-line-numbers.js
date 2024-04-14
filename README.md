@@ -159,5 +159,20 @@ CSS selector                             |  description
 
 - [highlightjs-lang.js](https://github.com/wcoder/highlightjs-lang.js) — plugin to display language name with formatting;
 
+## Development: Building, and Basic Test of Code
+
+Build the project.
+
+    ./node_modules/.bin/gulp build
+
+Run http-server to test that the code is working:
+
+    ./node_modules/.bin/http-server -c-1 test
+
+That will start the server on localhost on port 8080, which
+you can navigate to. The index page
+invokes highlighting and this library, so you should see
+a C# snippet and line numbers.
+
 ---
 &copy; 2023 Yauheni Pakala and [Community](https://github.com/wcoder/highlightjs-line-numbers.js/graphs/contributors) | MIT License

@@ -17,5 +17,6 @@ gulp.task('build', function() {
         .pipe(rename({
             extname: '.min.js'
         }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('test'));
 });
