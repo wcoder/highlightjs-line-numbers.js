@@ -102,10 +102,11 @@ There is one custom event fired when a code element has been augmented
 with line numbers. You can listen for it like so:
 
 ```js
-const code = document.querySelector('code.my-code')!;
-code.addEventListener('line-numbers-inserted', (e: CustomEvent) => {
+const code = document.querySelector('code.my-code');
+code.addEventListener('line-numbers-inserted', (e) => {
     // you can work with the line numbers modifications, now.
 });
+
 ```
 
 ## Options
