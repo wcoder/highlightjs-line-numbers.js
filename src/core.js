@@ -170,7 +170,7 @@ var decorateHljs = function(w,d,hljs) {
 
         async(function () {
             element.innerHTML = lineNumbersInternal(element, options);
-            const event = new CustomEvent('line-numbers-inserted', {bubbles: true});
+            var event = new CustomEvent('line-numbers-inserted', {bubbles: true});
             element.dispatchEvent(event);
         });
     }
