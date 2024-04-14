@@ -58,6 +58,17 @@ $(document).ready(function() {
 });
 ```
 
+You can also import the library as an es6 module:
+
+```js
+import hljs from 'highlight.js';
+
+import { decorateHljs } from 'highlightjs-line-numbers.js/src/decorator.es6.js';
+decorateHljs(hljs);
+hljs.highlightAll();
+hljs.initLineNumbersOnLoad();
+```
+
 If your needs cool style, add styles by taste:
 
 ```css
@@ -83,6 +94,19 @@ If your needs cool style, add styles by taste:
 .hljs-ln-code {
     padding-left: 10px;
 }
+```
+
+## Events
+
+There is one custom event fired when a code element has been augmented
+with line numbers. You can listen for it like so:
+
+```js
+const code = document.querySelector('code.my-code');
+code.addEventListener('line-numbers-inserted', (e) => {
+    // you can work with the line numbers modifications, now.
+});
+
 ```
 
 ## Options
@@ -158,6 +182,21 @@ CSS selector                             |  description
 ## More plugins
 
 - [highlightjs-lang.js](https://github.com/wcoder/highlightjs-lang.js) — plugin to display language name with formatting;
+
+## Development: Building, and Basic Test of Code
+
+Build the project.
+
+    ./node_modules/.bin/gulp build
+
+Run http-server to test that the code is working:
+
+    ./node_modules/.bin/http-server -c-1 test
+
+That will start the server on localhost on port 8080, which
+you can navigate to. The index page
+invokes highlighting and this library, so you should see
+a C# snippet and line numbers.
 
 ---
 &copy; 2023 Yauheni Pakala and [Community](https://github.com/wcoder/highlightjs-line-numbers.js/graphs/contributors) | MIT License
