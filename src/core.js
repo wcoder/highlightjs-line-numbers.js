@@ -1,5 +1,3 @@
-(function () {
-'use strict';
 
 var install = function(w,d,hljs) {
 
@@ -179,8 +177,8 @@ var install = function(w,d,hljs) {
     function lineNumbersValue (value, options) {
         if (typeof value !== 'string') return;
 
-        var element = document.createElement('code');
-        element.innerHTML = value;
+        var element = document.createElement('code')
+        element.innerHTML = value
 
         return lineNumbersInternal(element, options);
     }
@@ -357,19 +355,6 @@ var install = function(w,d,hljs) {
         var number = Number(str);
         return isFinite(number) ? number : fallback;
     }
-};
+}
 
-// jshint multistr:true
-
-(function (w, d) {
-    'use strict';
-
-    if(hljs) {
-        install(w,h,hljs);
-    } else {
-        w.console.error('highlight.js not detected!');        
-    }
-    
-}(window, document));
-
-}());
+export { install };
