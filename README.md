@@ -96,6 +96,18 @@ If your needs cool style, add styles by taste:
 }
 ```
 
+## Events
+
+There is one custom event fired when a code element has been augmented
+with line numbers. You can listen for it like so:
+
+```js
+const code = document.querySelector('code.my-code')!;
+code.addEventListener('line-numbers-inserted', (e: CustomEvent) => {
+    // you can work with the line numbers modifications, now.
+});
+```
+
 ## Options
 
 After version 2.1 plugin has optional parameter `options` - for custom setup.
