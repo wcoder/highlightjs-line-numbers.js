@@ -58,6 +58,17 @@ $(document).ready(function() {
 });
 ```
 
+You can also import the library as an es6 module:
+
+```js
+import hljs from 'highlight.js';
+
+import { decorateHljs } from 'highlightjs-line-numbers.js/src/decorator.es6.js';
+decorateHljs(hljs);
+hljs.highlightAll();
+hljs.initLineNumbersOnLoad();
+```
+
 If your needs cool style, add styles by taste:
 
 ```css
