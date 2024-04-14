@@ -6,9 +6,9 @@ import { install } from './core.js';
     'use strict';
 
     if(hljs) {
-        install(w,h,hljs);
+        install(w,d,hljs);
     } else {
-        w.console.error('highlight.js not detected!');        
+        w.console.error('highlight.js not detected!');
     }
     
 }(window, document));
