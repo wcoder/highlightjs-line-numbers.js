@@ -14,8 +14,8 @@
     if (w.hljs) {
         w.hljs.initLineNumbersOnLoad = initLineNumbersOnLoad;
         w.hljs.lineNumbersBlock = lineNumbersBlock;
+        w.hljs.lineNumbersBlockSync = lineNumbersBlockSync;
         w.hljs.lineNumbersValue = lineNumbersValue;
-        w.hljs.lineNumbersInternal = lineNumbersInternal;
 
         addStyles();
     } else {
@@ -180,6 +180,12 @@
         async(function () {
             element.innerHTML = lineNumbersInternal(element, options);
         });
+    }
+
+    function lineNumbersBlockSync (element, options) {
+        if (typeof element !== 'object') return;
+
+        element.innerHTML = lineNumbersInternal(element, options);
     }
 
     function lineNumbersValue (value, options) {

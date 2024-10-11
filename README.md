@@ -107,6 +107,10 @@ hljs.lineNumbersBlock(myCodeBlock, myOptions);
 ```
 
 ```js
+hljs.lineNumbersBlockSync(myCodeBlock, myOptions);
+```
+
+```js
 hljs.lineNumbersValue(myCodeBlock, myOptions);
 ```
 
