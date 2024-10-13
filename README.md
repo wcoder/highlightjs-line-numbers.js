@@ -164,4 +164,4 @@ CSS selector                             |  description
 - [highlightjs-lang.js](https://github.com/wcoder/highlightjs-lang.js) — plugin to display language name with formatting;
 
 ---
-&copy; 2023 Yauheni Pakala and [Community](https://github.com/wcoder/highlightjs-line-numbers.js/graphs/contributors) | MIT License
+&copy; 2024 Yauheni Pakala and [Community](https://github.com/wcoder/highlightjs-line-numbers.js/graphs/contributors) | MIT License
