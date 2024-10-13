@@ -179,6 +179,10 @@
 
         async(function () {
             element.innerHTML = lineNumbersInternal(element, options);
+
+            // event line numbering task complete
+            const event = new Event('ready');
+            element.dispatchEvent(event);
         });
     }
 
