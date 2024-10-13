@@ -21,11 +21,11 @@ npm install highlightjs-line-numbers.js
 #### Getting the library from CDN
 
 ```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.9.0/highlightjs-line-numbers.min.js"></script>
 ```
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.9.0/dist/highlightjs-line-numbers.min.js"></script>
 ```
 
 highlightjs-line-numbers.js 2.8.0 is known to work with highlight.js 11.3.1.
@@ -107,6 +107,10 @@ hljs.lineNumbersBlock(myCodeBlock, myOptions);
 ```
 
 ```js
+hljs.lineNumbersBlockSync(myCodeBlock, myOptions);
+```
+
+```js
 hljs.lineNumbersValue(myCodeBlock, myOptions);
 ```
 
@@ -160,4 +164,4 @@ CSS selector                             |  description
 - [highlightjs-lang.js](https://github.com/wcoder/highlightjs-lang.js) — plugin to display language name with formatting;
 
 ---
-&copy; 2023 Yauheni Pakala and [Community](https://github.com/wcoder/highlightjs-line-numbers.js/graphs/contributors) | MIT License
+&copy; 2024 Yauheni Pakala and [Community](https://github.com/wcoder/highlightjs-line-numbers.js/graphs/contributors) | MIT License
